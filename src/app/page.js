@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+
 // SVG Background Components
 const WaveBackground = () => (
   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -40,8 +41,18 @@ const GridPattern = () => (
 
 // Animation variants
 const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  hidden: { 
+    opacity: 0, 
+    y: 20 
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 0.77, 0.47, 0.97] 
+    }
+  }
 }
 
 const staggerContainer = {
@@ -49,7 +60,9 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05
+      staggerChildren: 0.1, 
+      delayChildren: 0.2, 
+      duration: 0.6 
     }
   }
 }
@@ -258,7 +271,8 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
             className="flex flex-col lg:flex-row items-center"
           >
@@ -328,111 +342,119 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-[3%]"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="text-center mb-16 max-w-3xl mx-auto"
-          >
-            <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-blue-600 uppercase">
-              What We Offer
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-              Comprehensive <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Language Solutions</span>
-            </h2>
-            <p className="text-lg text-gray-600">
-              Tailored programs designed to meet your specific language needs and professional objectives.
-            </p>
-          </motion.div>
+{/* Services Section */}
+<section id="services" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+  <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-[3%]"></div>
+  <div className="container mx-auto px-6 relative z-10">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+      className="text-center mb-16 max-w-3xl mx-auto"
+    >
+      <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-blue-600 uppercase">
+        What We Offer
+      </span>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+        Comprehensive <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Language Solutions</span>
+      </h2>
+      <p className="text-lg text-gray-600">
+        Tailored programs designed to meet your specific language needs and professional objectives.
+      </p>
+    </motion.div>
 
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                icon: (
-                  <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-                  </svg>
-                ),
-                title: "Personalized Language Classes",
-                description: "One-on-one instruction tailored to your level, goals, and learning preferences.",
-                color: "from-blue-100 to-blue-50"
-              },
-              {
-                icon: (
-                  <svg className="w-10 h-10 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                ),
-                title: "Business Language Training",
-                description: "Specialized courses for professionals needing language skills for the workplace.",
-                color: "from-purple-100 to-purple-50"
-              },
-              {
-                icon: (
-                  <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
-                ),
-                title: "Translation Services",
-                description: "Certified document translation between English and Spanish for all purposes.",
-                color: "from-blue-100 to-blue-50"
-              },
-              {
-                icon: (
-                  <svg className="w-10 h-10 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-                title: "Exam Preparation",
-                description: "Targeted training for language proficiency tests and certifications.",
-                color: "from-purple-100 to-purple-50"
-              },
-              {
-                icon: (
-                  <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                ),
-                title: "Cultural Immersion",
-                description: "Language learning enriched with cultural understanding and context.",
-                color: "from-blue-100 to-blue-50"
-              },
-              {
-                icon: (
-                  <svg className="w-10 h-10 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                ),
-                title: "Conversation Practice",
-                description: "Structured speaking practice with native-level feedback.",
-                color: "from-purple-100 to-purple-50"
-              }
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -5 }}
-                className={`bg-gradient-to-br ${service.color} p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100`}
-              >
-                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-white shadow-sm mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={staggerContainer}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {[
+        {
+          icon: (
+            <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+          ),
+          title: "Personalized Language Classes",
+          description: "One-on-one instruction tailored to your level, goals, and learning preferences.",
+          bg: "bg-blue-50/50 hover:bg-blue-50",
+          border: "border-blue-100"
+        },
+        {
+          icon: (
+            <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          ),
+          title: "Business Language Training",
+          description: "Specialized courses for professionals needing language skills for the workplace.",
+          bg: "bg-indigo-50/50 hover:bg-indigo-50",
+          border: "border-indigo-100"
+        },
+        {
+          icon: (
+            <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          ),
+          title: "Translation Services",
+          description: "Certified document translation between English and Spanish for all purposes.",
+          bg: "bg-blue-50/50 hover:bg-blue-50",
+          border: "border-blue-100"
+        },
+        {
+          icon: (
+            <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          ),
+          title: "Exam Preparation",
+          description: "Targeted training for language proficiency tests and certifications.",
+          bg: "bg-indigo-50/50 hover:bg-indigo-50",
+          border: "border-indigo-100"
+        },
+        {
+          icon: (
+            <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          ),
+          title: "Cultural Immersion",
+          description: "Language learning enriched with cultural understanding and context.",
+          bg: "bg-blue-50/50 hover:bg-blue-50",
+          border: "border-blue-100"
+        },
+        {
+          icon: (
+            <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          ),
+          title: "Conversation Practice",
+          description: "Structured speaking practice with native-level feedback.",
+          bg: "bg-indigo-50/50 hover:bg-indigo-50",
+          border: "border-indigo-100"
+        }
+      ].map((service, index) => (
+        <motion.div
+          key={index}
+          variants={fadeInUp}
+          whileHover={{ y: -5 }}
+          className={`${service.bg} p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border ${service.border}`}
+        >
+          <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-white shadow-sm mb-6">
+            {service.icon}
+          </div>
+          <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
+          <p className="text-gray-600">{service.description}</p>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
@@ -440,7 +462,8 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
             className="text-center mb-16 max-w-3xl mx-auto"
           >
@@ -457,14 +480,15 @@ export default function Home() {
 
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
             {[
               {
-                name: "Starter Package",
-                price: "$90",
+                name: "Casual Conversation",
+                price: "$125",
                 duration: "1 week",
                 hours: "5 hours",
                 features: [
@@ -476,8 +500,8 @@ export default function Home() {
                 highlighted: false
               },
               {
-                name: "Standard Package",
-                price: "$175",
+                name: "Steady Progress",
+                price: "$220",
                 duration: "3 weeks",
                 hours: "10 hours",
                 features: [
@@ -490,7 +514,7 @@ export default function Home() {
                 highlighted: true
               },
               {
-                name: "Premium Package",
+                name: "Intensive Learning",
                 price: "$340",
                 duration: "7 weeks",
                 hours: "20 hours",
@@ -557,8 +581,8 @@ export default function Home() {
 
           <motion.div
             initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }} variants={fadeInUp}
             className="mt-16 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 max-w-3xl mx-auto"
           >
             <h3 className="text-xl font-bold mb-4 text-gray-800">Payment Information</h3>
@@ -589,7 +613,8 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
             className="flex flex-col lg:flex-row"
           >
@@ -655,13 +680,13 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between">
             <div className="mb-8 md:mb-0">
               <div className="relative h-20 w-20"> {/* Adjust width/height as needed */}
-              <Image
-                src="/logo.svg"
-                alt="BE Language Solutions Logo"
-                fill
-                className="object-contain object-left" // Maintains aspect ratio
-              />
-            </div>
+                <Image
+                  src="/logo.svg"
+                  alt="BE Language Solutions Logo"
+                  fill
+                  className="object-contain object-left" // Maintains aspect ratio
+                />
+              </div>
               <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Language Solutions
               </h3>
