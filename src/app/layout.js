@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Be Languages | English and Spanish Classes in Bocas del Toro",
   description: "Personalized English and Spanish classes in Bocas del Toro, Isla Colon, Panama.",
+    keywords: [
+    'English classes Bocas del Toro Panama',
+    'Spanish classes Bocas del Toro Panama',
+    'Clase de Ingles Bocas del Toro Panama',
+    'certified translator Bocas del Toro Panama',
+    'Clase de Español Bocas del Toro Panama',
+    'traductor certificado Bocas del Toro Panama'
+  ],
 };
 
 export default function RootLayout({ children }) {
