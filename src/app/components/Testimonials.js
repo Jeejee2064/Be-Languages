@@ -5,7 +5,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 const WaveBackground = () => (
   <svg 
-    className="absolute bottom-0 w-full h-64" 
+    className="absolute bottom-0 w-full  h-64" 
     viewBox="0 0 1440 320" 
     preserveAspectRatio="none"
   >
@@ -28,6 +28,32 @@ const WaveBackground = () => (
   </svg>
 )
 
+const TopWaveBackground = () => (
+  <svg 
+    className="absolute top-0 w-full h-64" 
+    viewBox="0 0 1440 320" 
+    preserveAspectRatio="none"
+  >
+    <path 
+      fill="url(#gradient)" 
+      fillOpacity="0.15" 
+      d="M0,0L48,10.7C96,21,192,43,288,42.7C384,43,480,21,576,26.7C672,32,768,64,864,58.7C960,53,1056,11,1152,10.7C1248,11,1344,53,1392,74.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+    />
+    <path 
+      fill="url(#gradient)" 
+      fillOpacity="0.1" 
+      d="M0,32L48,21.3C96,11,192,-11,288,5.3C384,21,480,75,576,74.7C672,75,768,21,864,21.3C960,21,1056,75,1152,85.3C1248,96,1344,64,1392,48L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+    />
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#3b82f6" />
+        <stop offset="100%" stopColor="#8b5cf6" />
+      </linearGradient>
+    </defs>
+  </svg>
+)
+
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
@@ -40,27 +66,27 @@ const fadeInUp = {
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Olivia S.",
     role: "Business Owner",
-    content: "The Spanish classes completely transformed my ability to communicate with clients. My revenue in Latin American markets increased by 40%!"
+    content: "The Spanish classes completely transformed my ability to communicate with clients. Joanna’s teaching style is practical, clear, and adapted to real business needs. I now feel confident holding conversations with Spanish-speaking customers and partners, which has opened up new opportunities for my business."
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "University Student",
-    content: "Passed my DELE B2 exam on the first try thanks to the personalized study plan. The cultural immersion made learning feel natural."
+    name: "Nancy L.",
+    role: "Osteopath",
+    content: "I had so much fun learning English with Joanna! Her approach made me feel confident, relaxed, and actually excited to speak. The real-life practice helped me talk to my international clients with ease."
   },
   {
     id: 3,
-    name: "Emma Rodriguez",
-    role: "Travel Blogger",
-    content: "From zero to conversational in 3 months! Now I can interview locals without translators during my travels through Spain."
+    name: "Ronny S.",
+    role: "Retired Businessman",
+    content: "I'm in my late 70's an had 0 knowledge in spanish, after learning with Joanna for 2 years i made significant progess."
   },
   {
     id: 4,
-    name: "David Müller",
-    role: "Corporate Executive",
-    content: "Our team's business English skills improved dramatically. The industry-specific vocabulary training was exactly what we needed."
+    name: "Carlos M.",
+    role: "Legal Consultant",
+    content: "Joanna’s translation work was fast, precise, and culturally accurate. She helped me translate official documents and handled everything with professionalism and care. Highly recommended!"
   }
 ]
 
@@ -81,6 +107,9 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <WaveBackground />
+      <TopWaveBackground />
+      
+      
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial="hidden"
@@ -89,12 +118,12 @@ export default function Testimonials() {
           variants={fadeInUp}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-purple-600 uppercase">
-            Student Stories
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            Trusted by <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Learners Worldwide</span>
-          </h2>
+<span className="inline-block mb-4 text-sm font-semibold tracking-wider text-purple-600 uppercase">
+  What Clients Are Saying
+</span>
+<h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+  Language Learning & Translation Services <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">That Make a Difference</span>
+</h2>
         </motion.div>
 
         {/* Desktop Carousel - Clean smooth sliding */}
