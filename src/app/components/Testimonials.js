@@ -37,17 +37,6 @@ const fadeInUp = {
   }
 }
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
-  }
-}
-
 const testimonials = [
   {
     id: 1,
@@ -81,8 +70,13 @@ export default function Testimonials() {
   // Calculate total pages for desktop (2 testimonials per page)
   const totalPages = Math.ceil(testimonials.length / 2)
   
-  const next = () => setCurrent((prev) => (prev + 1) % totalPages)
-  const prev = () => setCurrent((prev) => (prev - 1 + totalPages) % totalPages)
+  // Desktop navigation (pages)
+  const nextDesktop = () => setCurrent((prev) => (prev + 1) % totalPages)
+  const prevDesktop = () => setCurrent((prev) => (prev - 1 + totalPages) % totalPages)
+  
+  // Mobile navigation (individual testimonials)
+  const nextMobile = () => setCurrent((prev) => (prev + 1) % testimonials.length)
+  const prevMobile = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)
 
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
@@ -103,29 +97,21 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        {/* Desktop Carousel - Fixed to show 2 per page */}
-        <motion.div 
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          className="hidden md:block relative"
-        >
+        {/* Desktop Carousel - Clean smooth sliding */}
+        <div className="hidden md:block relative">
           <div className="overflow-hidden">
             <motion.div
               className="flex"
               animate={{ x: `-${current * 100}%` }}
               transition={{ 
-                type: "spring", 
-                stiffness: 300, 
-                damping: 30,
-                duration: 0.6
+                duration: 0.5,
+                ease: "easeInOut"
               }}
             >
-              {testimonials.map((testimonial, index) => (
-                <motion.div
+              {testimonials.map((testimonial) => (
+                <div
                   key={testimonial.id}
                   className="flex-shrink-0 w-1/2 px-4"
-                  variants={fadeInUp}
                 >
                   <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full">
                     <div className="mb-6">
@@ -134,25 +120,25 @@ export default function Testimonials() {
                     </div>
                     <p className="text-gray-600 italic">"{testimonial.content}"</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </motion.div>
           </div>
           
           <button 
-            onClick={prev}
+            onClick={prevDesktop}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 z-10"
           >
             <FiChevronLeft className="w-6 h-6 text-blue-600" />
           </button>
           <button 
-            onClick={next}
+            onClick={nextDesktop}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 z-10"
           >
             <FiChevronRight className="w-6 h-6 text-blue-600" />
           </button>
 
-          {/* Dots indicator for desktop - Now shows correct number of pages */}
+          {/* Dots indicator for desktop - Shows correct number of pages */}
           <div className="flex justify-center mt-8 space-x-2">
             {Array.from({ length: totalPages }).map((_, index) => (
               <button
@@ -164,52 +150,59 @@ export default function Testimonials() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* Mobile Swipeable - Unchanged (still 1 per page) */}
-        <motion.div 
-          className="md:hidden overflow-hidden relative"
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInUp}
-        >
-          <motion.div
-            className="flex"
-            animate={{ x: `-${current * 100}%` }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={(e, { offset, velocity }) => {
-              if (offset.x > 100 || velocity.x > 800) prev()
-              if (offset.x < -100 || velocity.x < -800) next()
-            }}
-          >
-            {testimonials.map((testimonial) => (
-              <div 
-                key={testimonial.id}
-                className="flex-shrink-0 w-full px-4"
-              >
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                  <div className="mb-6">
-                    <h3 className="font-bold text-gray-800 text-lg">{testimonial.name}</h3>
-                    <p className="text-sm text-purple-600">{testimonial.role}</p>
+        {/* Mobile Carousel - Same as desktop but 1 per page */}
+        <div className="md:hidden overflow-hidden relative">
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex"
+              animate={{ x: `-${current * 100}%` }}
+              transition={{ 
+                duration: 0.5,
+                ease: "easeInOut"
+              }}
+            >
+              {testimonials.map((testimonial) => (
+                <div 
+                  key={testimonial.id}
+                  className="flex-shrink-0 w-full px-4"
+                >
+                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div className="mb-6">
+                      <h3 className="font-bold text-gray-800 text-lg">{testimonial.name}</h3>
+                      <p className="text-sm text-purple-600">{testimonial.role}</p>
+                    </div>
+                    <p className="text-gray-600 italic">"{testimonial.content}"</p>
                   </div>
-                  <p className="text-gray-600 italic">"{testimonial.content}"</p>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
+          
+          <button 
+            onClick={prevMobile}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 z-10"
+          >
+            <FiChevronLeft className="w-5 h-5 text-blue-600" />
+          </button>
+          <button 
+            onClick={nextMobile}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 z-10"
+          >
+            <FiChevronRight className="w-5 h-5 text-blue-600" />
+          </button>
           
           <div className="flex justify-center mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`w-3 h-3 rounded-full transition-all ${index === current ? "bg-blue-600 w-6" : "bg-gray-300"}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === current ? "bg-blue-600 w-6" : "bg-gray-300"}`}
               />
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
