@@ -1,9 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
-
+import Testimonials from './components/Testimonials'
 // SVG Background Components
 const WaveBackground = () => (
   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -86,10 +85,6 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-white text-gray-800 antialiased">
-      <Head>
-        <title>BE Language Solutions | Premium Language Classes</title>
-        <meta name="description" content="Personalized English and Spanish classes in Bocas del Toro with certified translator services" />
-      </Head>
 
       {/* Header */}
       <motion.header
@@ -606,7 +601,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
+<Testimonials/>
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <BlobBackground />
