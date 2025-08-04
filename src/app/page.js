@@ -625,7 +625,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
-            className="mt-16 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 max-w-3xl mx-auto"
+            className="mt-16 bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-3xl mx-auto"
           >
             <h3 className="text-xl font-bold mb-6 text-gray-800">Payment & Policy Information</h3>
 
