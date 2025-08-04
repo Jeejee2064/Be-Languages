@@ -813,7 +813,7 @@ export default function Home() {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-800">Email</h3>
-                <p className="mt-1 text-gray-600">be.languagesolution@gmail.com</p>
+                <p className="mt-1 text-gray-600">be.languages.pa@gmail.com</p>
               </div>
             </div>
 
@@ -884,7 +884,7 @@ export default function Home() {
               <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
               <ul className="space-y-2">
                 <li className="text-gray-400">+507 6613-5652</li>
-                <li className="text-gray-400">be.languagesolution@gmail.com</li>
+                <li className="text-gray-400">be.languages.pa@gmail.com</li>
                 <li className="text-gray-400">Bocas del Toro, Panama</li>
               </ul>
             </div>
