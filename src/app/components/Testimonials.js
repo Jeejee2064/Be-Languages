@@ -80,7 +80,7 @@ const testimonials = [
     id: 3,
     name: "Ronny S.",
     role: "Retired Businessman",
-    content: "I'm in my late 70's an had 0 knowledge in spanish, after learning with Joanna for 2 years i made significant progess."
+    content: "I'm in my late 70's and I had 0 knowledge of spanish, after learning with Joanna for 2 years I made significant progress."
   },
   {
     id: 4,
