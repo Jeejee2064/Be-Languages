@@ -132,9 +132,10 @@ export default function Home() {
                             />
                         </div>
                     </motion.div>
+                    <div className="flex items-center space-x-4">
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                     >
                         <a
@@ -145,11 +146,30 @@ export default function Home() {
                             <span>EN</span>
                         </a>
                     </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35 }}
+                    >
+                        <a
+                            href="/es"
+                            className="px-4 py-2 border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium flex items-center space-x-2"
+                        >
+                            <span className="text-lg">🇵🇦</span>
+                            <span>ES</span>
+                        </a>
+                    </motion.div>
+                    </div>
                     {/* Desktop Navigation */}
                     <nav className="hidden md:block">
                         <ul className="flex space-x-10">
-                            {['Inicio', 'Sobre mí', 'Servicios', 'Precios', 'Contacto'].map((item) => (
-                                <li key={item}>
+                            {['Inicio', 'Sobre mí', 'Servicios', 'Precios', 'Contacto'].map((item,index) => (
+                                             <motion.li
+                  key={item}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                >
                                     <a
                                         href={`#${item.toLowerCase()
                                             .replace(/ /g, '-')  // Replace spaces with dashes
@@ -159,15 +179,15 @@ export default function Home() {
                                     >
                                         {item}
                                     </a>
-                                </li>
+                                </motion.li>
                             ))}
                         </ul>
                     </nav>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.85 }}
                         className="hidden md:block"
                     >
                         <a href="#contacto" className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px]">

@@ -23,7 +23,7 @@ export const metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      'en': '/en',
+      'en': '/',
       'es': '/es',
     },
   },
