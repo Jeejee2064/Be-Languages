@@ -643,7 +643,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">•</span>
-                    Cash, local bank transfer and Yappy (banco General) accepted 
+                    Cash, local bank transfer and Yappy (Banco General) accepted 
                   </li>
                 </ul>
               </div>
