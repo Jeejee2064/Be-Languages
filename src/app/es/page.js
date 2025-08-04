@@ -148,21 +148,18 @@ export default function Home() {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:block">
                         <ul className="flex space-x-10">
-                            {['Inicio', 'Sobre mí', 'Servicios', 'Precios', 'Contacto'].map((item, index) => (
-                                <motion.li
-                                    key={item}
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 + index * 0.1 }}
-                                >
+                            {['Inicio', 'Sobre mí', 'Servicios', 'Precios', 'Contacto'].map((item) => (
+                                <li key={item}>
                                     <a
-                                        href={`#${item.toLowerCase().replace(' ', '-')}`}
-                                        className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium group"
+                                        href={`#${item.toLowerCase()
+                                            .replace(/ /g, '-')  // Replace spaces with dashes
+                                            .normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} // Remove accents
+                                        className="block py-2 text-gray-700 hover:text-blue-600"
+                                        onClick={() => setMobileMenuOpen(false)}
                                     >
                                         {item}
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
                                     </a>
-                                </motion.li>
+                                </li>
                             ))}
                         </ul>
                     </nav>
@@ -207,7 +204,9 @@ export default function Home() {
                                 {['Inicio', 'Sobre mí', 'Servicios', 'Precios', 'Contacto'].map((item) => (
                                     <li key={item}>
                                         <a
-                                            href={`#${item.toLowerCase().replace(' ', '-')}`}
+                                            href={`#${item.toLowerCase()
+                                                .replace(/ /g, '-')  // Replace spaces with dashes
+                                                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} // Remove accents
                                             className="block py-2 text-gray-700 hover:text-blue-600"
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
