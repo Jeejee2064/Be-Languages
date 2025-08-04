@@ -561,7 +561,7 @@ export default function Home() {
                 features: [
                   "8 shared 1 hour session",
                   "Personalized pair activities and real practice dialogues",
-                  "Learn together trhough games, role plays and teamwork",
+                  "Learn together through games, role plays and teamwork",
                   "Shared vocabulary lists and whatsapp groups",
                   "Real-world learning experiences (grocery shopping, food ordering...)"
                 ],
@@ -641,6 +641,10 @@ export default function Home() {
                     <span className="text-green-500 mr-2">•</span>
                     Transport fees may apply for in-person classes outside Bocas Town
                   </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    Cash, local bank transfer and Yappy (banco General) accepted 
+                  </li>
                 </ul>
               </div>
 
@@ -649,11 +653,11 @@ export default function Home() {
                 <ul className="text-gray-600 space-y-2">
                   <li className="flex items-start">
                     <span className="text-red-500 mr-2">•</span>
-                    Changes must be advised 24 hours before scheduled session
+                    Changes must be advised 12 hours before scheduled session
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-500 mr-2">•</span>
-                    Less than 24h notice or no-show: session is forfeited
+                    Less than 12h notice or no-show: session is forfeited
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">•</span>
@@ -701,7 +705,7 @@ export default function Home() {
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2">•</span>
-                    <span>Starts at $15 per page (translated and printed)</span>
+                    <span>Starts at $15 per page translated.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2">•</span>
