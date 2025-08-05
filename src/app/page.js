@@ -160,7 +160,7 @@ export default function Home() {
           </motion.div>
           </div>
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden lg:block">
             <ul className="flex space-x-10">
               {['Home', 'About', 'Services', 'Pricing', 'Contact'].map((item, index) => (
                 <motion.li
@@ -185,7 +185,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85 }}
-            className="hidden md:block"
+            className="hidden lg:block"
           >
             <a href="#contact" className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px]">
               Get Started
@@ -194,7 +194,7 @@ export default function Home() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="lg:hidden text-gray-700 focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
