@@ -898,7 +898,7 @@ export default function Home() {
                                 />
                             </div>
                             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                                Soluciones Lingüísticas
+                                Language Solutions
                             </h3>
                             <p className="text-gray-400 max-w-xs mb-6">
                                 Clases personalizadas de inglés y español con servicios de traducción certificada en Bocas del Toro, Panamá.

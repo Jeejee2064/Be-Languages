@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /es
+Disallow: /private/
+Disallow: /admin/
+
+Sitemap: https://be-languages.com/sitemap.xml
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /$
+Allow: /es$

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Be Languages | English and Spanish Classes in Bocas del Toro",
-  description: "Personalized English and Spanish classes in Bocas del Toro, Panama. Certified translation services for documents and interpretation.",
+  description: "Personalized English and Spanish classes in Bocas del Toro, Panama. Certified translation services for documents.",
   keywords: [
     'English classes Bocas del Toro',
     'Spanish classes Bocas del Toro',
@@ -36,6 +36,7 @@ export const metadata = {
     languages: {
       'en': '/',
       'es': '/es',
+      'x-default': '/', // Fallback for unspecified languages
     },
   },
   openGraph: {
@@ -53,6 +54,7 @@ export const metadata = {
         alt: "Be Languages logo",
       },
     ],
+    alternateLocales: ['es_ES'], // Important for multilingual sites
   },
   twitter: {
     card: "summary_large_image",
