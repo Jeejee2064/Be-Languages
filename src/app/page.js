@@ -3,64 +3,11 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Testimonials from './components/Testimonials'
+import { HeliconiaBackground, WaveBackground, TopWaveBackground, BambooBackground, GridPattern, PalmBackground } from './components/backgrounds';
+ import ContactSection from './components/ContactSection'
 // SVG Background Components
-const WaveBackground = () => (
-  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="url(#gradient)" fillOpacity="0.2" d="M0,256L48,261.3C96,267,192,277,288,245.3C384,213,480,139,576,138.7C672,139,768,213,864,218.7C960,224,1056,160,1152,128C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    <defs>
-      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#3b82f6" />
-        <stop offset="100%" stopColor="#8b5cf6" />
-      </linearGradient>
-    </defs>
-  </svg>
-)
 
-const BlobBackground = () => (
-  <div className="absolute inset-0 overflow-hidden">
-    <svg viewBox="0 0 200 200" className="absolute -right-20 -top-20 w-64 h-64 text-blue-400 opacity-20">
-      <path fill="currentColor" d="M45.2,-58.8C58.1,-49.3,68.1,-34.7,72.5,-18.4C76.8,-2.1,75.5,15.9,66.9,30.8C58.3,45.7,42.5,57.5,24.4,65.6C6.3,73.7,-14.1,78.1,-31.6,72.1C-49.1,66.1,-63.7,49.7,-69.7,30.8C-75.7,11.9,-73.1,-9.5,-63.6,-27.1C-54.1,-44.7,-37.7,-58.5,-19.8,-66.4C-1.9,-74.4,17.5,-76.5,32.4,-68.3Z" transform="translate(100 100)" />
-    </svg>
-    <svg viewBox="0 0 200 200" className="absolute -left-20 bottom-10 w-72 h-72 text-purple-400 opacity-20">
-      <path fill="currentColor" d="M43.9,-57.2C57.1,-46.9,68.3,-33.1,73.5,-16.9C78.7,-0.7,77.9,17.9,68.6,33.5C59.3,49.1,41.5,61.7,21.9,70.5C2.3,79.3,-19.2,84.3,-37.1,77.2C-55,70.1,-69.3,50.9,-73.2,30.5C-77.1,10.1,-70.6,-11.5,-58.7,-28.9C-46.8,-46.4,-29.5,-59.7,-10.4,-56.1C8.7,-52.5,17.4,-32,25.2,-16.7Z" transform="translate(100 100)" />
-    </svg>
-  </div>
-)
-const TopWaveBackground = () => (
-  <svg
-    className="absolute top-0 w-full h-64"
-    viewBox="0 0 1440 320"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="url(#gradient)"
-      fillOpacity="0.15"
-      d="M0,0L48,10.7C96,21,192,43,288,42.7C384,43,480,21,576,26.7C672,32,768,64,864,58.7C960,53,1056,11,1152,10.7C1248,11,1344,53,1392,74.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-    />
-    <path
-      fill="url(#gradient)"
-      fillOpacity="0.1"
-      d="M0,32L48,21.3C96,11,192,-11,288,5.3C384,21,480,75,576,74.7C672,75,768,21,864,21.3C960,21,1056,75,1152,85.3C1248,96,1344,64,1392,48L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-    />
-    <defs>
-      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#3b82f6" />
-        <stop offset="100%" stopColor="#8b5cf6" />
-      </linearGradient>
-    </defs>
-  </svg>
-)
 
-const GridPattern = () => (
-  <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#grid)" />
-  </svg>
-)
 
 // Animation variants
 const fadeInUp = {
@@ -132,32 +79,32 @@ export default function Home() {
             </div>
           </motion.div>
           <div className="flex items-center space-x-4">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <a
-              href="/"
-              className="px-4 py-2 border border-gray-300 bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium flex items-center space-x-2"
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
             >
-              <span className="text-lg">🇺🇸</span>
-              <span>EN</span>
-            </a>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-          >
-            <a
-              href="/es"
-              className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 font-medium flex items-center space-x-2"
+              <a
+                href="/"
+                className="px-4 py-2 border border-gray-300 bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium flex items-center space-x-2"
+              >
+                <span className="text-lg">🇺🇸</span>
+                <span>EN</span>
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
             >
-              <span className="text-lg">🇵🇦</span>
-              <span>ES</span>
-            </a>
-          </motion.div>
+              <a
+                href="/es"
+                className="px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-300 font-medium flex items-center space-x-2"
+              >
+                <span className="text-lg">🇵🇦</span>
+                <span>ES</span>
+              </a>
+            </motion.div>
           </div>
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
@@ -248,7 +195,7 @@ export default function Home() {
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 z-0"></div>
         <WaveBackground />
-        <BlobBackground />
+        <BambooBackground />
 
         <div className="container mx-auto px-6 py-20 relative z-10">
           <motion.div
@@ -314,6 +261,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden bg-gray-50">
         <GridPattern />
+        <HeliconiaBackground />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -492,8 +440,11 @@ export default function Home() {
                 whileHover={{ y: -5 }}
                 className={`${service.bg} p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border ${service.border}`}
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-white shadow-sm mb-6">
-                  {service.icon}
+                <div className="w-full flex items-center justify-center">
+
+                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-white shadow-sm mb-6">
+                    {service.icon}
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
@@ -506,7 +457,7 @@ export default function Home() {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <TopWaveBackground />
-        <BlobBackground />
+        <PalmBackground />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -780,105 +731,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <BlobBackground />
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <motion.div variants={fadeInUp}>
-              <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-blue-600 uppercase">
-                Get In Touch
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                Ready to Begin Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Language Journey?</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-                Contact me to schedule your first lesson or ask any questions about classes and translations.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white rounded-xl shadow-lg p-8 md:p-10 max-w-2xl mx-auto"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col items-center text-center md:text-left md:items-start">
-                  <div className="flex items-start mb-6">
-                    <div className="flex-shrink-0 mt-1">
-                      <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-gray-800">Phone/WhatsApp</h3>
-                      <p className="mt-1 text-gray-600">+507 6613-5652</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-gray-800">Location</h3>
-                      <p className="mt-1 text-gray-600">Bocas del Toro, Panama</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center text-center md:text-left md:items-start">
-                  <div className="flex items-start mb-6">
-                    <div className="flex-shrink-0 mt-1">
-                      <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-gray-800">Email</h3>
-                      <p className="mt-1 text-gray-600">be.languages.pa@gmail.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-gray-800">Availability</h3>
-                      <p className="mt-1 text-gray-600">Monday - Saturday, 9AM - 6PM</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 flex justify-center">
-                <a
-                  href="https://wa.me/50766135652"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-6.29-3.588c.245.149.39.13.541.038.151-.089.972-1.365 1.073-1.536.099-.17.05-.314-.025-.403-.075-.089-.223-.133-.446.038-.223.17-.86.85-1.072 1.036-.213.186-.319.223-.494.083-.173-.133-.733-.667-1.011-.92-.278-.253-.347-.186-.495-.105-.148.08-.624.386-.744.503-.119.118-.223.262-.074.529.149.266.673 1.148 1.137 1.562.463.413.854.543 1.137.543.186 0 .297-.025.372-.05.076-.025.132-.037.223-.138.089-.1.089-.173.134-.262.044-.089.022-.161.011-.161-.011 0-.148.034-.334-.075z" />
-                  </svg>
-                  Message on WhatsApp
-                </a>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+<ContactSection/>
       {/* Footer */}
       <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white pt-16 pb-8">
         <div className="container mx-auto px-6">

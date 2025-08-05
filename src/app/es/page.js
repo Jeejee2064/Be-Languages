@@ -4,64 +4,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import TestimonialsES from '../components/TestimonialsES'
-// SVG Background Components
-const WaveBackground = () => (
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="url(#gradient)" fillOpacity="0.2" d="M0,256L48,261.3C96,267,192,277,288,245.3C384,213,480,139,576,138.7C672,139,768,213,864,218.7C960,224,1056,160,1152,128C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#8b5cf6" />
-            </linearGradient>
-        </defs>
-    </svg>
-)
-
-const BlobBackground = () => (
-    <div className="absolute inset-0 overflow-hidden">
-        <svg viewBox="0 0 200 200" className="absolute -right-20 -top-20 w-64 h-64 text-blue-400 opacity-20">
-            <path fill="currentColor" d="M45.2,-58.8C58.1,-49.3,68.1,-34.7,72.5,-18.4C76.8,-2.1,75.5,15.9,66.9,30.8C58.3,45.7,42.5,57.5,24.4,65.6C6.3,73.7,-14.1,78.1,-31.6,72.1C-49.1,66.1,-63.7,49.7,-69.7,30.8C-75.7,11.9,-73.1,-9.5,-63.6,-27.1C-54.1,-44.7,-37.7,-58.5,-19.8,-66.4C-1.9,-74.4,17.5,-76.5,32.4,-68.3Z" transform="translate(100 100)" />
-        </svg>
-        <svg viewBox="0 0 200 200" className="absolute -left-20 bottom-10 w-72 h-72 text-purple-400 opacity-20">
-            <path fill="currentColor" d="M43.9,-57.2C57.1,-46.9,68.3,-33.1,73.5,-16.9C78.7,-0.7,77.9,17.9,68.6,33.5C59.3,49.1,41.5,61.7,21.9,70.5C2.3,79.3,-19.2,84.3,-37.1,77.2C-55,70.1,-69.3,50.9,-73.2,30.5C-77.1,10.1,-70.6,-11.5,-58.7,-28.9C-46.8,-46.4,-29.5,-59.7,-10.4,-56.1C8.7,-52.5,17.4,-32,25.2,-16.7Z" transform="translate(100 100)" />
-        </svg>
-    </div>
-)
-const TopWaveBackground = () => (
-    <svg
-        className="absolute top-0 w-full h-64"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-    >
-        <path
-            fill="url(#gradient)"
-            fillOpacity="0.15"
-            d="M0,0L48,10.7C96,21,192,43,288,42.7C384,43,480,21,576,26.7C672,32,768,64,864,58.7C960,53,1056,11,1152,10.7C1248,11,1344,53,1392,74.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-        />
-        <path
-            fill="url(#gradient)"
-            fillOpacity="0.1"
-            d="M0,32L48,21.3C96,11,192,-11,288,5.3C384,21,480,75,576,74.7C672,75,768,21,864,21.3C960,21,1056,75,1152,85.3C1248,96,1344,64,1392,48L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-        />
-        <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#8b5cf6" />
-            </linearGradient>
-        </defs>
-    </svg>
-)
-
-const GridPattern = () => (
-    <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-            </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-)
+import { BlobBackground, MonsteraBackground, WaveBackground, TopWaveBackground, DoubleWaveBackground, GridPattern } from '../components/backgrounds';
 
 // Animation variants
 const fadeInUp = {
@@ -787,7 +730,7 @@ export default function Home() {
             <TestimonialsES />
             {/* Contact Section */}
             <section id="contacto" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-                <BlobBackground />
+                <MonsteraBackground />
                 <div className="container mx-auto px-6 relative z-10">
                     <motion.div
                         initial="hidden"

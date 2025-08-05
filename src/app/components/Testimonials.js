@@ -2,56 +2,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-
-const WaveBackground = () => (
-  <svg 
-    className="absolute bottom-0 w-full  h-64" 
-    viewBox="0 0 1440 320" 
-    preserveAspectRatio="none"
-  >
-    <path 
-      fill="url(#gradient)" 
-      fillOpacity="0.15" 
-      d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,186.7C672,192,768,224,864,218.7C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-    />
-    <path 
-      fill="url(#gradient)" 
-      fillOpacity="0.1" 
-      d="M0,192L48,181.3C96,171,192,149,288,165.3C384,181,480,235,576,234.7C672,235,768,181,864,181.3C960,181,1056,235,1152,245.3C1248,256,1344,224,1392,208L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-    />
-    <defs>
-      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#3b82f6" />
-        <stop offset="100%" stopColor="#8b5cf6" />
-      </linearGradient>
-    </defs>
-  </svg>
-)
-
-const TopWaveBackground = () => (
-  <svg 
-    className="absolute top-0 w-full h-64" 
-    viewBox="0 0 1440 320" 
-    preserveAspectRatio="none"
-  >
-    <path 
-      fill="url(#gradient)" 
-      fillOpacity="0.15" 
-      d="M0,0L48,10.7C96,21,192,43,288,42.7C384,43,480,21,576,26.7C672,32,768,64,864,58.7C960,53,1056,11,1152,10.7C1248,11,1344,53,1392,74.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-    />
-    <path 
-      fill="url(#gradient)" 
-      fillOpacity="0.1" 
-      d="M0,32L48,21.3C96,11,192,-11,288,5.3C384,21,480,75,576,74.7C672,75,768,21,864,21.3C960,21,1056,75,1152,85.3C1248,96,1344,64,1392,48L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-    />
-    <defs>
-      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#3b82f6" />
-        <stop offset="100%" stopColor="#8b5cf6" />
-      </linearGradient>
-    </defs>
-  </svg>
-)
+import { BlobBackground, MonsteraBackground, WaveBackground, TopWaveBackground, DoubleWaveBackground, GridPattern } from './backgrounds';
 
 
 const fadeInUp = {
@@ -107,7 +58,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <WaveBackground />
-      <TopWaveBackground />
+      <DoubleWaveBackground />
       
       
       <div className="container mx-auto px-6 relative z-10">
