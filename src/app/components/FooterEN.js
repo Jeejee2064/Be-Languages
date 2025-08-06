@@ -23,7 +23,7 @@ export default function FooterEN() {
                 Language Solutions
             </h3>
             <p className="text-gray-400 max-w-xs mb-6">
-                Personalized English and Spanish classes with certified translation services in Bocas del Toro, Panama.
+                Personalized English and Spanish classes and certified translation services in Bocas del Toro, Panama.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/be.languages/" className="text-gray-400 hover:text-white transition-colors">

@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 
 export const metadata = {
   title: 'English Classes in Bocas del Toro | BE Language Solutions',
