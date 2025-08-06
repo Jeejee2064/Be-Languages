@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Testimonials from './components/Testimonials'
 import { HeliconiaBackground, WaveBackground, TopWaveBackground, BambooBackground, GridPattern, PalmBackground } from './components/backgrounds';
- import ContactSection from './components/ContactSection'
+import ContactSection from './components/ContactSection'
 // SVG Background Components
 
 import Link from 'next/link'
@@ -135,7 +135,7 @@ export default function Home() {
             transition={{ delay: 0.85 }}
             className="hidden lg:block"
           >
-            <a href="#contact" className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px]">
+            <a href="#getstarted" className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px]">
               Get Started
             </a>
           </motion.div>
@@ -179,7 +179,7 @@ export default function Home() {
                 ))}
                 <li>
                   <a
-                    href="#contact"
+                    href="#getstarted"
                     className="block py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-center"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -219,16 +219,16 @@ export default function Home() {
               </motion.div>
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                 <a
-                  href="#contact"
+                  href="#services"
                   className="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px] font-medium"
                 >
                   Start Learning Today
                 </a>
                 <a
-                  href="#pricing"
+                  href="#translations"
                   className="px-8 py-3.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 font-medium"
                 >
-                  View Pricing
+                  Ask for a  Certified Translation
                 </a>
               </motion.div>
             </motion.div>
@@ -454,76 +454,76 @@ export default function Home() {
           </motion.div>
         </div>
 
- <div className="w-full max-w-6xl mx-auto px-4 py-12">
-  {/* Header Text */}
-  <div className="text-center mb-12">
-    <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
-      What do you need?
-    </span>
-  </div>
+        <div className="w-full max-w-6xl mx-auto px-4 py-12">
+          {/* Header Text */}
+          <div className="text-center mb-12">
+            <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
+              What do you need?
+            </span>
+          </div>
 
-  {/* Navigation Cards Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-    
-    {/* Spanish Classes Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      whileHover={{ y: -5 }}
-      className="group"
-    >
-    <Link href="/spanish-classes-in-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🇵🇦</div>
-            <h3 className="text-xl font-bold mb-2">Spanish Classes</h3>
-          
+          {/* Navigation Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+            {/* Spanish Classes Card */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ y: -5 }}
+              className="group"
+            >
+              <Link href="/spanish-classes-in-isla-colon-bocas-del-toro">
+                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">🇵🇦</div>
+                    <h3 className="text-xl font-bold mb-2">Spanish Classes</h3>
+
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* English Classes Card */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              whileHover={{ y: -5 }}
+              className="group"
+            >
+              <Link href="/english-classes-in-isla-colon-bocas-del-toro">
+                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">🇺🇸</div>
+                    <h3 className="text-xl font-bold mb-2">English Classes</h3>
+
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Translation Services Card */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ y: -5 }}
+              className="group md:col-span-2 lg:col-span-1"
+            >
+              <Link href="/certified-translation-services-in-isla-colon-bocas-del-toro">
+                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">🌐</div>
+                    <h3 className="text-xl font-bold mb-2">Certified translation</h3>
+
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
           </div>
         </div>
-      </Link>
-    </motion.div>
-
-    {/* English Classes Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3 }}
-      whileHover={{ y: -5 }}
-      className="group"
-    >
-    <Link href="/english-classes-in-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🇺🇸</div>
-            <h3 className="text-xl font-bold mb-2">English Classes</h3>
-        
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-
-    {/* Translation Services Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
-      whileHover={{ y: -5 }}
-      className="group md:col-span-2 lg:col-span-1"
-    >
-        <Link href="/certified-translation-services-in-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🌐</div>
-            <h3 className="text-xl font-bold mb-2">Certified translation</h3>
-         
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-
-  </div>
-  </div>
 
       </section>
 
@@ -660,7 +660,7 @@ export default function Home() {
                       </ul>
                     </div>
                     <a
-                      href="#contact"
+                      href="#getstarted"
                       className={`mt-auto block w-full py-3 text-center rounded-lg font-medium transition-all duration-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:shadow-lg hover:shadow-blue-200/50`}
                     >
                       Get Started
@@ -804,8 +804,81 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
-<ContactSection/>
-<FooterEN/>
+      <section id="getstarted" className="py-20 bg-white text-black">
+
+      <div  className="w-full max-w-6xl mx-auto px-4 py-12">
+        {/* Header Text */}
+        <div className="text-center mb-12">
+          <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
+            What do you need?
+          </span>
+        </div>
+
+        {/* Navigation Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+          {/* Spanish Classes Card */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ y: -5 }}
+            className="group"
+          >
+            <Link href="/spanish-classes-in-isla-colon-bocas-del-toro">
+              <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🇵🇦</div>
+                  <h3 className="text-xl font-bold mb-2">Spanish Classes</h3>
+
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* English Classes Card */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            whileHover={{ y: -5 }}
+            className="group"
+          >
+            <Link href="/english-classes-in-isla-colon-bocas-del-toro">
+              <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🇺🇸</div>
+                  <h3 className="text-xl font-bold mb-2">English Classes</h3>
+
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Translation Services Card */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            whileHover={{ y: -5 }}
+            className="group md:col-span-2 lg:col-span-1"
+          >
+            <Link href="/certified-translation-services-in-isla-colon-bocas-del-toro">
+              <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🌐</div>
+                  <h3 className="text-xl font-bold mb-2">Certified translation</h3>
+
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+        </div>
+        </div>
+      </section>
+      <ContactSection />
+      <FooterEN />
     </div>
   )
 }

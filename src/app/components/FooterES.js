@@ -37,7 +37,7 @@ export default function FooterES() {
           <div className="mb-8 md:mb-0">
             <h4 className="text-lg font-semibold mb-4 text-white">Servicios</h4>
             <ul className="space-y-5">
-              <Link href="/clases-de-ingles-en-isla-colon-bocas-del-toro">
+              <Link href="/es/clases-de-ingles-en-isla-colon-bocas-del-toro">
                 <li className="flex items-start mb-4">
                   <svg className="w-5 h-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -47,7 +47,7 @@ export default function FooterES() {
                   </span>
                 </li>
               </Link>
-              <Link href="/clases-de-espanol-en-isla-colon-bocas-del-toro">
+              <Link href="/es/clases-de-espanol-en-isla-colon-bocas-del-toro">
                 <li className="flex items-start mb-4">
                   <svg className="w-5 h-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -57,7 +57,7 @@ export default function FooterES() {
                   </span>
                 </li>
               </Link>
-              <Link href="/traducciones-certificadas-en-bocas-del-toro">
+              <Link href="/es/traducciones-certificadas-en-bocas-del-toro">
                 <li className="flex items-start mb-4">
                   <svg className="w-5 h-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

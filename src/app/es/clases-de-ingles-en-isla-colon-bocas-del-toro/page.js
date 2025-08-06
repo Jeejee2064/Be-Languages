@@ -11,11 +11,10 @@ import {
     Link,
 } from "lucide-react";
 import Image from "next/image";
-import ContactSection from "../components/ContactSection";
-import { PalmBackground,BambooBackground, HeliconiaBackground, WaveBackground, MonsteraBackground, DoubleWaveBackground, GridPattern } from '../components/backgrounds';
+import { PalmBackground,BambooBackground, HeliconiaBackground, WaveBackground, MonsteraBackground, DoubleWaveBackground, GridPattern } from '../../components/backgrounds';
 
 import NextLink from "next/link";
-import FooterES from "../components/FooterES";
+import FooterES from "../../components/FooterES";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },

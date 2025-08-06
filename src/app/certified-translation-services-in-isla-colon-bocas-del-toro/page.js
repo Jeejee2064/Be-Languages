@@ -302,7 +302,7 @@ export default function TranslationServicesPage() {
                             className="text-center mb-16 max-w-3xl mx-auto"
                         >
                             <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-blue-600 uppercase">
-                                Why Choose Us
+                                Why Me ?
                             </span>
                             <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                                 Professional Translation <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">You Can Trust</span>

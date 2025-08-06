@@ -11,11 +11,10 @@ import {
     Link,
 } from "lucide-react";
 import Image from "next/image";
-import ContactSection from "../components/ContactSection";
-import { PalmBackground,BambooBackground, HeliconiaBackground, WaveBackground, MonsteraBackground, DoubleWaveBackground, GridPattern } from '../components/backgrounds';
+import { PalmBackground,BambooBackground, HeliconiaBackground, WaveBackground, MonsteraBackground, DoubleWaveBackground, GridPattern } from '../../components/backgrounds';
 
 import NextLink from "next/link";
-import FooterES from "../components/FooterES";
+import FooterES from "../../components/FooterES";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -192,7 +191,7 @@ const pricingPlans = [
 export default function SpanishClassesPage() {
     return (
         <div className="bg-white text-gray-800 min-h-screen">
-            <NextLink href="/en">
+            <NextLink href="/es">
              <div className="absolute  top-0  h-30 w-30 ml-8 z-50">
                             <Image
                                 src="./logo.svg"
