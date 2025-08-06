@@ -8,11 +8,14 @@ import {
     Users,
     MessageCircle,
     Briefcase,
+    Link,
 } from "lucide-react";
-
+import Image from "next/image";
 import ContactSection from "../components/ContactSection";
-import { BlobBackground, MonsteraBackground, WaveBackground, TopWaveBackground, DoubleWaveBackground, GridPattern } from '../components/backgrounds';
+import { PalmBackground,BambooBackground, HeliconiaBackground, WaveBackground, TopWaveBackground, DoubleWaveBackground, GridPattern } from '../components/backgrounds';
 
+import NextLink from "next/link";
+import FooterEN from "../components/FooterEN";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -70,9 +73,9 @@ const classTopics = [
         title: "Grammar Fundamentals",
         icon: <Globe className="w-6 h-6 text-blue-600" />,
         items: [
-            "Spanish verbs tenses",
+            "English verb tenses",
             "Asking questions",
-            "Gender & plurals",
+            "Articles & plurals",
             "Key irregular verbs",
             "Pronouns & prepositions",
         ],
@@ -83,11 +86,11 @@ const classTopics = [
         title: "Cultural Understanding",
         icon: <Landmark className="w-6 h-6 text-blue-600" />,
         items: [
-            "Panamanian Traditions & Local etiquette",
-            "Panamanian Idioms",
-            "Festivals & local culture",
-            "Regional differences",
-            "Body language expressions",
+            "American/British differences",
+            "Common idioms & phrases",
+            "Business etiquette",
+            "Regional accents",
+            "Body language cues",
         ],
         bg: "bg-blue-50/50 hover:bg-blue-50",
         border: "border-blue-100"
@@ -98,9 +101,9 @@ const classTopics = [
         items: [
             "Market visits",
             "Restaurant role-plays",
-            "Taxi/bus conversations",
+            "Transportation conversations",
             "Neighbor interactions",
-            "Phone/SMS Spanish",
+            "Phone/SMS English",
         ],
         bg: "bg-indigo-50/50 hover:bg-indigo-50",
         border: "border-indigo-100"
@@ -109,11 +112,11 @@ const classTopics = [
         title: "Specialized Topics",
         icon: <Briefcase className="w-6 h-6 text-blue-600" />,
         items: [
-            "Surf/sailing terms",
+            "Business English",
             "Dating & relationships",
-            "Renting/buying property",
+            "Job interviews",
             "Healthcare vocabulary",
-            "Business basics",
+            "Academic writing",
         ],
         bg: "bg-blue-50/50 hover:bg-blue-50",
         border: "border-blue-100"
@@ -141,10 +144,10 @@ const pricingPlans = [
         price: "$150",
         duration: "3 weeks",
         hours: "6 hours",
-        description: "Perfect for visiters staying a few weeks, consistent, stress-free spanish improvement without overloading.",
+        description: "Perfect for visitors staying a few weeks, consistent, stress-free English improvement without overloading.",
         features: [
             "Conversation based sessions (twice a week)",
-            "local context : shopping, addresses, restaurants, small talk.",
+            "Local context: shopping, addresses, restaurants, small talk",
             "Useful verbs and real life expressions",
             "Whatsapp mini follow-ups after each session",
             "Light Homework (optional)"
@@ -156,14 +159,14 @@ const pricingPlans = [
         price: "$180",
         duration: "month",
         hours: "8 hours",
-        description: "Ideal for expats, digital nomads or long term visitors ready to pregress steadily and confidently.",
+        description: "Ideal for expats, digital nomads or long term visitors ready to progress steadily and confidently.",
         features: [
             "Basic (essential phrases, verbs, expressions)",
-            "Intro to Grammar : regular verbs, basic past/present/future talk",
-            "Personalized topics based on you needs and goals",
+            "Intro to Grammar: verb tenses, basic past/present/future",
+            "Personalized topics based on your needs and goals",
             "Review notes and weekly short homework",
             "Progress check every 4 classes",
-            "Real-world learning experiences (grocery shopping, food ordering...)",
+            "Real-world learning experiences",
             "Whatsapp support"
         ],
         highlighted: true
@@ -175,25 +178,35 @@ const pricingPlans = [
         hours: "8 hours",
         description: "Perfect for couples, friends, travel partners who want to make learning fun and practice together.",
         features: [
-            "8 shared 1 hour session",
+            "8 shared 1 hour sessions",
             "Personalized pair activities and real practice dialogues",
             "Learn together through games, role plays and teamwork",
             "Shared vocabulary lists and whatsapp groups",
-            "Real-world learning experiences (grocery shopping, food ordering...)"
+            "Real-world learning experiences"
         ],
         highlighted: true
     }
 ];
 
 // --- The main component for the page ---
-export default function SpanishClassesPage() {
+export default function EnglishClassesPage() {
     return (
         <div className="bg-white text-gray-800 min-h-screen">
+            <NextLink href="/">
+             <div className="absolute  top-0  h-30 w-30 ml-8 z-50">
+                            <Image
+                                src="./logo.svg"
+                                alt="Logo de BE Language Solutions"
+                                fill
+                                className="object-contain object-left"
+                            />
+                        </div>
+                        </NextLink>
           {/* Hero Section */}
 <section id="home" className="min-h-screen flex items-center justify-center text-center relative overflow-hidden pt-20">
   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 z-0"></div>
   <WaveBackground />
-  <MonsteraBackground />
+  <BambooBackground />
 
   <div className="container mx-auto px-6 py-20 relative z-10">
     <motion.div
@@ -203,15 +216,16 @@ export default function SpanishClassesPage() {
       className="max-w-3xl mx-auto"
     >
       <motion.div variants={fadeInUp}>
+        
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Spanish Classes in Bocas del Toro
+            English Classes in Bocas del Toro
           </span>
         </h1>
       </motion.div>
 
       <motion.div variants={fadeInUp} className="text-lg text-gray-700 mb-8">
-        Learn Spanish with a certified local instructor in the heart of the Caribbean. Perfect for expats, digital nomads, and travelers who want to connect with the culture and people of Panama.
+        Learn English with a certified instructor in the heart of the Caribbean. Perfect for locals, expats, and travelers who want to improve their English for work, travel, or personal growth.
       </motion.div>
 
       <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
@@ -234,7 +248,7 @@ export default function SpanishClassesPage() {
 
             <main>
                 <section id="classTopics" className="py-20 relative overflow-hidden">
-                    <DoubleWaveBackground />
+                    <HeliconiaBackground />
                     <div className="container mx-auto px-6 relative z-10">
                         <motion.div
                             initial="hidden"
@@ -287,7 +301,7 @@ export default function SpanishClassesPage() {
                 </section>
 
                 <section id="pricing" className="py-20 relative overflow-hidden bg-gray-50">
-                    <WaveBackground />
+                    <PalmBackground />
                     <div className="container mx-auto px-6 relative z-10">
                         <motion.div
                             initial="hidden"
@@ -419,6 +433,7 @@ export default function SpanishClassesPage() {
 
                 <ContactSection/>
             </main>
+ <FooterEN/>
         </div>
     );
 }

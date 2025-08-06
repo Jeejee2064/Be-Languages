@@ -139,7 +139,7 @@ d="m 543.1568,660.65571 c 0.42361,-1.04717 1.13493,-3.11703 1.5807,-4.59969 0.44
 );
 
 export const PalmBackground = () => (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden z-0">
 <svg
    viewBox="0 0 800 800"
    className="absolute inset-0 w-full h-full"
