@@ -242,7 +242,7 @@ export default function TranslationServicesPage() {
                         <motion.div variants={fadeInUp}>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                                    Servicios de Traducción Certificada
+                                    Servicios de Traducción Certificada en Isla Colón, Bocas del Toro
                                 </span>
                             </h1>
                         </motion.div>
@@ -254,7 +254,7 @@ export default function TranslationServicesPage() {
 
                         <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 mb-8">
                             <a
-                                href="#contact"
+                                href="#contacto"
                                 className="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px] font-medium"
                             >
                                 Obtener Cotización Gratis

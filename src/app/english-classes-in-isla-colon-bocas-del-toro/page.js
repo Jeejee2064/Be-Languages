@@ -219,7 +219,7 @@ export default function EnglishClassesPage() {
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            English Classes in Bocas del Toro
+            English Classes in Isla Colón, Bocas del Toro
           </span>
         </h1>
       </motion.div>

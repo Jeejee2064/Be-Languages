@@ -125,63 +125,63 @@ const classTopics = [
 
 const pricingPlans = [
     {
-        name: "Curso Intensivo de 1 Semana",
+        name: "Crash Course 1 Semana",
         price: "$125",
         duration: "1 semana",
-        description: "Ideal para viajeros y expatriados que quieren mejorar la conversación básica rápidamente.",
+        description: "Ideal para viajeros y expatriados que quieren mejorar su conversación básica rápidamente.",
         hours: "5 horas",
         features: [
             "Enfoque en frases esenciales",
-            "Elementos básicos de viaje",
+            "Conceptos básicos para viajar",
             "Juegos de rol",
             "Tarea ligera (opcional)"
         ],
         highlighted: false
     },
     {
-        name: "Plan Flujo Isleño",
+        name: "Plan Island Flow",
         price: "$150",
         duration: "3 semanas",
         hours: "6 horas",
-        description: "Perfecto para visitantes que se quedan algunas semanas, mejora consistente y sin estrés del inglés sin sobrecargar.",
+        description: "Perfecto para visitantes que se quedan unas semanas, mejora constante del español sin estrés ni sobrecarga.",
         features: [
             "Sesiones basadas en conversación (dos veces por semana)",
-            "Contexto local: compras, direcciones, restaurantes, charla casual",
+            "Contexto local: compras, direcciones, restaurantes, charlas informales",
             "Verbos útiles y expresiones de la vida real",
-            "Mini seguimientos por WhatsApp después de cada sesión",
+            "Mini seguimientos por Whatsapp después de cada sesión",
             "Tarea ligera (opcional)"
         ],
         highlighted: false
     },
     {
-        name: "Plan Surf Constante",
+        name: "Plan Steady Surf",
         price: "$180",
         duration: "mes",
         hours: "8 horas",
-        description: "Ideal para expatriados, nómadas digitales o visitantes de largo plazo listos para progresar de manera constante y con confianza.",
+        description: "Ideal para expatriados, nómadas digitales o visitantes a largo plazo listos para progresar de manera constante y segura.",
         features: [
             "Básico (frases esenciales, verbos, expresiones)",
-            "Introducción a la gramática: tiempos verbales, pasado/presente/futuro básico",
-            "Temas personalizados basados en tus necesidades y objetivos",
-            "Notas de repaso y tarea corta semanal",
-            "Control de progreso cada 4 clases",
-            "Experiencias de aprendizaje del mundo real",
-            "Soporte por WhatsApp"
+            "Introducción a la gramática: verbos regulares, hablar en pasado/presente/futuro básico",
+            "Temas personalizados según tus necesidades y objetivos",
+            "Notas de repaso y tarea semanal corta",
+            "Revisión de progreso cada 4 clases",
+            "Experiencias de aprendizaje en el mundo real (compras en el supermercado, pedir comida...)",
+            "Soporte por Whatsapp"
         ],
         highlighted: true
     },
     {
-        name: "Impulso en Pareja (2 personas)",
+        name: "Plan Buddy Boost (2 personas)",
         price: "$320",
         duration: "mes",
         hours: "8 horas",
         description: "Perfecto para parejas, amigos, compañeros de viaje que quieren hacer el aprendizaje divertido y practicar juntos.",
         features: [
             "8 sesiones compartidas de 1 hora",
-            "Actividades personalizadas en pareja y diálogos de práctica real",
-            "Aprender juntos a través de juegos, juegos de rol y trabajo en equipo",
-            "Listas de vocabulario compartidas y grupos de WhatsApp",
-            "Experiencias de aprendizaje del mundo real"
+            "Actividades en pareja personalizadas y diálogos de práctica real",
+            "Aprender juntos a través de juegos, juegos de roles y trabajo en equipo",
+            "Listas de vocabulario compartidas y grupos de Whatsapp",
+            "Experiencias de aprendizaje en el mundo real (compras en el supermercado, pedir comida...)"
         ],
         highlighted: true
     }
@@ -218,7 +218,7 @@ export default function EnglishClassesPage() {
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Clases de Inglés en Bocas del Toro
+            Clases de Inglés en Isla Colón, Bocas del Toro
           </span>
         </h1>
       </motion.div>
@@ -229,7 +229,7 @@ export default function EnglishClassesPage() {
 
       <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
         <a
-          href="#contact"
+          href="#contacto"
           className="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px] font-medium"
         >
           Reservar una Clase

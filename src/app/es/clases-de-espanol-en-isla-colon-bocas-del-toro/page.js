@@ -125,7 +125,7 @@ const classTopics = [
 
 const pricingPlans = [
     {
-        name: "Curso Intensivo de 1 Semana",
+        name: "Crash Course 1 Semana",
         price: "$125",
         duration: "1 semana",
         description: "Ideal para viajeros y expatriados que quieren mejorar su conversación básica rápidamente.",
@@ -139,7 +139,7 @@ const pricingPlans = [
         highlighted: false
     },
     {
-        name: "Plan Flujo de Isla",
+        name: "Plan Island Flow",
         price: "$150",
         duration: "3 semanas",
         hours: "6 horas",
@@ -154,7 +154,7 @@ const pricingPlans = [
         highlighted: false
     },
     {
-        name: "Plan Surf Constante",
+        name: "Plan Steady Surf",
         price: "$180",
         duration: "mes",
         hours: "8 horas",
@@ -171,7 +171,7 @@ const pricingPlans = [
         highlighted: true
     },
     {
-        name: "Impulso en Pareja (2 personas)",
+        name: "Plan Buddy Boost (2 personas)",
         price: "$320",
         duration: "mes",
         hours: "8 horas",
@@ -218,7 +218,7 @@ export default function SpanishClassesPage() {
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Clases de Español en Bocas del Toro
+            Clases de Español en Isla Colón, Bocas del Toro
           </span>
         </h1>
       </motion.div>
@@ -229,7 +229,7 @@ export default function SpanishClassesPage() {
 
       <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
         <a
-          href="#contact"
+          href="#contacto"
           className="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:shadow-blue-200/50 hover:translate-y-[-2px] font-medium"
         >
           Reserva una Clase

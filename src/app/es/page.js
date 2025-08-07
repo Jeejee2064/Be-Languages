@@ -342,7 +342,7 @@ export default function Home() {
             {/* Services Section */}
             <section id="servicios" className="py-20  relative overflow-hidden">
                 <div className="container mx-auto px-6 relative z-1000">
-                <PalmBackground />
+                    <PalmBackground />
 
                     <motion.div
                         initial="hidden"
@@ -453,76 +453,76 @@ export default function Home() {
                     </motion.div>
                 </div>
 
- <div className="w-full max-w-6xl mx-auto px-4 py-12">
-  {/* Header Text */}
-  <div className="text-center mb-12">
-    <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
-      ¿Qué necesitas?
-    </span>
-  </div>
+                <div className="w-full max-w-6xl mx-auto px-4 py-12">
+                    {/* Header Text */}
+                    <div className="text-center mb-12">
+                        <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
+                            ¿Qué necesitas?
+                        </span>
+                    </div>
 
-  {/* Navigation Cards Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-    
-    {/* Spanish Classes Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      whileHover={{ y: -5 }}
-      className="group"
-    >
-      <Link href="/es/clases-de-espanol-en-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🇵🇦</div>
-            <h3 className="text-xl font-bold mb-2">Clases de Español</h3>
-          
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+                    {/* Navigation Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-    {/* English Classes Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3 }}
-      whileHover={{ y: -5 }}
-      className="group"
-    >
-      <Link href="/es/clases-de-ingles-en-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🇺🇸</div>
-            <h3 className="text-xl font-bold mb-2">Clases de Inglés</h3>
-        
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+                        {/* Spanish Classes Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            whileHover={{ y: -5 }}
+                            className="group"
+                        >
+                            <Link href="/es/clases-de-espanol-en-isla-colon-bocas-del-toro">
+                                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-4">🇵🇦</div>
+                                        <h3 className="text-xl font-bold mb-2">Clases de Español</h3>
 
-    {/* Translation Services Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
-      whileHover={{ y: -5 }}
-      className="group md:col-span-2 lg:col-span-1"
-    >
-      <Link href="/es/traducciones-certificadas-en-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🌐</div>
-            <h3 className="text-xl font-bold mb-2">Traducción Certificada</h3>
-         
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
 
-  </div>
-  </div>
+                        {/* English Classes Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            whileHover={{ y: -5 }}
+                            className="group"
+                        >
+                            <Link href="/es/clases-de-ingles-en-isla-colon-bocas-del-toro">
+                                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-4">🇺🇸</div>
+                                        <h3 className="text-xl font-bold mb-2">Clases de Inglés</h3>
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+
+                        {/* Translation Services Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            whileHover={{ y: -5 }}
+                            className="group md:col-span-2 lg:col-span-1"
+                        >
+                            <Link href="/es/traducciones-certificadas-en-bocas-del-toro">
+                                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-4">🌐</div>
+                                        <h3 className="text-xl font-bold mb-2">Traducción Certificada</h3>
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+
+                    </div>
+                </div>
 
 
 
@@ -559,7 +559,7 @@ export default function Home() {
                     >
                         {[
                             {
-                                name: "Curso Intensivo de 1 Semana",
+                                name: "Crash Course 1 Semana",
                                 price: "$125",
                                 duration: "1 semana",
                                 description: "Ideal para viajeros y expatriados que quieran mejorar rápidamente la conversación básica.",
@@ -573,7 +573,7 @@ export default function Home() {
                                 highlighted: false
                             },
                             {
-                                name: "Plan Flujo de Isla",
+                                name: "Plan Island Flow",
                                 price: "$150",
                                 duration: "3 semanas",
                                 hours: "6 horas",
@@ -588,7 +588,7 @@ export default function Home() {
                                 highlighted: false
                             },
                             {
-                                name: "Plan Surf Constante",
+                                name: "Plan Steady Surf",
                                 price: "$180",
                                 duration: "mes",
                                 hours: "8 horas",
@@ -720,6 +720,7 @@ export default function Home() {
                         </div>
                     </motion.div>
                 </div>
+
             </section>
             <WaveBackground />
             {/* Translation Services Section */}
@@ -801,6 +802,20 @@ export default function Home() {
                         </p>
                     </motion.div>
                 </div>
+                <div className="w-full mt-6 flex justify-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        whileHover={{ y: -5 }}
+                    >
+                        <Link href="/es/traducciones-certificadas-en-bocas-del-toro">
+                            <div className="px-6 py-3 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl flex items-center justify-center">
+                                <h3 className="text-xl font-bold">Ver Detalles</h3>
+                            </div>
+                        </Link>
+                    </motion.div>
+                </div>
             </section>
 
             {/* TestimonialsES Section */}
@@ -808,77 +823,77 @@ export default function Home() {
 
             <section id="getstarted" className="py-20 bg-white text-black">
 
-            <div  className="w-full max-w-6xl mx-auto px-4 py-12">
-  {/* Header Text */}
-  <div className="text-center mb-12">
-    <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
-      ¿Qué necesitas?
-    </span>
-  </div>
+                <div className="w-full max-w-6xl mx-auto px-4 py-12">
+                    {/* Header Text */}
+                    <div className="text-center mb-12">
+                        <span className="inline-block mb-6 text-lg font-bold tracking-wider text-blue-600 uppercase">
+                            ¿Qué necesitas?
+                        </span>
+                    </div>
 
-  {/* Navigation Cards Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-    
-    {/* Spanish Classes Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      whileHover={{ y: -5 }}
-      className="group"
-    >
-      <Link href="/es/clases-de-espanol-en-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🇵🇦</div>
-            <h3 className="text-xl font-bold mb-2">Clases de Español</h3>
-          
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+                    {/* Navigation Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-    {/* English Classes Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3 }}
-      whileHover={{ y: -5 }}
-      className="group"
-    >
-      <Link href="/es/clases-de-ingles-en-isla-colon-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🇺🇸</div>
-            <h3 className="text-xl font-bold mb-2">Clases de Inglés</h3>
-        
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+                        {/* Spanish Classes Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            whileHover={{ y: -5 }}
+                            className="group"
+                        >
+                            <Link href="/es/clases-de-espanol-en-isla-colon-bocas-del-toro">
+                                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-4">🇵🇦</div>
+                                        <h3 className="text-xl font-bold mb-2">Clases de Español</h3>
 
-    {/* Translation Services Card */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
-      whileHover={{ y: -5 }}
-      className="group md:col-span-2 lg:col-span-1"
-    >
-      <Link href="/es/traducciones-certificadas-en-bocas-del-toro">
-        <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🌐</div>
-            <h3 className="text-xl font-bold mb-2">Traducción Certificada</h3>
-         
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
 
-  </div>
-  </div>
-  </section>
+                        {/* English Classes Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            whileHover={{ y: -5 }}
+                            className="group"
+                        >
+                            <Link href="/es/clases-de-ingles-en-isla-colon-bocas-del-toro">
+                                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-4">🇺🇸</div>
+                                        <h3 className="text-xl font-bold mb-2">Clases de Inglés</h3>
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+
+                        {/* Translation Services Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            whileHover={{ y: -5 }}
+                            className="group md:col-span-2 lg:col-span-1"
+                        >
+                            <Link href="/es/traducciones-certificadas-en-bocas-del-toro">
+                                <div className="px-2 py-4 cursor-pointer border bg-gradient-to-r from-blue-500 to-purple-600 border-gray-300 text-gray-100 rounded-full hover:border-blue-500 hover:text-blue-200 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                                    <div className="text-center">
+                                        <div className="text-4xl mb-4">🌐</div>
+                                        <h3 className="text-xl font-bold mb-2">Traducción Certificada</h3>
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+
+                    </div>
+                </div>
+            </section>
 
             {/* Contact Section */}
             <section id="contacto" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
@@ -980,7 +995,7 @@ export default function Home() {
                 </div>
             </section>
             {/* Footer */}
-<FooterES/>
+            <FooterES />
         </div>
     )
 }
