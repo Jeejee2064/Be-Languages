@@ -13,18 +13,19 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Be Languages | English and Spanish Classes in Bocas del Toro",
-  description: "Personalized English and Spanish classes in Bocas del Toro, Panama. Certified translation services for documents.",
+  description:
+    "Personalized English and Spanish classes in Bocas del Toro, Panama. Certified translation services for documents.",
   keywords: [
-    'English classes Bocas del Toro',
-    'Spanish classes Bocas del Toro',
-    'Learn English Panama',
-    'Learn Spanish Panama',
-    'Language school Bocas del Toro',
-    'Certified translator Panama',
-    'Document translation services',
-    'Language immersion Panama',
-    'Private language lessons',
-    'Bilingual education Bocas del Toro'
+    "English classes Bocas del Toro",
+    "Spanish classes Bocas del Toro",
+    "Learn English Panama",
+    "Learn Spanish Panama",
+    "Language school Bocas del Toro",
+    "Certified translator Panama",
+    "Document translation services",
+    "Language immersion Panama",
+    "Private language lessons",
+    "Bilingual education Bocas del Toro",
   ],
   authors: [{ name: "Be Languages", url: "https://be-languages.com" }],
   creator: "JdwApps",
@@ -33,14 +34,15 @@ export const metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      'en': '/',
-      'es': '/es',
-      'x-default': '/', // Fallback for unspecified languages
+      en: "/",
+      es: "/es",
+      "x-default": "/", // fallback
     },
   },
   openGraph: {
     title: "Be Languages | English & Spanish Classes in Bocas del Toro",
-    description: "Professional language classes and translation services in Bocas del Toro, Panama",
+    description:
+      "Professional language classes and translation services in Bocas del Toro, Panama",
     url: "https://be-languages.com",
     siteName: "Be Languages",
     locale: "en_US",
@@ -53,7 +55,7 @@ export const metadata = {
         alt: "Be Languages logo",
       },
     ],
-    alternateLocales: ['es_ES'], // Important for multilingual sites
+    alternateLocales: ["es_ES"],
   },
   twitter: {
     card: "summary_large_image",
@@ -77,18 +79,16 @@ export const metadata = {
   },
 };
 
-import { usePathname } from 'next/navigation'
-
 export default function RootLayout({ children }) {
-  const pathname = usePathname()
-  const locale = pathname.startsWith('/es') ? 'es' : 'en'
-  
+  const pathname = usePathname();
+  const locale = pathname.startsWith("/es") ? "es" : "en";
+
   return (
     <html lang={locale}>
-      <body >
+      <body>
         <Analytics />
         {children}
       </body>
     </html>
-  )
+  );
 }
