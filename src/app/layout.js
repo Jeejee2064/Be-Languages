@@ -80,12 +80,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const locale = pathname.startsWith("/es") ? "es" : "en";
+  const path = headers().get("x-invoke-path") || "";
+  const locale = path.startsWith("/es") ? "es" : "en";
 
   return (
     <html lang={locale}>
-      <body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Analytics />
         {children}
       </body>
