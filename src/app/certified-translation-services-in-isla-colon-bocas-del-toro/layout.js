@@ -27,7 +27,7 @@ export const metadata = {
     siteName: "BE Language Solutions",
     images: [
       {
-        url: "https://be-languages.com/logo.svg", // Using logo as OG image (you can replace with a custom image later)
+        url: "https://be-languages.com/logoNoir.png", // Using logo as OG image (you can replace with a custom image later)
         width: 512,
         height: 512,
         alt: "BE Language Solutions Logo"
@@ -39,7 +39,7 @@ export const metadata = {
     title: "Certified Translation Services in Isla Colón, Bocas del Toro",
     description:
       "Certified translations between English and Spanish in Bocas del Toro. Trusted for legal, personal, and official documents.",
-    images: ["https://be-languages.com/logo.svg"],
+    images: ["https://be-languages.com/logoNoir.png"], 
   },
   alternates: {
     canonical: "https://be-languages.com/certified-translation-services-in-isla-colon-bocas-del-toro",

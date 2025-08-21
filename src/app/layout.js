@@ -29,10 +29,10 @@ export const metadata = {
     "Private language lessons",
     "Bilingual education Bocas del Toro",
   ],
-  authors: [{ name: "Be Languages", url: "https://be-languages.com" }],
+  authors: [{ name: "Be Languages", url: "https://www.be-languages.com" }],
   creator: "JdwApps",
   publisher: "JdwApps",
-  metadataBase: new URL("https://be-languages.com"),
+  metadataBase: new URL("https://www.be-languages.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -45,7 +45,7 @@ export const metadata = {
     title: "Be Languages | English & Spanish Classes in Bocas del Toro",
     description:
       "Professional language classes and translation services in Bocas del Toro, Panama",
-    url: "https://be-languages.com",
+    url: "https://www.be-languages.com",
     siteName: "Be Languages",
     locale: "en_US",
     type: "website",
@@ -82,11 +82,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const path = headers().get("x-invoke-path") || "";
-  const locale = path.startsWith("/es") ? "es" : "en";
-
   return (
-    <html lang={locale}>
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Analytics />
         {children}

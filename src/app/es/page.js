@@ -213,11 +213,11 @@ export default function Home() {
                                     Educación Lingüística Premium
                                 </span>
                                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Domina Idiomas</span> en el Paraíso
+                                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Domina Idiomas</span> en un entorno paradisíaco 
                                 </h2>
                             </motion.div>
                             <motion.div variants={fadeInUp} className="text-xl text-gray-600 mb-8 max-w-lg">
-                                <h1>Clases personalizadas de inglés y español adaptadas a tus necesidades en la hermosa Bocas del Toro, Panamá. Servicios de traducción certificada</h1>
+                                <h1>Clases personalizadas de inglés y español adaptadas a tus necesidades desde la hermosa Bocas del Toro, Panamá. Servicios de traducción certificada</h1>
                             </motion.div>
                             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                                 <a
@@ -230,7 +230,7 @@ export default function Home() {
                                     href="#traducciones"
                                     className="px-8 py-3.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 font-medium"
                                 >
-                                    Traduccion Certificada
+                                    Solicita una Traduccion 
                                 </a>
                             </motion.div>
                         </motion.div>
@@ -288,13 +288,13 @@ export default function Home() {
                         </motion.div>
                         <motion.div variants={fadeInUp} className="lg:w-1/2">
                             <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-purple-600 uppercase">
-                                Sobre el Instructor
+                                Sobre la Instructora
                             </span>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Traductor</span> Certificado e Instructor de Idiomas
+                                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Traductora</span> Pública autorizada e Instructora de Idiomas
                             </h2>
                             <p className="text-lg text-gray-600 mb-6">
-                                Con más de una década de experiencia enseñando inglés y español, ofrezco experiencia profesional y atención personalizada a cada estudiante, permitiéndoles ganar confianza y fluidez en situaciones cotidianas.
+                                Con más de diez años de trajectoria en la enseñanza del inglés y español, ofrezco atención individual a cada alumno que les permite adquirir confianza y fluidez en situaciones cotidianas. Además tengo mas de dieciocho años de experiencia en el campo de las traducciones oficiales, formales e informales. 
                             </p>
 
                             <div className="space-y-6">
@@ -305,8 +305,8 @@ export default function Home() {
                                         </svg>
                                     </div>
                                     <div className="ml-3">
-                                        <h3 className="text-lg font-medium text-gray-800">Traducciones certificadas</h3>
-                                        <p className="mt-1 text-gray-600">Para uso oficial en Panamá o en el extranjero (documentos legales, académicos, de inmigración, técnicos...)</p>
+                                        <h3 className="text-lg font-medium text-gray-800">Traductora oficial</h3>
+                                        <p className="mt-1 text-gray-600">Experta en traducir documentos ara uso oficial y legal en Panamá o en el extranjero (documentos legales, laborales, académicos, de inmigración, técnicos...)</p>
                                     </div>
                                 </div>
 
@@ -317,7 +317,7 @@ export default function Home() {
                                         </svg>
                                     </div>
                                     <div className="ml-3">
-                                        <h3 className="text-lg font-medium text-gray-800">Profesor experimentado</h3>
+                                        <h3 className="text-lg font-medium text-gray-800">Profesora experimentada</h3>
                                         <p className="mt-1 text-gray-600">Clases personalizadas para adultos, centradas en el uso real del idioma y la integración cultural</p>
                                     </div>
                                 </div>
@@ -330,7 +330,7 @@ export default function Home() {
                                     </div>
                                     <div className="ml-3">
                                         <h3 className="text-lg font-medium text-gray-800">Formación académica</h3>
-                                        <p className="mt-1 text-gray-600">Posgrado en Educación Superior</p>
+                                        <p className="mt-1 text-gray-600">Posgrado en Docencia Superior</p>
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +388,7 @@ export default function Home() {
                                     </svg>
                                 ),
                                 title: "Capacitación en Idiomas para Negocios",
-                                description: "Cursos especializados para profesionales que necesitan habilidades lingüísticas para el trabajo.",
+                                description: "Cursos especializados para profesionales que necesitan habilidades lingüísticas para su entorno laboral.",
                                 bg: "bg-indigo-50/50 hover:bg-indigo-50",
                                 border: "border-indigo-100"
                             },
@@ -540,13 +540,13 @@ export default function Home() {
                     className="text-center mb-16 max-w-3xl mx-auto"
                 >
                     <span className="inline-block mb-4 text-sm font-semibold tracking-wider text-purple-600 uppercase">
-                        Clases & Paquetes
+                        Clases & Planes
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                        Precios <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Transparentes</span>
+                        Precios <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Claros</span> y detallados
                     </h2>
                     <p className="text-lg text-gray-600">
-                        Paquetes flexibles diseñados para diferentes necesidades de aprendizaje y presupuestos.
+                        Planes flexibles diseñados para diferentes necesidades de aprendizaje y presupuestos.
                     </p>
                 </motion.div>
                 <div className="container mx-auto px-6 relative z-10">
@@ -559,63 +559,77 @@ export default function Home() {
                     >
                         {[
                             {
-                                name: "Crash Course 1 Semana",
-                                price: "$125",
+                                name: "Curso Intensivo de Inglés",
+                                price: "$100",
                                 duration: "1 semana",
-                                description: "Ideal para viajeros y expatriados que quieran mejorar rápidamente la conversación básica.",
+                                description: "Ideal para quienes necesitan inglés para viajar o conseguir trabajo inmediato.",
                                 hours: "5 horas",
                                 features: [
-                                    "Enfoque en frases esenciales",
-                                    "Lo esencial para viajar",
-                                    "Juego de roles",
-                                    "Tarea ligera (opcional)"
+                                    "Saludos y presentaciones.",
+                                    "Vocabulario básico para restaurantes, tiendas y transporte.",
+                                    "Practica de juego de roles en contextos reales.",
+                                    "Cómo hacer preguntas básicas y entender respuestas que dan los turistas angloparlantes."
                                 ],
-                                highlighted: false
+                                highlighted: false   
                             },
                             {
-                                name: "Plan Island Flow",
-                                price: "$150",
+                                name: "Inglés Fluido",
+                                price: "$132",
                                 duration: "3 semanas",
                                 hours: "6 horas",
-                                description: "Perfecto para visitantes que se quedan unas semanas, mejora constante del español sin sobrecarga.",
+                                description: "Perfecto para quienes tienen una base en inglés y quieren mejorar su fluidez y confianza.",
                                 features: [
-                                    "Sesiones basadas en conversación (dos veces por semana)",
+                                    "Conversaciones fluidas y naturales.",
                                     "Contexto local: compras, direcciones, restaurantes, charlas.",
-                                    "Verbos útiles y expresiones de la vida real",
-                                    "Mini seguimientos por Whatsapp después de cada sesión",
-                                    "Tarea ligera (opcional)"
+                                    "Vocabulario específico para tu profesión o intereses.",
+                                    "Comprensión auditiva y oral.",
+                                    "Práctica de conversación en situaciones reales y simulaciones.",       
+                                    "Corrección de errores comunes que ayuden al momento de hablar.",       
                                 ],
                                 highlighted: false
                             },
                             {
-                                name: "Plan Steady Surf",
-                                price: "$180",
-                                duration: "mes",
-                                hours: "8 horas",
-                                description: "Ideal para expatriados, nómadas digitales o visitantes a largo plazo listos para progresar de manera constante y segura.",
+                                name: "Inglés Básico para el Trabajo y la Vida Social",
+                                price: "$160",
+                                duration: "mensual",
+                                hours: "8 horas de instrucción (2 clases por semana).",
+                                description: "Para personas con poco o ningún conocimiento de inglés que buscan ganar confianza y habilidades prácticas para el trabajo, vida social y cultural",
                                 features: [
-                                    "Básico (frases esenciales, verbos, expresiones)",
-                                    "Introducción a la gramática: verbos regulares, hablar en pasado/presente/futuro básico",
-                                    "Temas personalizados según tus necesidades y objetivos",
-                                    "Notas de revisión y tarea corta semanal",
-                                    "Control de progreso cada 4 clases",
-                                    "Experiencias de aprendizaje en el mundo real (compras, pedir comida...)",
-                                    "Soporte por Whatsapp"
+                                    "Vocabulario básico y frases cotidianas.",
+                                    "Estructura gramatical esencial (conjugaciones en tiempos simples, verbos más comunes utilizados).",
+                                    "Situaciones sociales y laborales (presentarse, hacer preguntas y mantener conversaciones sencillas).",
+                                    "Entrenamiento en confianza para comunicarse mejor con personas de habla inglesa en situaciones simples.",
+                                    "Soporte por Whatsapp."
                                 ],
                                 highlighted: true
                             },
                             {
-                                name: "Plan Buddy Boost (2 personas)",
-                                price: "$320",
-                                duration: "mes",
-                                hours: "8 horas",
-                                description: "Perfecto para parejas, amigos, compañeros de viaje que quieran hacer el aprendizaje divertido y practicar juntos.",
+                                name: "Plan Amigos: Aprendamos Juntos (2 personas)",
+                                price: "$150 por persona",
+                                duration: "mensual",
+                                hours: "8 horas/2 clases por semana. Cada clase tiene una duración de 1 hora",
+                                description: "Diseñada para dos personas (parejas, amigos, compañeros de trabajo) que quieran aprender juntos inglés de manera divertida.",
                                 features: [
-                                    "8 sesiones compartidas de 1 hora",
-                                    "Actividades en pareja personalizadas y diálogos de práctica real",
-                                    "Aprende juntos a través de juegos, roles y trabajo en equipo",
-                                    "Listas de vocabulario compartidas y grupos de Whatsapp",
-                                    "Experiencias de aprendizaje en el mundo real (compras, pedir comida...)"
+                                    "8 sesiones compartidas de 1 hora.",
+                                    "Vocabulario y gramática básica a intermedia.",
+                                    "Conversaciones prácticas y actividades en pareja.",
+                                    "Resolución de dudas y corrección de errores en tiempo real.",
+                                    "Contestación de dudas por Whatsapp.",
+                                ],
+                                highlighted: true
+                            },
+                            {
+                                name: "Inglés Profesional y Global. Career & Moving Abroad Plan",
+                                price: "$180-$225",
+                                duration: "mensual",
+                                hours: "$180 (8 horas)/ $225 (10 horas). Cada clase tiene una duración de 1 hora.",
+                                description: "Ideal para quienes buscan ptenciar su carrera profesional o se necesitan preparar para vivir en el extranjero.",
+                                features: [
+                                    "Inglés comercial y comunicación profesional.",
+                                    "Preparación para entrevistas de trabajo y redacción de CV y correos electrónicos formales",
+                                    "Cultura y etiqueta laboral internacional.",
+                                    "Vocabulario para la vida en el extranjero y expresiones idiomáticas más utilizadas en países de habla inglesa.",
+                                    
                                 ],
                                 highlighted: true
                             }
@@ -679,7 +693,7 @@ export default function Home() {
                         variants={fadeInUp}
                         className="mt-16 bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-3xl mx-auto"
                     >
-                        <h3 className="text-xl font-bold mb-6 text-gray-800">Información de Pago y Políticas</h3>
+                        <h3 className="text-xl font-bold mb-6 text-gray-800">Información de Pago y Políticas de Cancelación</h3>
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
@@ -687,15 +701,15 @@ export default function Home() {
                                 <ul className="text-gray-600 space-y-2">
                                     <li className="flex items-start">
                                         <span className="text-green-500 mr-2">•</span>
-                                        100% al inicio del plan
+                                        100% al inicio del plan.
                                     </li>
                                     <li className="flex items-start">
                                         <span className="text-green-500 mr-2">•</span>
-                                        Pueden aplicarse gastos de transporte para clases presenciales fuera de Bocas Town
+                                        Pueden haber gastos de transporte para clases presenciales fuera de Bocas Town (ejemplo: zona de Paunch, Bluff o Carenero).
                                     </li>
                                     <li className="flex items-start">
                                         <span className="text-green-500 mr-2">•</span>
-                                        Se acepta efectivo, transferencia bancaria local y Yappy (Banco General)
+                                        Se aceptan pagos en efectivo, transferencia bancaria local y Yappy (Banco General)
                                     </li>
                                 </ul>
                             </div>
@@ -705,15 +719,15 @@ export default function Home() {
                                 <ul className="text-gray-600 space-y-2">
                                     <li className="flex items-start">
                                         <span className="text-red-500 mr-2">•</span>
-                                        Los cambios deben notificarse 12 horas antes de la sesión programada
+                                        Los cambios deben notificarse 12 horas antes de la clase programada. Si notifica en el tiempo indicado, la clase se reprograma sin costo adicional.
                                     </li>
                                     <li className="flex items-start">
                                         <span className="text-red-500 mr-2">•</span>
-                                        Menos de 12h de aviso o no presentación: la sesión se pierde
+                                        Si avisa en menos de 12h o no se presenta a la clase: la clase se pierde.
                                     </li>
                                     <li className="flex items-start">
                                         <span className="text-green-500 mr-2">•</span>
-                                        Cancelaciones de emergencia evaluadas caso por caso
+                                        Cancelaciones por emergencia son evaluadas caso por caso.
                                     </li>
                                 </ul>
                             </div>
