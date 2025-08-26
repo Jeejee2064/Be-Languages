@@ -1,8 +1,6 @@
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import { headers } from "next/headers";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -82,6 +80,42 @@ export const metadata = {
   },
 };
 
+// Define pricingPlans first
+const pricingPlans = [
+  {
+    name: "1 Week Crash Course",
+    price: "125.00",
+    currency: "USD",
+    duration: "P1W",
+    description:
+      "Ideal for travelers and expats who want to improve basic conversation rapidly.",
+  },
+  {
+    name: "Island Flow Plan",
+    price: "150.00",
+    currency: "USD",
+    duration: "P3W",
+    description:
+      "Perfect for visitors staying a few weeks, consistent, stress-free Spanish improvement.",
+  },
+  {
+    name: "Steady Surf Plan",
+    price: "180.00",
+    currency: "USD",
+    duration: "P1M",
+    description:
+      "Ideal for expats, digital nomads or long term visitors ready to progress steadily.",
+  },
+  {
+    name: "Buddy Boost (2 people)",
+    price: "320.00",
+    currency: "USD",
+    duration: "P1M",
+    description:
+      "Perfect for couples, friends, or partners who want to learn and practice together.",
+  },
+];
+
 // JSON-LD schemas
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -119,7 +153,7 @@ const localBusinessSchema = {
   }))
 };
 
-// Alternative: Separate Service schemas
+// Service schemas
 const servicesSchema = [
   {
     "@context": "https://schema.org",
@@ -172,25 +206,19 @@ const servicesSchema = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <head>
+      <head>
         <Script
-          id="ld-localbusiness"
+          id="structured-data-localbusiness"
           type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <Script
-          id="ld-services"
+          id="structured-data-services"
           type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(servicesSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Analytics />
         {children}
       </body>
