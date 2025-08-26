@@ -85,92 +85,89 @@ export const metadata = {
 // JSON-LD schemas
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LanguageSchool",
+  "@type": ["LocalBusiness", "LanguageSchool"],
   "@id": "https://www.be-languages.com/#school",
-  name: "Be Languages",
-  description:
-    "Personalized English and Spanish classes and certified translation services in Bocas del Toro, Panama.",
-  url: "https://www.be-languages.com",
-  logo: "https://www.be-languages.com/logoNoir.png",
-  image: "https://www.be-languages.com/mimitimbi.jpeg",
-  telephone: "+507 6613-5652",
-  email: "be.languages.pa@gmail.com",
-  address: {
+  "name": "Be Languages",
+  "description": "Personalized English and Spanish classes and certified translation services in Bocas del Toro, Panama.",
+  "url": "https://www.be-languages.com",
+  "logo": "https://www.be-languages.com/logoNoir.png",
+  "image": "https://www.be-languages.com/mimitimbi.jpeg",
+  "telephone": "+507 6613-5652",
+  "email": "be.languages.pa@gmail.com",
+  "address": {
     "@type": "PostalAddress",
-    streetAddress: "Isla Colón",
-    addressLocality: "Bocas del Toro",
-    addressCountry: "PA",
+    "streetAddress": "Isla Colón",
+    "addressLocality": "Bocas del Toro",
+    "addressCountry": "PA"
   },
-  geo: {
+  "geo": {
     "@type": "GeoCoordinates",
-    latitude: 9.3405,
-    longitude: -82.2405,
+    "latitude": 9.3405,
+    "longitude": -82.2405
   },
-  sameAs: [
-    "https://www.instagram.com/be.languages/",
-    // add facebook if you have it
+  "sameAs": [
+    "https://www.instagram.com/be.languages/"
   ],
-  priceRange: "$$",
-};
-
-// Services generated from your pricingPlans
-const pricingPlans = [
-  {
-    name: "1 Week Crash Course",
-    price: "125.00",
-    currency: "USD",
-    duration: "P1W",
-    description:
-      "Ideal for travelers and expats who want to improve basic conversation rapidly.",
-  },
-  {
-    name: "Island Flow Plan",
-    price: "150.00",
-    currency: "USD",
-    duration: "P3W",
-    description:
-      "Perfect for visitors staying a few weeks, consistent, stress-free Spanish improvement.",
-  },
-  {
-    name: "Steady Surf Plan",
-    price: "180.00",
-    currency: "USD",
-    duration: "P1M",
-    description:
-      "Ideal for expats, digital nomads or long term visitors ready to progress steadily.",
-  },
-  {
-    name: "Buddy Boost (2 people)",
-    price: "320.00",
-    currency: "USD",
-    duration: "P1M",
-    description:
-      "Perfect for couples, friends, or partners who want to learn and practice together.",
-  },
-];
-
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: "Language Classes & Certified Translation",
-  provider: {
-    "@type": "LanguageSchool",
-    name: "Be Languages",
-    url: "https://www.be-languages.com",
-  },
-  offers: pricingPlans.map((plan) => ({
+  "priceRange": "$$",
+  "makesOffer": pricingPlans.map(plan => ({
     "@type": "Offer",
-    name: plan.name,
-    description: plan.description,
-    price: plan.price,
-    priceCurrency: plan.currency,
-    eligibleDuration: {
-      "@type": "Duration",
-      iso8601Duration: plan.duration, // ISO 8601 format
-    },
-  })),
+    "name": plan.name,
+    "description": plan.description,
+    "price": plan.price,
+    "priceCurrency": plan.currency,
+    "eligibleDuration": plan.duration
+  }))
 };
 
+// Alternative: Separate Service schemas
+const servicesSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Spanish Language Classes",
+    "description": "Personalized Spanish classes for all levels",
+    "provider": {
+      "@type": "Organization",
+      "name": "Be Languages"
+    },
+    "offers": pricingPlans.map(plan => ({
+      "@type": "Offer",
+      "name": plan.name,
+      "description": plan.description,
+      "price": plan.price,
+      "priceCurrency": plan.currency,
+      "eligibleDuration": plan.duration
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "English Language Classes",
+    "description": "Personalized English classes for all levels",
+    "provider": {
+      "@type": "Organization",
+      "name": "Be Languages"
+    },
+    "offers": pricingPlans.map(plan => ({
+      "@type": "Offer",
+      "name": plan.name,
+      "description": plan.description,
+      "price": plan.price,
+      "priceCurrency": plan.currency,
+      "eligibleDuration": plan.duration
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Certified Translation Services",
+    "description": "Professional certified translation services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Be Languages"
+    }
+  }
+];
 
 export default function RootLayout({ children }) {
   return (
