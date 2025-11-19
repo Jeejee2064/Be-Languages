@@ -96,10 +96,17 @@ export default function FooterES() {
             </ul>
           </div>
         </div>
-
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Be Languages . Todos los derechos reservados.</p>
-        </div>
+<div className="border-t border-gray-500 mt-8 pt-6 text-center text-sm">
+        <Link 
+          href="https://bocasdigital.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:text-blue-300 transition-colors"
+        >
+         &copy;  Sitio web hecho por <span className="font-semibold">Bocas Digital</span>
+        </Link>
+      </div>
+    
       </div>
     </footer>
   );
