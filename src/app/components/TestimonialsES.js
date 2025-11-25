@@ -19,27 +19,27 @@ const fadeInUp = {
 const testimonials = [
   {
     id: 1,
-    name: "Olivia S.",
-    role: "Empresaria",
-    content: "Las clases de español transformaron completamente mi capacidad para comunicarme con los clientes. El estilo de enseñanza de Joanna es práctico, claro y adaptado a las necesidades reales del negocio. Ahora me siento segura manteniendo conversaciones con clientes y socios de habla hispana, lo que ha abierto nuevas oportunidades para mi negocio."
+    name: "Patricia G.",
+    role: "Supervisora",
+    content: "Yo sabía muy poco inglés, solo el verbo “to be” y contar hasta 20, pero las clases de inglés de Joanna me ayudaron a conseguir un trabajo en el que se requería que se hablara inglés básico o intermedio. Sus clases me fueron brindando la confianza de poder comunicarme mejor."
   },
   {
     id: 2,
-    name: "Nancy L.",
-    role: "Osteópata",
-    content: "¡Me divertí mucho aprendiendo inglés con Joanna! Su enfoque me hizo sentir segura, relajada y realmente emocionada de hablar. La práctica de la vida real me ayudó a hablar con mis clientes internacionales con facilidad."
+    name: "Carlos S.",
+    role: "Ingeniero en Sistemas",
+    content: "Entiendo inglés, pero me cuesta hablarlo porque me bloqueaba a menudo así que decidí tomar clases personalizadas con Joanna y con su energía y dinamismo logré que el inglés fluyera de mi cabeza a sostener conversaciones en inglés."
   },
   {
     id: 3,
-    name: "Ronny S.",
-    role: "Empresario Jubilado",
-    content: "Tengo más de 70 años y tenía 0 conocimiento de español, después de aprender con Joanna durante 2 años he hecho un progreso significativo."
+    name: "Jorge D.",
+    role: "Gerente",
+    content: "Joanna es mi traductora de confianza desde hace 5 años. Cada vez que necesito la traducción de documentos importantes que deben certificarse para enviar al extranjero acudo a ella y con su profesionalismo y orientación al detalle hace un excelente trabajo."
   },
   {
     id: 4,
-    name: "Carlos M.",
-    role: "Consultor Legal",
-    content: "El trabajo de traducción de Joanna fue rápido, preciso y culturalmente exacto. Me ayudó a traducir documentos oficiales y manejó todo con profesionalismo y cuidado. ¡Altamente recomendada!"
+    name: "Grant L.",
+    role: "Businessman",
+    content: "Joanna is an experienced translator who has translated different types of documents for me. From college diplomas, contracts and financial statements. She is a 100% professional and confidential person."
   }
 ]
 

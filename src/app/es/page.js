@@ -294,8 +294,10 @@ export default function Home() {
                                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Traductora</span> Pública autorizada e Instructora de Idiomas
                             </h2>
                             <p className="text-lg text-gray-600 mb-6">
-                                Con más de diez años de trajectoria en la enseñanza del inglés y español, ofrezco atención individual a cada alumno que les permite adquirir confianza y fluidez en situaciones cotidianas. Además tengo mas de dieciocho años de experiencia en el campo de las traducciones oficiales, formales e informales. 
-                            </p>
+Con más de una década de experiencia en la enseñanza del inglés y el español,
+brindo atención personalizada a cada estudiante para ayudarles a obtener fluidez
+y confianza en situaciones diarias. Además, cuento con más de 18 años de
+experiencia en la traducción, tanto formal como informal y oficial.                            </p>
 
                             <div className="space-y-6">
                                 <div className="flex">
@@ -306,7 +308,9 @@ export default function Home() {
                                     </div>
                                     <div className="ml-3">
                                         <h3 className="text-lg font-medium text-gray-800">Traductora oficial</h3>
-                                        <p className="mt-1 text-gray-600">Experta en traducir documentos ara uso oficial y legal en Panamá o en el extranjero (documentos legales, laborales, académicos, de inmigración, técnicos...)</p>
+                                        <p className="mt-1 text-gray-600">Amplia y demostrada experiencia en traducir documentos para uso oficial y legal
+en Panamá o en el extranjero (documentos legales, laborales, académicos, de
+inmigración, técnicos...)</p>
                                     </div>
                                 </div>
 
@@ -318,7 +322,8 @@ export default function Home() {
                                     </div>
                                     <div className="ml-3">
                                         <h3 className="text-lg font-medium text-gray-800">Profesora experimentada</h3>
-                                        <p className="mt-1 text-gray-600">Clases personalizadas para adultos, centradas en el uso real del idioma y la integración cultural</p>
+                                        <p className="mt-1 text-gray-600">Clases personalizadas para adultos, centradas en el uso real del idioma tanto
+escrito como oral y en la integración cultural de cada estudiante a su propio ritmo.</p>
                                     </div>
                                 </div>
 
@@ -376,7 +381,7 @@ export default function Home() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                                     </svg>
                                 ),
-                                title: "Clases de Idiomas Personalizadas",
+                                title: "Clases Personalizadas de Idiomas ",
                                 description: "Instrucción individual adaptada a tu nivel, objetivos y preferencias de aprendizaje.",
                                 bg: "bg-blue-50/50 hover:bg-blue-50",
                                 border: "border-blue-100"
@@ -387,8 +392,8 @@ export default function Home() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                     </svg>
                                 ),
-                                title: "Capacitación en Idiomas para Negocios",
-                                description: "Cursos especializados para profesionales que necesitan habilidades lingüísticas para su entorno laboral.",
+                                title: "Capacitación en Idiomas para el Sector Laboral.",
+                                description: "Cursos especializados para personas que necesitan aprender inglés o español o mejorar sus habilidades lingüísticas para propósitos laborales.",
                                 bg: "bg-indigo-50/50 hover:bg-indigo-50",
                                 border: "border-indigo-100"
                             },
@@ -399,7 +404,7 @@ export default function Home() {
                                     </svg>
                                 ),
                                 title: "Servicios de Traducción",
-                                description: "Traducción certificada de documentos entre inglés y español para todo tipo de propósitos (legales, técnicos, académicos, personales, sitios web).",
+                                description: "Traducciónes certificadas de documentos de inglés y español para todo tipo de propósitos (legales, técnicos, académicos, personales, sitios web).",
                                 bg: "bg-blue-50/50 hover:bg-blue-50",
                                 border: "border-blue-100"
                             },
@@ -558,81 +563,111 @@ export default function Home() {
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
                     >
                         {[
-                            {
-                                name: "Curso Intensivo de Inglés",
-                                price: "$100",
-                                duration: "1 semana",
-                                description: "Ideal para quienes necesitan inglés para viajar o conseguir trabajo inmediato.",
-                                hours: "5 horas",
-                                features: [
-                                    "Saludos y presentaciones.",
-                                    "Vocabulario básico para restaurantes, tiendas y transporte.",
-                                    "Practica de juego de roles en contextos reales.",
-                                    "Cómo hacer preguntas básicas y entender respuestas que dan los turistas angloparlantes."
-                                ],
-                                highlighted: false   
-                            },
-                            {
-                                name: "Inglés Fluido",
-                                price: "$132",
-                                duration: "3 semanas",
-                                hours: "6 horas",
-                                description: "Perfecto para quienes tienen una base en inglés y quieren mejorar su fluidez y confianza.",
-                                features: [
-                                    "Conversaciones fluidas y naturales.",
-                                    "Contexto local: compras, direcciones, restaurantes, charlas.",
-                                    "Vocabulario específico para tu profesión o intereses.",
-                                    "Comprensión auditiva y oral.",
-                                    "Práctica de conversación en situaciones reales y simulaciones.",       
-                                    "Corrección de errores comunes que ayuden al momento de hablar.",       
-                                ],
-                                highlighted: false
-                            },
-                            {
-                                name: "Inglés Básico para el Trabajo y la Vida Social",
-                                price: "$160",
-                                duration: "mensual",
-                                hours: "8 horas de instrucción (2 clases por semana).",
-                                description: "Para personas con poco o ningún conocimiento de inglés que buscan ganar confianza y habilidades prácticas para el trabajo, vida social y cultural",
-                                features: [
-                                    "Vocabulario básico y frases cotidianas.",
-                                    "Estructura gramatical esencial (conjugaciones en tiempos simples, verbos más comunes utilizados).",
-                                    "Situaciones sociales y laborales (presentarse, hacer preguntas y mantener conversaciones sencillas).",
-                                    "Entrenamiento en confianza para comunicarse mejor con personas de habla inglesa en situaciones simples.",
-                                    "Soporte por Whatsapp."
-                                ],
-                                highlighted: true
-                            },
-                            {
-                                name: "Plan Amigos: Aprendamos Juntos (2 personas)",
-                                price: "$150 por persona",
-                                duration: "mensual",
-                                hours: "8 horas/2 clases por semana. Cada clase tiene una duración de 1 hora",
-                                description: "Diseñada para dos personas (parejas, amigos, compañeros de trabajo) que quieran aprender juntos inglés de manera divertida.",
-                                features: [
-                                    "8 sesiones compartidas de 1 hora.",
-                                    "Vocabulario y gramática básica a intermedia.",
-                                    "Conversaciones prácticas y actividades en pareja.",
-                                    "Resolución de dudas y corrección de errores en tiempo real.",
-                                    "Contestación de dudas por Whatsapp.",
-                                ],
-                                highlighted: true
-                            },
-                            {
-                                name: "Inglés Profesional y Global. Career & Moving Abroad Plan",
-                                price: "$180-$225",
-                                duration: "mensual",
-                                hours: "$180 (8 horas)/ $225 (10 horas). Cada clase tiene una duración de 1 hora.",
-                                description: "Ideal para quienes buscan ptenciar su carrera profesional o se necesitan preparar para vivir en el extranjero.",
-                                features: [
-                                    "Inglés comercial y comunicación profesional.",
-                                    "Preparación para entrevistas de trabajo y redacción de CV y correos electrónicos formales",
-                                    "Cultura y etiqueta laboral internacional.",
-                                    "Vocabulario para la vida en el extranjero y expresiones idiomáticas más utilizadas en países de habla inglesa.",
-                                    
-                                ],
-                                highlighted: true
-                            }
+           {
+        name: "English Express",
+        price: "$125",
+        duration: "1 semana",
+        description: "Personas que necesitan aprender inglés básico de forma rápida y práctica.",
+        hours: "5 días — 1 semana",
+        features: [
+            "Saludos, presentaciones y frases esenciales",
+            "Preguntas básicas y vocabulario cotidiano",
+            "Situaciones reales simples (viajes, compras, pedir información)",
+            "Conversación guiada diaria",
+            "Listening básico adaptado al nivel"
+        ],
+        highlighted: false
+    },
+    {
+        name: "Steady Wave Plan",
+        price: "$160",
+        duration: "mes (8 clases al mes)",
+        hours: "2× por semana",
+        description: "Adultos que desean avanzar en inglés a un ritmo constante y manejable.",
+        features: [
+            "Vocabulario y frases cotidianas",
+            "Gramática esencial aplicada",
+            "Situaciones reales sencillas",
+            "Conversación guiada",
+            "Listening adaptado"
+        ],
+        highlighted: false
+    },
+    {
+        name: "Power Surf Plan",
+        price: "$240",
+        duration: "mes (12 clases al mes)",
+        hours: "3× por semana",
+        description: "Personas que buscan avanzar más rápido y practicar más horas por semana.",
+        features: [
+            "Vocabulario cotidiano ampliado",
+            "Gramática aplicada a situaciones reales",
+            "Conversación intensiva",
+            "Listening con velocidad natural",
+            "Role-plays prácticos"
+        ],
+        highlighted: true
+    },
+    {
+        name: "English Buddy Boost (2 personas)",
+        price: "$300",
+        duration: "mes (8 clases)",
+        hours: "2× por semana",
+        description: "Dos personas que prefieren aprender juntas en un ambiente colaborativo.",
+        features: [
+            "Clases grupales personalizadas",
+            "Conversación en pareja",
+            "Vocabulario útil y gramática práctica",
+            "Listening adaptado",
+            "Role-plays sencillos"
+        ],
+        highlighted: false
+    },
+    {
+        name: "English Buddy Boost Intensivo (2 personas)",
+        price: "$420",
+        duration: "mes (12 clases)",
+        hours: "3× por semana",
+        description: "Dos personas que quieren avanzar más rápido con práctica intensiva.",
+        features: [
+            "Clases intensivas personalizadas",
+            "Conversación activa en dúo",
+            "Vocabulario aplicado",
+            "Listening más natural",
+            "Role-plays colaborativos"
+        ],
+        highlighted: false
+    },
+    {
+        name: "English Trio Boost (3 personas)",
+        price: "$360",
+        duration: "mes (8 clases)",
+        hours: "2× por semana",
+        description: "Tres personas que desean aprender juntas en un formato dinámico y social.",
+        features: [
+            "Clases grupales personalizadas",
+            "Conversación guiada en grupo",
+            "Vocabulario útil y gramática aplicada",
+            "Listening multitalker",
+            "Actividades grupales"
+        ],
+        highlighted: false
+    },
+    {
+        name: "English Trio Boost Intensivo (3 personas)",
+        price: "$480",
+        duration: "mes (12 clases)",
+        hours: "3× por semana",
+        description: "Grupos de tres que buscan progreso acelerado y más práctica semanal.",
+        features: [
+            "Clases intensivas en grupo",
+            "Conversación rotativa",
+            "Vocabulario cotidiano aplicado",
+            "Listening natural y multitalker",
+            "Role-plays dinámicos"
+        ],
+        highlighted: false
+    }
                         ].map((plan, index) => (
                             <motion.div
                                 key={index}
@@ -770,13 +805,10 @@ export default function Home() {
                             <div>
                                 <h3 className="font-bold text-xl mb-4 text-gray-800">Detalles del Servicio</h3>
                                 <ul className="space-y-3">
+                      
                                     <li className="flex items-start">
                                         <span className="text-blue-500 mr-2">•</span>
-                                        <span>Desde $15 por página traducida.</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-2">•</span>
-                                        <span>Precio final varía según complejidad del documento</span>
+                                        <span>Precio final varía según el volumen y complejidad del documento</span>
                                     </li>
                                     <li className="flex items-start">
                                         <span className="text-blue-500 mr-2">•</span>

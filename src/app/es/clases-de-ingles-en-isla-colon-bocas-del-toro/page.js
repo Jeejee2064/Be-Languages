@@ -125,67 +125,112 @@ const classTopics = [
 
 const pricingPlans = [
     {
-        name: "Crash Course 1 Semana",
+        name: "English Express",
         price: "$125",
         duration: "1 semana",
-        description: "Ideal para viajeros y expatriados que quieren mejorar su conversación básica rápidamente.",
-        hours: "5 horas",
+        description: "Personas que necesitan aprender inglés básico de forma rápida y práctica.",
+        hours: "5 días — 1 semana",
         features: [
-            "Enfoque en frases esenciales",
-            "Conceptos básicos para viajar",
-            "Juegos de rol",
-            "Tarea ligera (opcional)"
+            "Saludos, presentaciones y frases esenciales",
+            "Preguntas básicas y vocabulario cotidiano",
+            "Situaciones reales simples (viajes, compras, pedir información)",
+            "Conversación guiada diaria",
+            "Listening básico adaptado al nivel"
         ],
         highlighted: false
     },
     {
-        name: "Plan Island Flow",
-        price: "$150",
-        duration: "3 semanas",
-        hours: "6 horas",
-        description: "Perfecto para visitantes que se quedan unas semanas, mejora constante del español sin estrés ni sobrecarga.",
+        name: "Steady Wave Plan",
+        price: "$160",
+        duration: "mes (8 clases al mes)",
+        hours: "2× por semana",
+        description: "Adultos que desean avanzar en inglés a un ritmo constante y manejable.",
         features: [
-            "Sesiones basadas en conversación (dos veces por semana)",
-            "Contexto local: compras, direcciones, restaurantes, charlas informales",
-            "Verbos útiles y expresiones de la vida real",
-            "Mini seguimientos por Whatsapp después de cada sesión",
-            "Tarea ligera (opcional)"
+            "Vocabulario y frases cotidianas",
+            "Gramática esencial aplicada",
+            "Situaciones reales sencillas",
+            "Conversación guiada",
+            "Listening adaptado"
         ],
         highlighted: false
     },
     {
-        name: "Plan Steady Surf",
-        price: "$180",
-        duration: "mes",
-        hours: "8 horas",
-        description: "Ideal para expatriados, nómadas digitales o visitantes a largo plazo listos para progresar de manera constante y segura.",
+        name: "Power Surf Plan",
+        price: "$240",
+        duration: "mes (12 clases al mes)",
+        hours: "3× por semana",
+        description: "Personas que buscan avanzar más rápido y practicar más horas por semana.",
         features: [
-            "Básico (frases esenciales, verbos, expresiones)",
-            "Introducción a la gramática: verbos regulares, hablar en pasado/presente/futuro básico",
-            "Temas personalizados según tus necesidades y objetivos",
-            "Notas de repaso y tarea semanal corta",
-            "Revisión de progreso cada 4 clases",
-            "Experiencias de aprendizaje en el mundo real (compras en el supermercado, pedir comida...)",
-            "Soporte por Whatsapp"
+            "Vocabulario cotidiano ampliado",
+            "Gramática aplicada a situaciones reales",
+            "Conversación intensiva",
+            "Listening con velocidad natural",
+            "Role-plays prácticos"
         ],
         highlighted: true
     },
     {
-        name: "Plan Buddy Boost (2 personas)",
-        price: "$320",
-        duration: "mes",
-        hours: "8 horas",
-        description: "Perfecto para parejas, amigos, compañeros de viaje que quieren hacer el aprendizaje divertido y practicar juntos.",
+        name: "English Buddy Boost (2 personas)",
+        price: "$300",
+        duration: "mes (8 clases)",
+        hours: "2× por semana",
+        description: "Dos personas que prefieren aprender juntas en un ambiente colaborativo.",
         features: [
-            "8 sesiones compartidas de 1 hora",
-            "Actividades en pareja personalizadas y diálogos de práctica real",
-            "Aprender juntos a través de juegos, juegos de roles y trabajo en equipo",
-            "Listas de vocabulario compartidas y grupos de Whatsapp",
-            "Experiencias de aprendizaje en el mundo real (compras en el supermercado, pedir comida...)"
+            "Clases grupales personalizadas",
+            "Conversación en pareja",
+            "Vocabulario útil y gramática práctica",
+            "Listening adaptado",
+            "Role-plays sencillos"
         ],
-        highlighted: true
+        highlighted: false
+    },
+    {
+        name: "English Buddy Boost Intensivo (2 personas)",
+        price: "$420",
+        duration: "mes (12 clases)",
+        hours: "3× por semana",
+        description: "Dos personas que quieren avanzar más rápido con práctica intensiva.",
+        features: [
+            "Clases intensivas personalizadas",
+            "Conversación activa en dúo",
+            "Vocabulario aplicado",
+            "Listening más natural",
+            "Role-plays colaborativos"
+        ],
+        highlighted: false
+    },
+    {
+        name: "English Trio Boost (3 personas)",
+        price: "$360",
+        duration: "mes (8 clases)",
+        hours: "2× por semana",
+        description: "Tres personas que desean aprender juntas en un formato dinámico y social.",
+        features: [
+            "Clases grupales personalizadas",
+            "Conversación guiada en grupo",
+            "Vocabulario útil y gramática aplicada",
+            "Listening multitalker",
+            "Actividades grupales"
+        ],
+        highlighted: false
+    },
+    {
+        name: "English Trio Boost Intensivo (3 personas)",
+        price: "$480",
+        duration: "mes (12 clases)",
+        hours: "3× por semana",
+        description: "Grupos de tres que buscan progreso acelerado y más práctica semanal.",
+        features: [
+            "Clases intensivas en grupo",
+            "Conversación rotativa",
+            "Vocabulario cotidiano aplicado",
+            "Listening natural y multitalker",
+            "Role-plays dinámicos"
+        ],
+        highlighted: false
     }
 ];
+
 
 // --- El componente principal para la página ---
 export default function EnglishClassesPage() {
