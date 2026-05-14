@@ -81,7 +81,7 @@ Learning Resources             </span>
 
           {/* Column 3: Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Contacto</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,21 @@ Learning Resources             </span>
           </div>
         </div>
 
-<div className="border-t border-gray-500 mt-8 pt-6 text-center text-sm">
+        <div className="border-t border-gray-700 mt-10 pt-8 mb-2">
+          <p className="text-gray-500 text-xs text-center mb-3">Useful resources for expats in Panama</p>
+          <div className="flex justify-center">
+            <a
+              href="https://panama-contact.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-blue-300 transition-colors text-sm"
+            >
+              Panama Contact — Immigration assistance in Panama
+            </a>
+          </div>
+        </div>
+
+<div className="border-t border-gray-500 mt-6 pt-6 text-center text-sm">
         <Link 
           href="https://bocasdigital.com" 
           target="_blank" 

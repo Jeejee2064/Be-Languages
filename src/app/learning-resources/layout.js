@@ -73,6 +73,6 @@ export const jsonLd = {
   ],
 };
 
-export default function Layout({ children }) {
+export default function LearningResourcesLayout({ children }) {
   return <>{children}</>;
 }

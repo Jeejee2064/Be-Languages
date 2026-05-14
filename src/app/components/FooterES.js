@@ -97,9 +97,20 @@ export default function FooterES() {
           </div>
         </div>
 <div className="border-t border-gray-500 mt-8 pt-6 text-center text-sm">
-        <Link 
-          href="https://bocasdigital.com" 
-          target="_blank" 
+        <div className="mb-4">
+          <p className="text-gray-500 text-xs mb-2">Recursos útiles para expatriados en Panamá</p>
+          <a
+            href="https://panama-contact.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-300 transition-colors text-sm"
+          >
+            Panama Contact — Asistencia de inmigración en Panamá
+          </a>
+        </div>
+        <Link
+          href="https://bocasdigital.com"
+          target="_blank"
           rel="noopener noreferrer"
           className="hover:text-blue-300 transition-colors"
         >

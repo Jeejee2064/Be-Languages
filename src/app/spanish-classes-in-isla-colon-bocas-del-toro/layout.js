@@ -1,5 +1,4 @@
-// app/certified-translation-services-in-isla-colon-bocas-del-toro/layout.js
-
+// app/spanish-classes-in-isla-colon-bocas-del-toro/layout.js
 export const metadata = {
   title: 'Spanish Classes in Bocas del Toro | BE Language Solutions',
   description: 'Learn Spanish with a certified local instructor in Bocas del Toro, Panama. Perfect for expats, digital nomads, and travelers who want to connect with Panamanian culture.',
@@ -37,9 +36,9 @@ export const metadata = {
     siteName: 'BE Language Solutions',
     images: [
       {
-        url: '/logo.svg',
-        width: 800,
-        height: 800,
+        url: 'https://www.be-languages.com/logoNoir.png',
+        width: 1200,
+        height: 1200,
         alt: 'BE Language Solutions - Spanish Classes in Bocas del Toro',
       },
     ],
@@ -47,10 +46,10 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Spanish Classes in Bocas del Toro | BE Language Solutions',
     description: 'Learn Spanish with a certified local instructor in the heart of the Caribbean. Connect with Panamanian culture through personalized lessons.',
-    images: ['/logo.svg'],
+    images: ['https://www.be-languages.com/logoNoir.png'],
   },
   robots: {
     index: true,

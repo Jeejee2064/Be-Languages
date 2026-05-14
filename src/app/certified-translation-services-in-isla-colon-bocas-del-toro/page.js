@@ -536,6 +536,19 @@ export default function TranslationServicesPage() {
                                     All translations are certified and legally recognized for official use worldwide
                                 </p>
                             </div>
+
+                            <div className="mt-4 p-5 bg-gray-50 rounded-xl border border-gray-200 text-center text-sm text-gray-500">
+                                Navigating Panama&apos;s immigration process? Our partners at{" "}
+                                <a
+                                    href="https://panama-contact.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 hover:underline"
+                                >
+                                    Panama Contact
+                                </a>{" "}
+                                offer expert immigration assistance for expats in Panama.
+                            </div>
                         </motion.div>
                     </div>
                 </section>

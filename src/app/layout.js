@@ -1,16 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import WhatsAppButton from "./components/WhatsAppButton";
+const inter = Inter({
+  variable: "--font-inter-sans",
+  subsets: ["latin"],
+});
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Be Languages | English and Spanish Classes in Bocas del Toro",
@@ -218,8 +215,9 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable}`}>
         <Analytics />
+        <WhatsAppButton />
         {children}
       </body>
     </html>
