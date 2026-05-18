@@ -1,77 +1,78 @@
-// app/learning-resources/dating-romance-panama/layout.js
+import Script from 'next/script'
 
 export const metadata = {
-  title: 'Dating and Romance in Panama | BE Language Solutions',
-  description: 'Learn about dating, romance, and cultural tips in Panama. Discover common phrases, date ideas, flirting tips, and relationship etiquette for Bocas del Toro and Isla Colón.',
+  title: 'Dating & Romance in Panama: Spanish Phrases & Cultural Tips | Be Languages',
+  description: 'Learn Spanish phrases for dating and romance in Panama. Cultural norms, flirting vocabulary, date ideas and relationship etiquette in Bocas del Toro and Isla Colón.',
   keywords: [
-    'Dating in Panama',
-    'Romance Panama',
-    'Panamanian dating tips',
-    'Spanish phrases dating',
+    'dating Spanish Panama',
+    'romance vocabulary Spanish Panama',
+    'flirting Spanish Panama',
+    'dating culture Panama',
+    'romantic phrases Spanish Panama',
     'Bocas del Toro dating',
-    'Isla Colón romance',
-    'Panama relationships',
-    'Flirting in Spanish',
-    'Dating culture Panama',
-    'Romantic expressions Spanish'
+    'Panamanian dating culture',
+    'love Spanish phrases Panama',
+    'relationship vocabulary Spanish',
+    'Spanish phrases for dating',
   ],
-  authors: [{ name: 'BE Language Solutions' }],
-  creator: 'BE Language Solutions',
-  publisher: 'BE Language Solutions',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  authors: [{ name: 'Be Languages' }],
+  creator: 'Be Languages',
+  publisher: 'Be Languages',
   metadataBase: new URL('https://www.be-languages.com'),
-  alternates: {
-    canonical: '/learning-resources/dating-romance-panama',
-  },
+  alternates: { canonical: '/learning-resources/dating-romance-panama' },
   openGraph: {
-    title: 'Dating and Romance in Panama | BE Language Solutions',
-    description: 'Learn dating and romance tips in Panama — from common phrases and flirting to cultural norms and date ideas in Bocas del Toro and Isla Colón.',
+    title: 'Dating & Romance in Panama: Spanish Phrases & Cultural Tips | Be Languages',
+    description: 'Spanish phrases for dating and romance in Panama — flirting vocabulary, cultural norms and date ideas in Bocas del Toro.',
     url: '/learning-resources/dating-romance-panama',
-    siteName: 'BE Language Solutions',
-    images: [
-      {
-        url: 'https://www.be-languages.com/dating-romance-panama.png',
-        width: 1200,
-        height: 630,
-        alt: 'Dating and Romance in Panama — BE Language Solutions',
-      },
-    ],
+    siteName: 'Be Languages',
+    images: [{ url: '/dating-romance-panama.png', width: 1200, height: 630, alt: 'Dating & Romance in Panama' }],
     locale: 'en_US',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dating and Romance in Panama | BE Language Solutions',
-    description: 'Explore dating, romance, and cultural tips for English speakers in Panama. Includes phrases, flirting tips, and date ideas for Bocas del Toro and Isla Colón.',
-    images: ['https://www.be-languages.com/dating-romance-panama.png'],
+    title: 'Dating & Romance in Panama | Be Languages',
+    description: 'Spanish phrases and cultural tips for dating and romance in Panama.',
+    images: ['/dating-romance-panama.png'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
-};
+}
 
-// JSON-LD structured data for SEO
-export const jsonLd = {
+const breadcrumbSchema = {
   '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'BE Language Solutions',
-  description: 'Dating and romance tips in Panama for English speakers.',
-  url: 'https://www.be-languages.com/learning-resources/dating-romance-panama',
-  logo: 'https://www.be-languages.com/dating-romance-panama.png',
-  teaches: [
-    'Romantic Spanish Phrases',
-    'Flirting and Communication',
-    'Panamanian Dating Culture',
-    'Date Planning Ideas',
-    'Relationship Etiquette'
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.be-languages.com' },
+    { '@type': 'ListItem', position: 2, name: 'Learning Resources', item: 'https://www.be-languages.com/learning-resources' },
+    { '@type': 'ListItem', position: 3, name: 'Dating & Romance in Panama', item: 'https://www.be-languages.com/learning-resources/dating-romance-panama' },
   ],
-};
+}
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Dating & Romance in Panama: Spanish Phrases and Cultural Tips',
+  description: 'Spanish vocabulary and cultural guidance for dating and romance in Panama — flirting, date ideas, relationship etiquette and romantic expressions.',
+  image: 'https://www.be-languages.com/dating-romance-panama.png',
+  url: 'https://www.be-languages.com/learning-resources/dating-romance-panama',
+  author: { '@id': 'https://www.be-languages.com/#school' },
+  publisher: { '@id': 'https://www.be-languages.com/#school' },
+  datePublished: '2025-08-04',
+  dateModified: '2026-05-18',
+  inLanguage: 'en',
+  isPartOf: { '@type': 'WebPage', url: 'https://www.be-languages.com/learning-resources' },
+}
 
 export default function Layout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <Script id="breadcrumb-dating" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script id="article-dating" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {children}
+    </>
+  )
 }

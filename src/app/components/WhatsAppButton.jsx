@@ -1,12 +1,9 @@
 'use client'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { motion, AnimatePresence, useAnimation } from 'framer-motion'
+import { useState, useEffect, useCallback } from 'react'
 
-// ─── Config — edit these ──────────────────────────────────────────
-const WHATSAPP_NUMBER = '50769XXXXXXX'           // your full number, no + or spaces
-// ─────────────────────────────────────────────────────────────────
-
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`
+const PHONE = '50766135652'
+const WHATSAPP_URL = `https://wa.me/${PHONE}`
 
 function Ripple() {
   return (
@@ -15,9 +12,9 @@ function Ripple() {
         <motion.span
           key={i}
           className="absolute inset-0 rounded-full"
-          style={{ background: '#9333ea' }}
-          animate={{ scale: [1, 1.8], opacity: [0.35, 0] }}
-          transition={{ duration: 2.2, delay: i * 1.1, repeat: Infinity, ease: 'easeOut' }}
+          style={{ background: 'linear-gradient(135deg, #3b82f6, #9333ea)' }}
+          animate={{ scale: [1, 1.9], opacity: [0.4, 0] }}
+          transition={{ duration: 2.4, delay: i * 1.2, repeat: Infinity, ease: 'easeOut' }}
         />
       ))}
     </span>
@@ -34,24 +31,76 @@ function WhatsAppIcon({ className }) {
 
 export default function WhatsAppButton() {
   const [tooltip, setTooltip] = useState(false)
-  const [popped, setPopped] = useState(false)
+  const [dismissed, setDismissed] = useState(false)
+  const controls = useAnimation()
 
-  // Show tooltip bubble after 4s on first load
+  // Show tooltip after 5s on first load
   useEffect(() => {
-    if (popped) return
-    const t = setTimeout(() => { setTooltip(true); setPopped(true) }, 4000)
+    if (dismissed) return
+    const t = setTimeout(() => setTooltip(true), 5000)
     return () => clearTimeout(t)
-  }, [popped])
+  }, [dismissed])
+
+  // Auto-hide tooltip after 8s
+  useEffect(() => {
+    if (!tooltip) return
+    const t = setTimeout(() => setTooltip(false), 8000)
+    return () => clearTimeout(t)
+  }, [tooltip])
+
+  // Attention wiggle every 18s
+  useEffect(() => {
+    const wiggle = async () => {
+      await controls.start({
+        rotate: [0, -8, 8, -6, 6, -3, 3, 0],
+        transition: { duration: 0.6, ease: 'easeInOut' },
+      })
+    }
+    const interval = setInterval(wiggle, 18000)
+    // First wiggle after 12s
+    const first = setTimeout(wiggle, 12000)
+    return () => { clearInterval(interval); clearTimeout(first) }
+  }, [controls])
+
+  const handleDismiss = useCallback((e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setTooltip(false)
+    setDismissed(true)
+  }, [])
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5, y: 20 }}
+      initial={{ opacity: 0, scale: 0.5, y: 30 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 22, delay: 0.8 }}
+      transition={{ type: 'spring', stiffness: 280, damping: 20, delay: 1 }}
       className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
     >
       {/* Tooltip bubble */}
-     
+      <AnimatePresence>
+        {tooltip && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85, y: 8, x: 8 }}
+            animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+            exit={{ opacity: 0, scale: 0.85, y: 8 }}
+            transition={{ type: 'spring', stiffness: 320, damping: 24 }}
+            className="relative max-w-[220px] bg-white rounded-2xl rounded-br-sm shadow-xl border border-gray-100 px-4 py-3 text-sm text-gray-700 leading-snug"
+          >
+            {/* Close button */}
+            <button
+              onClick={handleDismiss}
+              className="absolute -top-2 -right-2 w-5 h-5 bg-gray-400 hover:bg-gray-500 text-white rounded-full flex items-center justify-center text-xs leading-none transition-colors"
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <p className="font-semibold text-gray-800 mb-0.5">👋 Questions? Chat now!</p>
+            <p className="text-gray-500 text-xs">Classes or translations — I reply fast.</p>
+            {/* tail */}
+            <span className="absolute -bottom-2 right-3 w-0 h-0 border-l-8 border-r-0 border-t-8 border-l-transparent border-t-white drop-shadow-sm" />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main button */}
       <motion.a
@@ -59,13 +108,14 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        whileHover={{ scale: 1.12 }}
-        whileTap={{ scale: 0.94 }}
-        onHoverStart={() => setTooltip(true)}
+        animate={controls}
+        whileHover={{ scale: 1.13 }}
+        whileTap={{ scale: 0.92 }}
+        onHoverStart={() => !dismissed && setTooltip(true)}
         className="relative w-16 h-16 rounded-full flex items-center justify-center shadow-2xl cursor-pointer"
         style={{
-          background: 'linear-gradient(135deg, #9333ea 0%, #7c3aed 60%, #6d28d9 100%)',
-          boxShadow: '0 8px 32px rgba(147,51,234,0.45), 0 2px 8px rgba(0,0,0,0.15)',
+          background: 'linear-gradient(135deg, #3b82f6 0%, #9333ea 60%, #7c3aed 100%)',
+          boxShadow: '0 8px 32px rgba(99,102,241,0.45), 0 2px 8px rgba(0,0,0,0.15)',
         }}
       >
         <Ripple />

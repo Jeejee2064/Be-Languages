@@ -139,6 +139,9 @@ const localBusinessSchema = {
   "sameAs": [
     "https://www.instagram.com/be.languages/"
   ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+  ],
   "priceRange": "$$",
   "makesOffer": pricingPlans.map(plan => ({
     "@type": "Offer",
@@ -150,17 +153,76 @@ const localBusinessSchema = {
   }))
 };
 
+// WebSite schema (enables sitelinks in Google)
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.be-languages.com/#website",
+  "name": "Be Languages",
+  "url": "https://www.be-languages.com",
+  "inLanguage": ["en", "es"],
+  "publisher": {
+    "@id": "https://www.be-languages.com/#school"
+  }
+};
+
+// FAQ schema (triggers rich snippets in Google search results)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do Spanish classes cost in Bocas del Toro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spanish classes at Be Languages start at $125 for a 1-week crash course (5 hours). A 3-week Island Flow Plan is $150 (6 hours) and a full month Steady Surf Plan is $180 (8 hours). Buddy sessions for 2 people are $320/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer online Spanish or English classes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Be Languages offers both in-person and online classes. Online sessions are available for students who are not in Bocas del Toro or prefer to learn from home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What certified translation services do you offer in Panama?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Be Languages provides certified English-Spanish translations for legal documents, academic papers, personal documents, immigration files, medical records, and business materials. Prices start at $15 per page. Typical turnaround is 2–3 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are classes available for complete beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Classes are tailored to every level, from complete beginners to advanced speakers. Each program is personalized based on your goals, current level, and learning style."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are the language classes held in Bocas del Toro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Classes take place on Isla Colón in Bocas del Toro, Panama. Sessions can be held at a location of your choice — café, home, or outdoors — or online via video call."
+      }
+    }
+  ]
+};
+
 // Service schemas
 const servicesSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Spanish Language Classes",
-    "description": "Personalized Spanish classes for all levels",
-    "provider": {
-      "@type": "Organization",
-      "name": "Be Languages"
-    },
+    "description": "Personalized Spanish classes for all levels in Bocas del Toro, Panama. Ideal for expats, digital nomads, and travelers.",
+    "provider": { "@id": "https://www.be-languages.com/#school" },
+    "areaServed": { "@type": "Place", "name": "Bocas del Toro, Panama" },
     "offers": pricingPlans.map(plan => ({
       "@type": "Offer",
       "name": plan.name,
@@ -174,11 +236,9 @@ const servicesSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "English Language Classes",
-    "description": "Personalized English classes for all levels",
-    "provider": {
-      "@type": "Organization",
-      "name": "Be Languages"
-    },
+    "description": "Personalized English classes for all levels in Bocas del Toro, Panama. Perfect for locals, expats, and professionals.",
+    "provider": { "@id": "https://www.be-languages.com/#school" },
+    "areaServed": { "@type": "Place", "name": "Bocas del Toro, Panama" },
     "offers": pricingPlans.map(plan => ({
       "@type": "Offer",
       "name": plan.name,
@@ -192,11 +252,9 @@ const servicesSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Certified Translation Services",
-    "description": "Professional certified translation services",
-    "provider": {
-      "@type": "Organization",
-      "name": "Be Languages"
-    }
+    "description": "Professional certified English-Spanish translation services for legal, academic, medical, and personal documents in Panama.",
+    "provider": { "@id": "https://www.be-languages.com/#school" },
+    "areaServed": { "@type": "Place", "name": "Panama" }
   }
 ];
 
@@ -205,9 +263,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <Script
+          id="structured-data-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
           id="structured-data-localbusiness"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <Script
+          id="structured-data-faq"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <Script
           id="structured-data-services"

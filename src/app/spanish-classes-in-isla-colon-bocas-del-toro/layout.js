@@ -1,30 +1,31 @@
-// app/spanish-classes-in-isla-colon-bocas-del-toro/layout.js
+import Script from 'next/script'
+
 export const metadata = {
-  title: 'Spanish Classes in Bocas del Toro | BE Language Solutions',
-  description: 'Learn Spanish with a certified local instructor in Bocas del Toro, Panama. Perfect for expats, digital nomads, and travelers who want to connect with Panamanian culture.',
+  title: 'Spanish Classes in Bocas del Toro | Private Lessons | Be Languages',
+  description: 'Spanish classes in Bocas del Toro, Panama. Certified local instructor, personalized lessons for expats, digital nomads & travelers. Beginner to advanced, in-person or online.',
   keywords: [
     'Spanish classes Bocas del Toro',
+    'Spanish lessons Bocas del Toro',
+    'learn Spanish Bocas del Toro',
+    'Spanish tutor Bocas del Toro',
+    'Spanish course Panama',
     'Spanish lessons Panama',
-    'Spanish tutor Caribbean',
-    'conversational Spanish',
-    'Panamanian Spanish',
-    'expat Spanish classes',
-    'travel Spanish',
-    'certified Spanish instructor',
-    'Spanish grammar lessons',
-    'practical Spanish vocabulary',
-    'local Spanish teacher',
-    'digital nomad Spanish',
-    'Panama culture language'
+    'private Spanish classes Panama',
+    'conversational Spanish Panama',
+    'Panamanian Spanish classes',
+    'expat Spanish lessons Panama',
+    'digital nomad Spanish class',
+    'Spanish for travelers Panama',
+    'Isla Colon Spanish lessons',
+    'learn Spanish Isla Colon',
+    'affordable Spanish classes Panama',
+    'online Spanish classes Panama',
+    'online Spanish lessons Panama',
+    'Spanish classes online Panama',
   ],
-  authors: [{ name: 'BE Language Solutions' }],
-  creator: 'BE Language Solutions',
-  publisher: 'BE Language Solutions',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  authors: [{ name: 'Be Languages' }],
+  creator: 'Be Languages',
+  publisher: 'Be Languages',
   metadataBase: new URL('https://www.be-languages.com'),
   alternates: {
     canonical: '/spanish-classes-in-isla-colon-bocas-del-toro',
@@ -35,94 +36,60 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Spanish Classes in Bocas del Toro | BE Language Solutions',
-    description: 'Learn Spanish with a certified local instructor in the heart of the Caribbean. Perfect for expats, digital nomads, and travelers who want to connect with the culture and people of Panama.',
+    title: 'Spanish Classes in Bocas del Toro | Private Lessons | Be Languages',
+    description: 'Certified local instructor, personalized Spanish lessons for expats, digital nomads & travelers in Bocas del Toro. Beginner to advanced, in-person or online.',
     url: '/spanish-classes-in-isla-colon-bocas-del-toro',
-    siteName: 'BE Language Solutions',
-    images: [
-      {
-        url: 'https://www.be-languages.com/logoNoir.png',
-        width: 1200,
-        height: 1200,
-        alt: 'BE Language Solutions - Spanish Classes in Bocas del Toro',
-      },
-    ],
+    siteName: 'Be Languages',
+    images: [{ url: '/logoNoir.png', width: 1200, height: 1200, alt: 'Spanish Classes in Bocas del Toro - Be Languages' }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Spanish Classes in Bocas del Toro | BE Language Solutions',
-    description: 'Learn Spanish with a certified local instructor in the heart of the Caribbean. Connect with Panamanian culture through personalized lessons.',
-    images: ['https://www.be-languages.com/logoNoir.png'],
+    title: 'Spanish Classes in Bocas del Toro | Be Languages',
+    description: 'Spanish lessons in Bocas del Toro with a certified local instructor. Personalized for expats, nomads & travelers. All levels welcome.',
+    images: ['/logoNoir.png'],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
 }
 
-// JSON-LD structured data for Spanish language classes
-export const jsonLd = {
+const breadcrumbSchema = {
   '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'BE Language Solutions',
-  description: 'Spanish language classes in Bocas del Toro, Panama',
-  url: 'https://www.be-languages.com/spanish-classes-in-isla-colon-bocas-del-toro',
-  logo: 'https://www.be-languages.com/logo.svg',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Bocas del Toro',
-    addressCountry: 'Panama',
-  },
-  offers: [
-    {
-      '@type': 'Offer',
-      name: '1 Week Crash Course',
-      price: '125',
-      priceCurrency: 'USD',
-      description: 'Intensive Spanish course for travelers and expats',
-    },
-    {
-      '@type': 'Offer',
-      name: 'Island Flow Plan',
-      price: '150',
-      priceCurrency: 'USD',
-      description: '3-week Spanish course for consistent learning',
-    },
-    {
-      '@type': 'Offer',
-      name: 'Steady Surf Plan',
-      price: '180',
-      priceCurrency: 'USD',
-      description: 'Monthly Spanish course for steady progress',
-    },
-    {
-      '@type': 'Offer',
-      name: 'Buddy Boost',
-      price: '320',
-      priceCurrency: 'USD',
-      description: 'Spanish classes for couples and friends',
-    },
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.be-languages.com' },
+    { '@type': 'ListItem', position: 2, name: 'Spanish Classes in Bocas del Toro', item: 'https://www.be-languages.com/spanish-classes-in-isla-colon-bocas-del-toro' },
   ],
-  teaches: [
-    'Conversational Spanish',
-    'Spanish Grammar',
-    'Panamanian Culture',
-    'Travel Spanish',
-    'Business Spanish'
-  ]
+}
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Spanish Classes in Bocas del Toro',
+  description: 'Private Spanish language classes with a certified local instructor in Bocas del Toro, Panama. Courses for all levels, from beginners to advanced.',
+  url: 'https://www.be-languages.com/spanish-classes-in-isla-colon-bocas-del-toro',
+  provider: { '@id': 'https://www.be-languages.com/#school' },
+  areaServed: { '@type': 'Place', name: 'Bocas del Toro, Panama' },
+  serviceType: 'Spanish Language Instruction',
+  inLanguage: 'es',
+  offers: [
+    { '@type': 'Offer', name: '1 Week Crash Course', price: '125', priceCurrency: 'USD', description: 'Intensive 5-hour Spanish crash course for travelers and expats' },
+    { '@type': 'Offer', name: 'Island Flow Plan', price: '150', priceCurrency: 'USD', description: '3-week, 6-hour Spanish course for consistent improvement' },
+    { '@type': 'Offer', name: 'Steady Surf Plan', price: '180', priceCurrency: 'USD', description: 'Monthly 8-hour Spanish course for steady progress' },
+    { '@type': 'Offer', name: 'Buddy Boost (2 people)', price: '320', priceCurrency: 'USD', description: 'Shared monthly Spanish course for couples or friends' },
+  ],
 }
 
 export default function SpanishClassesLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <Script id="breadcrumb-spanish" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script id="service-spanish" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      {children}
+    </>
+  )
 }

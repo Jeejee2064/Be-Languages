@@ -1,32 +1,28 @@
+import Script from 'next/script'
 
 export const metadata = {
-  title: 'Servicios de Traducción Certificada en Panamá | BE Language Solutions',
-  description: 'Traducciones profesionales, precisas y legalmente reconocidas entre inglés y español. Certificadas para documentos oficiales, legales, médicos y académicos en Bocas del Toro.',
+  title: 'Traducciones Certificadas en Bocas del Toro | Inglés-Español | Be Languages',
+  description: 'Traducciones certificadas inglés-español en Bocas del Toro, Panamá. Documentos legales, académicos, médicos y de inmigración. Entrega rápida para uso oficial en Panamá y el extranjero.',
   keywords: [
-    'traducción certificada Panamá',
-    'servicios de traducción Bocas del Toro',
-    'traductor certificado español inglés',
+    'traducciones certificadas Bocas del Toro',
+    'traducciones certificadas Panamá',
+    'traducción inglés español Panamá',
+    'traductora certificada Bocas del Toro',
     'traducción legal Panamá',
-    'traducción médica',
-    'traducción académica',
-    'documentos oficiales traducción',
-    'traducción judicial',
-    'traducción inmigración',
-    'traductor oficial Panamá',
-    'traducción empresarial',
-    'traducción técnica',
-    'servicios traducción Caribe',
-    'traductor profesional',
-    'traducción notarizada'
+    'traducción documentos oficiales Panamá',
+    'traducción académica Panamá',
+    'traducción médica Panamá',
+    'traducción inmigración Panamá',
+    'traducción notariada Panamá',
+    'servicios de traducción Bocas del Toro',
+    'traductor profesional Isla Colón',
+    'traducción certificada Isla Colón',
+    'traducción rápida Panamá',
+    'traducción barata Panamá',
   ],
-  authors: [{ name: 'BE Language Solutions' }],
-  creator: 'BE Language Solutions',
-  publisher: 'BE Language Solutions',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  authors: [{ name: 'Be Languages' }],
+  creator: 'Be Languages',
+  publisher: 'Be Languages',
   metadataBase: new URL('https://www.be-languages.com'),
   alternates: {
     canonical: '/es/traducciones-certificadas-en-bocas-del-toro',
@@ -37,146 +33,58 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Servicios de Traducción Certificada en Panamá | BE Language Solutions',
-    description: 'Traducciones profesionales, precisas y legalmente reconocidas entre inglés y español. Confiado por individuos, empresas y profesionales legales para documentos oficiales.',
+    title: 'Traducciones Certificadas en Bocas del Toro | Inglés-Español | Be Languages',
+    description: 'Traducciones certificadas profesionales en Bocas del Toro. Documentos legales, académicos, médicos y de inmigración. Entrega rápida para uso oficial en Panamá y el extranjero.',
     url: '/es/traducciones-certificadas-en-bocas-del-toro',
-    siteName: 'BE Language Solutions',
-    images: [
-      {
-        url: '/logo.svg',
-        width: 800,
-        height: 800,
-        alt: 'BE Language Solutions - Servicios de Traducción Certificada',
-      },
-    ],
+    siteName: 'Be Languages',
+    images: [{ url: '/logoNoir.png', width: 1200, height: 1200, alt: 'Traducciones Certificadas Bocas del Toro - Be Languages' }],
     locale: 'es_ES',
     type: 'website',
   },
   twitter: {
-    card: 'summary',
-    title: 'Servicios de Traducción Certificada en Panamá | BE Language Solutions',
-    description: 'Traducciones profesionales certificadas entre inglés y español. Documentos legales, médicos y académicos reconocidos oficialmente.',
-    images: ['/logo.svg'],
+    card: 'summary_large_image',
+    title: 'Traducciones Certificadas Bocas del Toro | Be Languages',
+    description: 'Traducciones certificadas inglés-español en Bocas del Toro. Documentos legales, académicos, médicos y personales. Entrega rápida.',
+    images: ['/logoNoir.png'],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
 }
 
-// JSON-LD structured data for translation services (Spanish version)
-export const jsonLd = {
+const breadcrumbSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://www.be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
-  name: 'BE Language Solutions - Servicios de Traducción',
-  description: 'Servicios de traducción certificada entre inglés y español en Bocas del Toro, Panamá',
-  url: 'https://www.be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
-  logo: 'https://www.be-languages.com/logo.svg',
-  image: 'https://www.be-languages.com/logo.svg',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Bocas del Toro',
-    addressCountry: 'PA',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '9.3404',
-    longitude: '-82.2330'
-  },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+507-6613-5652',
-    contactType: 'customer service',
-    areaServed: 'PA',
-    availableLanguage: ['Spanish', 'English'],
-    serviceType: 'Servicios de Traducción Certificada'
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    opens: '09:00',
-    closes: '18:00'
-  },
-  priceRange: '$15-$30',
-  currenciesAccepted: 'USD',
-  paymentAccepted: ['Cash', 'Bank Transfer', 'Yappy'],
-  serviceArea: {
-    '@type': 'Place',
-    name: 'Bocas del Toro, Panama'
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Servicios de Traducción',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Traducción Estándar',
-          description: 'Traducción certificada para documentos personales y certificados'
-        },
-        price: '15',
-        priceCurrency: 'USD',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '15',
-          priceCurrency: 'USD',
-          unitText: 'por página'
-        }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Traducción Legal',
-          description: 'Traducción especializada para documentos legales y contratos'
-        },
-        price: '25',
-        priceCurrency: 'USD',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '25',
-          priceCurrency: 'USD',
-          unitText: 'por página'
-        }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Traducción Técnica/Médica',
-          description: 'Traducción experta para registros médicos y documentos técnicos'
-        },
-        price: '30',
-        priceCurrency: 'USD',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '30',
-          priceCurrency: 'USD',
-          unitText: 'por página'
-        }
-      }
-    ]
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    ratingCount: '1'
-  },
-  inLanguage: ['es', 'en']
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.be-languages.com/es' },
+    { '@type': 'ListItem', position: 2, name: 'Traducciones Certificadas en Bocas del Toro', item: 'https://www.be-languages.com/es/traducciones-certificadas-en-bocas-del-toro' },
+  ],
 }
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Traducciones Certificadas en Bocas del Toro',
+  description: 'Servicio de traducciones certificadas inglés-español para documentos legales, académicos, médicos, de inmigración y personales en Bocas del Toro, Panamá.',
+  url: 'https://www.be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
+  provider: { '@id': 'https://www.be-languages.com/#school' },
+  areaServed: { '@type': 'Place', name: 'Panamá' },
+  serviceType: 'Traducción Certificada',
+  offers: [
+    { '@type': 'Offer', name: 'Traducción Estándar', price: '15', priceCurrency: 'USD', description: 'Traducción certificada para documentos personales y certificados, por página' },
+    { '@type': 'Offer', name: 'Traducción Legal', price: '25', priceCurrency: 'USD', description: 'Traducción certificada para documentos legales y contratos, por página' },
+    { '@type': 'Offer', name: 'Traducción Técnica / Médica', price: '30', priceCurrency: 'USD', description: 'Traducción experta para registros médicos y documentos técnicos, por página' },
+  ],
+}
 
-export default function ClasesESLayout({ children }) {
-  return <>{children}</>;
+export default function TraduccionesLayout({ children }) {
+  return (
+    <>
+      <Script id="breadcrumb-traducciones" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script id="service-traducciones" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      {children}
+    </>
+  )
 }
