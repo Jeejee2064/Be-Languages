@@ -16,22 +16,22 @@ export const metadata = {
     'Clases privadas de idiomas',
     'Educación bilingüe Bocas del Toro'
   ],
-  authors: [{ name: "Be Languages", url: "https://be-languages.com" }],
+  authors: [{ name: "Be Languages", url: "https://www.be-languages.com" }],
   creator: "JdwApps",
   publisher: "JdwApps",
-  metadataBase: new URL("https://be-languages.com"),
+  metadataBase: new URL("https://www.be-languages.com"),
   alternates: {
-    canonical: "/es", // Changed from "/" to self-reference Spanish version
+    canonical: "/es",
     languages: {
-      'en': '/',      // English version
-      'es': '/es',    // Self-reference for Spanish
-      'x-default': '/es', // Fallback for Spanish as primary
+      'en': '/',
+      'es': '/es',
+      'x-default': '/',
     },
   },
   openGraph: {
     title: "Be Languages | Clases de Inglés y Español en Bocas del Toro",
     description: "Clases profesionales de idiomas y servicios de traducción en Bocas del Toro, Panamá",
-    url: "https://be-languages.com/es", // Full URL to Spanish version
+    url: "/es",
     siteName: "Be Languages",
     locale: "es_ES",
     type: "website",

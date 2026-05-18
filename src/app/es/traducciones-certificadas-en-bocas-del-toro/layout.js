@@ -27,13 +27,14 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://be-languages.com'),
+  metadataBase: new URL('https://www.be-languages.com'),
   alternates: {
-    canonical: '/es/servicios-de-traduccion-certificada-bocas-del-toro',
+    canonical: '/es/traducciones-certificadas-en-bocas-del-toro',
     languages: {
-      'en': '/certified-translation-services-bocas-del-toro',
-      'es': '/es/traducciones-certificadas-en-bocas-del-toro'
-    }
+      en: '/certified-translation-services-in-isla-colon-bocas-del-toro',
+      es: '/es/traducciones-certificadas-en-bocas-del-toro',
+      'x-default': '/certified-translation-services-in-isla-colon-bocas-del-toro',
+    },
   },
   openGraph: {
     title: 'Servicios de Traducción Certificada en Panamá | BE Language Solutions',
@@ -76,12 +77,12 @@ export const metadata = {
 export const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
+  '@id': 'https://www.be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
   name: 'BE Language Solutions - Servicios de Traducción',
   description: 'Servicios de traducción certificada entre inglés y español en Bocas del Toro, Panamá',
-  url: 'https://be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
-  logo: 'https://be-languages.com/logo.svg',
-  image: 'https://be-languages.com/logo.svg',
+  url: 'https://www.be-languages.com/es/traducciones-certificadas-en-bocas-del-toro',
+  logo: 'https://www.be-languages.com/logo.svg',
+  image: 'https://www.be-languages.com/logo.svg',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bocas del Toro',

@@ -1,5 +1,3 @@
-// app/certified-translation-services-in-isla-colon-bocas-del-toro/layout.js
-
 export const metadata = {
   title: "Certified Translation Services in Isla Colón, Bocas del Toro | BE Language Solutions",
   description:
@@ -16,20 +14,31 @@ export const metadata = {
     "medical translation Panama Bocas del Toro",
     "BE Language Solutions"
   ],
-    language: "en",
-
+  authors: [{ name: 'BE Language Solutions' }],
+  creator: 'BE Language Solutions',
+  publisher: 'BE Language Solutions',
+  metadataBase: new URL('https://www.be-languages.com'),
+  alternates: {
+    canonical: '/certified-translation-services-in-isla-colon-bocas-del-toro',
+    languages: {
+      en: '/certified-translation-services-in-isla-colon-bocas-del-toro',
+      es: '/es/traducciones-certificadas-en-bocas-del-toro',
+      'x-default': '/certified-translation-services-in-isla-colon-bocas-del-toro',
+    },
+  },
   openGraph: {
     title: "Certified Translation Services in Isla Colón, Bocas del Toro",
     description:
       "Accurate and certified English-Spanish translation services for legal, medical, academic, and business documents. Located in Bocas del Toro, Panama.",
-    url: "https://be-languages.com/certified-translation-services-in-isla-colon-bocas-del-toro",
+    url: '/certified-translation-services-in-isla-colon-bocas-del-toro',
     type: "website",
     siteName: "BE Language Solutions",
+    locale: 'en_US',
     images: [
       {
-        url: "https://be-languages.com/logoNoir.png", // Using logo as OG image (you can replace with a custom image later)
-        width: 512,
-        height: 512,
+        url: '/logoNoir.png',
+        width: 1200,
+        height: 1200,
         alt: "BE Language Solutions Logo"
       }
     ]
@@ -39,10 +48,18 @@ export const metadata = {
     title: "Certified Translation Services in Isla Colón, Bocas del Toro",
     description:
       "Certified translations between English and Spanish in Bocas del Toro. Trusted for legal, personal, and official documents.",
-    images: ["https://be-languages.com/logoNoir.png"], 
+    images: ['/logoNoir.png'],
   },
-  alternates: {
-    canonical: "https://be-languages.com/certified-translation-services-in-isla-colon-bocas-del-toro",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

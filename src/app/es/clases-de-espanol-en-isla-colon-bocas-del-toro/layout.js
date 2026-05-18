@@ -25,13 +25,14 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://be-languages.com'),
+  metadataBase: new URL('https://www.be-languages.com'),
   alternates: {
     canonical: '/es/clases-de-espanol-en-isla-colon-bocas-del-toro',
     languages: {
-      'en': '/spanish-classes-in-isla-colon-bocas-del-toro',
-      'es': '/es/clases-de-espanol-en-isla-colon-bocas-del-toro'
-    }
+      en: '/spanish-classes-in-isla-colon-bocas-del-toro',
+      es: '/es/clases-de-espanol-en-isla-colon-bocas-del-toro',
+      'x-default': '/spanish-classes-in-isla-colon-bocas-del-toro',
+    },
   },
   openGraph: {
     title: 'Clases de Español en Bocas del Toro | BE Language Solutions',
@@ -40,9 +41,9 @@ export const metadata = {
     siteName: 'BE Language Solutions',
     images: [
       {
-        url: '/logo.svg',
-        width: 800,
-        height: 800,
+        url: 'https://www.be-languages.com/logoNoir.png',
+        width: 1200,
+        height: 1200,
         alt: 'BE Language Solutions - Clases de Español en Bocas del Toro',
       },
     ],
@@ -50,10 +51,10 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Clases de Español en Bocas del Toro | BE Language Solutions',
     description: 'Aprende español con una instructora local certificada en el corazón del Caribe. Conecta con la cultura panameña a través de lecciones personalizadas.',
-    images: ['/logo.svg'],
+    images: ['https://www.be-languages.com/logoNoir.png'],
   },
   robots: {
     index: true,
@@ -76,8 +77,8 @@ export const jsonLd = {
   '@type': 'EducationalOrganization',
   name: 'BE Language Solutions',
   description: 'Clases de español en Bocas del Toro, Panamá',
-  url: 'https://be-languages.com/es/clases-de-espanol-en-isla-colon-bocas-del-toro',
-  logo: 'https://be-languages.com/logo.svg',
+  url: 'https://www.be-languages.com/es/clases-de-espanol-en-isla-colon-bocas-del-toro',
+  logo: 'https://www.be-languages.com/logo.svg',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bocas del Toro',

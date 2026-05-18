@@ -25,9 +25,14 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://be-languages.com'),
+  metadataBase: new URL('https://www.be-languages.com'),
   alternates: {
     canonical: '/spanish-classes-in-isla-colon-bocas-del-toro',
+    languages: {
+      en: '/spanish-classes-in-isla-colon-bocas-del-toro',
+      es: '/es/clases-de-espanol-en-isla-colon-bocas-del-toro',
+      'x-default': '/spanish-classes-in-isla-colon-bocas-del-toro',
+    },
   },
   openGraph: {
     title: 'Spanish Classes in Bocas del Toro | BE Language Solutions',
@@ -72,8 +77,8 @@ export const jsonLd = {
   '@type': 'EducationalOrganization',
   name: 'BE Language Solutions',
   description: 'Spanish language classes in Bocas del Toro, Panama',
-  url: 'https://be-languages.com/spanish-classes-in-isla-colon-bocas-del-toro',
-  logo: 'https://be-languages.com/logo.svg',
+  url: 'https://www.be-languages.com/spanish-classes-in-isla-colon-bocas-del-toro',
+  logo: 'https://www.be-languages.com/logo.svg',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bocas del Toro',

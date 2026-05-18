@@ -22,9 +22,14 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://be-languages.com'),
+  metadataBase: new URL('https://www.be-languages.com'),
   alternates: {
     canonical: '/english-classes-in-isla-colon-bocas-del-toro',
+    languages: {
+      en: '/english-classes-in-isla-colon-bocas-del-toro',
+      es: '/es/clases-de-ingles-en-isla-colon-bocas-del-toro',
+      'x-default': '/english-classes-in-isla-colon-bocas-del-toro',
+    },
   },
   openGraph: {
     title: 'English Classes in Bocas del Toro | BE Language Solutions',
@@ -33,9 +38,9 @@ export const metadata = {
     siteName: 'BE Language Solutions',
     images: [
       {
-        url: '/logo.svg',
-        width: 800,
-        height: 800,
+        url: 'https://www.be-languages.com/logoNoir.png',
+        width: 1200,
+        height: 1200,
         alt: 'BE Language Solutions - English Classes in Bocas del Toro',
       },
     ],
@@ -43,10 +48,10 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'English Classes in Bocas del Toro | BE Language Solutions',
     description: 'Learn English with a certified instructor in the heart of the Caribbean. Flexible packages for all learning needs.',
-    images: ['/logo.svg'],
+    images: ['https://www.be-languages.com/logoNoir.png'],
   },
   robots: {
     index: true,
