@@ -1,5 +1,5 @@
 'use client'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import { UI } from '../content/site'
@@ -7,19 +7,15 @@ import { UI } from '../content/site'
 const PHONE = '50766135652'
 const WHATSAPP_URL = `https://wa.me/${PHONE}`
 
+// One thin ring that fades in and out slowly, with a long pause between pulses
 function Ripple() {
   return (
-    <span className="absolute inset-0 rounded-full pointer-events-none">
-      {[0, 1].map(i => (
-        <motion.span
-          key={i}
-          className="absolute inset-0 rounded-full"
-          style={{ background: 'linear-gradient(135deg, #3b82f6, #9333ea)' }}
-          animate={{ scale: [1, 1.9], opacity: [0.4, 0] }}
-          transition={{ duration: 2.4, delay: i * 1.2, repeat: Infinity, ease: 'easeOut' }}
-        />
-      ))}
-    </span>
+    <motion.span
+      aria-hidden="true"
+      className="absolute inset-0 rounded-full pointer-events-none border border-violet-400"
+      animate={{ scale: [1, 1.3], opacity: [0, 0.35, 0] }}
+      transition={{ duration: 3.2, times: [0, 0.3, 1], repeat: Infinity, repeatDelay: 2.8, ease: 'easeInOut' }}
+    />
   )
 }
 
@@ -36,7 +32,6 @@ export default function WhatsAppButton() {
   const t = UI[pathname === '/es' || pathname.startsWith('/es/') ? 'es' : 'en'].wa
   const [tooltip, setTooltip] = useState(false)
   const [dismissed, setDismissed] = useState(false)
-  const controls = useAnimation()
 
   // Show tooltip after 5s on first load
   useEffect(() => {
@@ -52,20 +47,6 @@ export default function WhatsAppButton() {
     return () => clearTimeout(t)
   }, [tooltip])
 
-  // Attention wiggle every 18s
-  useEffect(() => {
-    const wiggle = async () => {
-      await controls.start({
-        rotate: [0, -8, 8, -6, 6, -3, 3, 0],
-        transition: { duration: 0.6, ease: 'easeInOut' },
-      })
-    }
-    const interval = setInterval(wiggle, 18000)
-    // First wiggle after 12s
-    const first = setTimeout(wiggle, 12000)
-    return () => { clearInterval(interval); clearTimeout(first) }
-  }, [controls])
-
   const handleDismiss = useCallback((e) => {
     e.preventDefault()
     e.stopPropagation()
@@ -75,9 +56,9 @@ export default function WhatsAppButton() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5, y: 30 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ type: 'spring', stiffness: 280, damping: 20, delay: 1 }}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut', delay: 1 }}
       className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
     >
       {/* Tooltip bubble */}
@@ -112,9 +93,8 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t.label}
-        animate={controls}
-        whileHover={{ scale: 1.13 }}
-        whileTap={{ scale: 0.92 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.96 }}
         onHoverStart={() => !dismissed && setTooltip(true)}
         className="relative w-16 h-16 rounded-full flex items-center justify-center shadow-2xl cursor-pointer"
         style={{
