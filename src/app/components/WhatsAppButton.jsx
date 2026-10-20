@@ -1,6 +1,8 @@
 'use client'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
+import { UI } from '../content/site'
 
 const PHONE = '50766135652'
 const WHATSAPP_URL = `https://wa.me/${PHONE}`
@@ -30,6 +32,8 @@ function WhatsAppIcon({ className }) {
 }
 
 export default function WhatsAppButton() {
+  const pathname = usePathname() || '/'
+  const t = UI[pathname === '/es' || pathname.startsWith('/es/') ? 'es' : 'en'].wa
   const [tooltip, setTooltip] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const controls = useAnimation()
@@ -90,12 +94,12 @@ export default function WhatsAppButton() {
             <button
               onClick={handleDismiss}
               className="absolute -top-2 -right-2 w-5 h-5 bg-gray-400 hover:bg-gray-500 text-white rounded-full flex items-center justify-center text-xs leading-none transition-colors"
-              aria-label="Close"
+              aria-label={t.close}
             >
               ×
             </button>
-            <p className="font-semibold text-gray-800 mb-0.5">👋 Questions? Chat now!</p>
-            <p className="text-gray-500 text-xs">Classes or translations — I reply fast.</p>
+            <p className="font-semibold text-gray-800 mb-0.5">👋 {t.title}</p>
+            <p className="text-gray-500 text-xs">{t.body}</p>
             {/* tail */}
             <span className="absolute -bottom-2 right-3 w-0 h-0 border-l-8 border-r-0 border-t-8 border-l-transparent border-t-white drop-shadow-sm" />
           </motion.div>
@@ -107,7 +111,7 @@ export default function WhatsAppButton() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
+        aria-label={t.label}
         animate={controls}
         whileHover={{ scale: 1.13 }}
         whileTap={{ scale: 0.92 }}

@@ -1,9 +1,8 @@
-import "../globals.css";
 
 
 export const metadata = {
-  title: "Be Languages | Clases de Inglés y Español en Bocas del Toro",
-  description: "Clases personalizadas de inglés y español en Bocas del Toro, Panamá. Servicios de traducción certificada para documentos.",
+  title: "Clases de Inglés y Español en Bocas del Toro y Panamá | Be Languages",
+  description: "Clases privadas de español e inglés en Bocas del Toro y en línea en todo Panamá, más traducción certificada de documentos. Reserva por WhatsApp.",
   keywords: [
     'Clases de inglés Bocas del Toro',
     'Clases de español Bocas del Toro',
@@ -72,14 +71,5 @@ export const metadata = {
 };
 
 export default function ESLayout({ children }) {
-  return (
-    <html lang="es">
-      <body
-      >
-       
-
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

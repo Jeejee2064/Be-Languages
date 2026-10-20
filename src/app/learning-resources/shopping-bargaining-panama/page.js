@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import NextLink from "next/link";
+import SiteHeader from "../../components/site/SiteHeader";
+import SiteFooter from "../../components/site/SiteFooter";
 import { PalmBackground, BambooBackground, HeliconiaBackground, MonsteraBackground, WaveBackground } from '../../components/backgrounds';
 
 const fadeInUp = {
@@ -267,38 +269,16 @@ const marketLocations = [
 
 export default function ShoppingBargainingPanamaArticle() {
     return (
-        <div className="bg-white text-gray-800 min-h-screen">
-            <BambooBackground />
+        <div className="bg-paper text-ink min-h-screen">
 
-            {/* Header with Logo and Back Button */}
-            <header className="relative z-50 pt-6 pb-4">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="flex items-center justify-between">
-                        <NextLink href="/">
-                            <div className="h-12 w-32 relative">
-                                <Image
-                                    src="./logo.svg"
-                                    alt="Logo de BE Language Solutions"
-                                    fill
-                                    className="object-contain object-left"
-                                />
-                            </div>
-                        </NextLink>
-                        <NextLink href="/learning-resources">
-                            <div className="flex items-center text-blue-600 hover:text-purple-600 transition-colors cursor-pointer">
-                                <ArrowLeft className="w-4 h-4 mr-2" />
-                                <span className="font-medium">All Resources</span>
-                            </div>
-                        </NextLink>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader lang="en" alt="resources" />
 
             {/* Hero Section */}
-            <section className="pt-12 pb-16 relative overflow-hidden">
+            <section className="pt-[calc(var(--header-h)+2rem)] pb-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 z-0"></div>
 
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
+<div className="max-w-4xl mx-auto mb-6"><NextLink href="/learning-resources" className="inline-flex items-center gap-2 text-sm font-medium text-royal hover:text-grape"><ArrowLeft className="w-4 h-4" />All Resources</NextLink></div>
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -311,18 +291,18 @@ export default function ShoppingBargainingPanamaArticle() {
                                 Shopping Guide
                             </div>
 
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            <h1 className="h-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                                 Shopping & Bargaining in Panama:
-                                <span className="block bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                                <span className="block grad-text-light">
                                     Market Mastery Guide
                                 </span>
                             </h1>
 
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-xl text-ink-2 mb-8 leading-relaxed max-w-3xl mx-auto">
                                 Navigate markets, stores, and street vendors with confidence using essential shopping vocabulary and proven bargaining techniques.
                             </p>
 
-                            <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
+                            <div className="flex items-center justify-center gap-8 text-sm text-ink-3">
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-blue-600" />
                                     <span>4 min read</span>
@@ -364,8 +344,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Where to <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Shop</span> in Panama
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Where to <span className="grad-text-light">Shop</span> in Panama
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -374,18 +354,18 @@ export default function ShoppingBargainingPanamaArticle() {
                                         key={index}
                                         variants={fadeInUp}
                                         whileHover={{ y: -5 }}
-                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-line"
                                     >
                                         <div className="flex items-center mb-3">
                                             <div className={`w-10 h-10 bg-gradient-to-r ${venue.gradient} rounded-lg flex items-center justify-center shadow-md mr-3`}>
                                                 {venue.icon}
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900">{venue.title}</h3>
+                                                <h3 className="text-lg font-bold text-ink">{venue.title}</h3>
                                                 <p className="text-blue-600 text-sm font-medium">{venue.spanish}</p>
                                             </div>
                                         </div>
-                                        <p className="text-gray-600 text-sm">{venue.description}</p>
+                                        <p className="text-ink-2 text-sm">{venue.description}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -394,7 +374,7 @@ export default function ShoppingBargainingPanamaArticle() {
                 </section>
 
                 {/* Essential Shopping Phrases */}
-                <section className="mb-16 bg-gray-50 py-16">
+                <section className="mb-16 bg-lav/60 py-16">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -403,8 +383,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Essential <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Shopping Phrases</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Essential <span className="grad-text-light">Shopping Phrases</span>
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {shoppingPhrases.map((section, sectionIndex) => (
@@ -422,7 +402,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                             {section.phrases.map((phrase, phraseIndex) => (
                                                 <div key={phraseIndex} className="p-3 bg-blue-50/50 rounded-lg">
                                                     <p className="font-semibold text-blue-900">{phrase.spanish}</p>
-                                                    <p className="text-gray-700 text-sm mb-1">{phrase.english}</p>
+                                                    <p className="text-ink-2 text-sm mb-1">{phrase.english}</p>
                                                     <p className="text-blue-600 text-xs italic">{phrase.pronunciation}</p>
                                                 </div>
                                             ))}
@@ -445,8 +425,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Bargaining <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Strategies</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Bargaining <span className="grad-text-light">Strategies</span>
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -464,7 +444,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                             {strategy.tips.map((tip, tipIndex) => (
                                                 <li key={tipIndex} className="flex items-start gap-2">
                                                     <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                                                    <span className="text-gray-700">{tip}</span>
+                                                    <span className="text-ink-2">{tip}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -485,8 +465,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto text-center"
                         >
-                            <h2 className="text-3xl font-bold mb-8">
-                                Essential Shopping <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Vocabulary</span>
+                            <h2 className="h-display text-3xl mb-8">
+                                Essential Shopping <span className="grad-text-light">Vocabulary</span>
                             </h2>
 
                             <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -499,7 +479,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                         <ul className="space-y-2 text-sm">
                                             {category.vocabulary.map((item, itemIndex) => (
                                                 <li key={itemIndex}>
-                                                    <strong className="text-blue-800">{item.spanish}:</strong> <span className="text-gray-700">{item.english}</span>
+                                                    <strong className="text-blue-800">{item.spanish}:</strong> <span className="text-ink-2">{item.english}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -521,8 +501,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Popular <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Markets Guide</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Popular <span className="grad-text-light">Markets Guide</span>
                             </h2>
 
                             <div className="grid md:grid-cols-2 gap-6">
@@ -542,13 +522,13 @@ export default function ShoppingBargainingPanamaArticle() {
                                         
                                         <div className="space-y-2 text-sm">
                                             <div>
-                                                <strong className="text-blue-800">Location:</strong> <span className="text-gray-700">{market.location}</span>
+                                                <strong className="text-blue-800">Location:</strong> <span className="text-ink-2">{market.location}</span>
                                             </div>
                                             <div>
-                                                <strong className="text-blue-800">Specialty:</strong> <span className="text-gray-700">{market.specialty}</span>
+                                                <strong className="text-blue-800">Specialty:</strong> <span className="text-ink-2">{market.specialty}</span>
                                             </div>
                                             <div>
-                                                <strong className="text-blue-800">Bargaining:</strong> <span className="text-gray-700">{market.bargaining}</span>
+                                                <strong className="text-blue-800">Bargaining:</strong> <span className="text-ink-2">{market.bargaining}</span>
                                             </div>
                                             <div className="bg-purple-50 p-3 rounded-lg mt-3">
                                                 <strong className="text-purple-800 text-xs">TIP:</strong>
@@ -563,7 +543,7 @@ export default function ShoppingBargainingPanamaArticle() {
                 </section>
 
                 {/* Cultural Shopping Tips */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -572,8 +552,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Shopping <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Culture</span> in Panama
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Shopping <span className="grad-text-light">Culture</span> in Panama
                             </h2>
 
                             <div className="bg-blue-50/50 rounded-xl p-6 md:p-8 shadow-inner border border-blue-100">
@@ -585,7 +565,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Shopping Hours</h4>
-                                            <p className="text-gray-700 text-sm">Markets open early (6AM) for best selection. Malls typically open 10AM-10PM. Sunday shopping is limited in some areas.</p>
+                                            <p className="text-ink-2 text-sm">Markets open early (6AM) for best selection. Malls typically open 10AM-10PM. Sunday shopping is limited in some areas.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -594,7 +574,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Payment Customs</h4>
-                                            <p className="text-gray-700 text-sm">USD is widely accepted. Small vendors prefer cash. Always have small bills for markets. Credit cards accepted in malls and larger stores.</p>
+                                            <p className="text-ink-2 text-sm">USD is widely accepted. Small vendors prefer cash. Always have small bills for markets. Credit cards accepted in malls and larger stores.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -603,7 +583,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Vendor Relations</h4>
-                                            <p className="text-gray-700 text-sm">Building relationships matters. Regular customers get better prices. Be polite and patient. A friendly 'Buenos días' goes a long way.</p>
+                                            <p className="text-ink-2 text-sm">Building relationships matters. Regular customers get better prices. Be polite and patient. A friendly 'Buenos días' goes a long way.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -612,7 +592,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Quality & Authenticity</h4>
-                                            <p className="text-gray-700 text-sm">Inspect items carefully before buying. Ask about return policies. For crafts, learn to identify authentic vs. mass-produced items.</p>
+                                            <p className="text-ink-2 text-sm">Inspect items carefully before buying. Ask about return policies. For crafts, learn to identify authentic vs. mass-produced items.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -631,7 +611,7 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Bargaining <span className="bg-gradient-to-r from-purple-600 to-red-600 bg-clip-text text-transparent">Do's & Don'ts</span>
                             </h2>
 
@@ -644,23 +624,23 @@ export default function ShoppingBargainingPanamaArticle() {
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Start with a friendly greeting and smile</span>
+                                            <span className="text-ink-2">Start with a friendly greeting and smile</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Show genuine interest in the product</span>
+                                            <span className="text-ink-2">Show genuine interest in the product</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Be patient and respectful during negotiations</span>
+                                            <span className="text-ink-2">Be patient and respectful during negotiations</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Learn basic Spanish phrases for better rapport</span>
+                                            <span className="text-ink-2">Learn basic Spanish phrases for better rapport</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Be prepared to walk away if needed</span>
+                                            <span className="text-ink-2">Be prepared to walk away if needed</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -673,23 +653,23 @@ export default function ShoppingBargainingPanamaArticle() {
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't be rude or aggressive during bargaining</span>
+                                            <span className="text-ink-2">Don't be rude or aggressive during bargaining</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't try to bargain in established stores or malls</span>
+                                            <span className="text-ink-2">Don't try to bargain in established stores or malls</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't offer insultingly low prices</span>
+                                            <span className="text-ink-2">Don't offer insultingly low prices</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't buy without checking quality first</span>
+                                            <span className="text-ink-2">Don't buy without checking quality first</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't forget to thank vendors regardless of purchase</span>
+                                            <span className="text-ink-2">Don't forget to thank vendors regardless of purchase</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -699,7 +679,7 @@ export default function ShoppingBargainingPanamaArticle() {
                 </section>
 
                 {/* Money & Numbers */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -708,8 +688,8 @@ export default function ShoppingBargainingPanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Money & <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Numbers</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Money & <span className="grad-text-light">Numbers</span>
                             </h2>
 
                             <div className="grid md:grid-cols-2 gap-8">
@@ -751,7 +731,7 @@ export default function ShoppingBargainingPanamaArticle() {
             </main>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gray-900 relative overflow-hidden">
+            <section className="py-16 bg-ink relative overflow-hidden">
                 <WaveBackground />
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
@@ -761,8 +741,8 @@ export default function ShoppingBargainingPanamaArticle() {
                         variants={fadeInUp}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                            Ready to Shop Like a <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Local?</span>
+                        <h2 className="h-display text-3xl md:text-4xl mb-6 text-white leading-tight">
+                            Ready to Shop Like a <span className="grad-text-light">Local?</span>
                         </h2>
                         <p className="text-lg text-gray-300 mb-8">
                             Master your shopping Spanish! Book personalized lessons and practice bargaining techniques with confidence in Panama's markets.
@@ -774,7 +754,7 @@ export default function ShoppingBargainingPanamaArticle() {
                                 </span>
                             </NextLink>
                             <NextLink href="/learning-resources">
-                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-gray-900 cursor-pointer text-sm sm:text-base">
+                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-ink cursor-pointer text-sm sm:text-base">
                                     More Learning Resources
                                 </span>
                             </NextLink>
@@ -782,6 +762,7 @@ export default function ShoppingBargainingPanamaArticle() {
                     </motion.div>
                 </div>
             </section>
+        <SiteFooter lang="en" />
         </div>
     );
 }

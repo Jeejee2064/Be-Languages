@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import NextLink from "next/link";
+import SiteHeader from "../../components/site/SiteHeader";
+import SiteFooter from "../../components/site/SiteFooter";
 import { PalmBackground, BambooBackground, HeliconiaBackground, MonsteraBackground, WaveBackground } from '../../components/backgrounds';
 
 const fadeInUp = {
@@ -278,38 +280,16 @@ const regionalAccents = [
 
 export default function PanamanianSpanishDifferencesArticle() {
     return (
-        <div className="bg-white text-gray-800 min-h-screen">
-            <BambooBackground />
+        <div className="bg-paper text-ink min-h-screen">
 
-            {/* Header with Logo and Back Button */}
-            <header className="relative z-50 pt-6 pb-4">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="flex items-center justify-between">
-                        <NextLink href="/">
-                            <div className="h-12 w-32 relative">
-                                <Image
-                                    src="./logo.svg"
-                                    alt="Logo de BE Language Solutions"
-                                    fill
-                                    className="object-contain object-left"
-                                />
-                            </div>
-                        </NextLink>
-                        <NextLink href="/learning-resources">
-                            <div className="flex items-center text-blue-600 hover:text-purple-600 transition-colors cursor-pointer">
-                                <ArrowLeft className="w-4 h-4 mr-2" />
-                                <span className="font-medium">All Resources</span>
-                            </div>
-                        </NextLink>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader lang="en" alt="resources" />
 
             {/* Hero Section */}
-            <section className="pt-12 pb-16 relative overflow-hidden">
+            <section className="pt-[calc(var(--header-h)+2rem)] pb-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 z-0"></div>
 
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
+<div className="max-w-4xl mx-auto mb-6"><NextLink href="/learning-resources" className="inline-flex items-center gap-2 text-sm font-medium text-royal hover:text-grape"><ArrowLeft className="w-4 h-4" />All Resources</NextLink></div>
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -322,18 +302,18 @@ export default function PanamanianSpanishDifferencesArticle() {
                                 Language Guide
                             </div>
 
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            <h1 className="h-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                                 Panamanian Spanish vs. Other Spanish:
-                                <span className="block bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                                <span className="block grad-text-light">
                                     Key Differences Explained
                                 </span>
                             </h1>
 
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-xl text-ink-2 mb-8 leading-relaxed max-w-3xl mx-auto">
                                 Understand the unique characteristics of Panamanian Spanish, including Caribbean influences, local expressions, and how it compares to other varieties.
                             </p>
 
-                            <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
+                            <div className="flex items-center justify-center gap-8 text-sm text-ink-3">
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-blue-600" />
                                     <span>6 min read</span>
@@ -375,8 +355,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Panamanian Spanish in the <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Spanish-Speaking World</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Panamanian Spanish in the <span className="grad-text-light">Spanish-Speaking World</span>
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -385,18 +365,18 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         key={index}
                                         variants={fadeInUp}
                                         whileHover={{ y: -5 }}
-                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-line"
                                     >
                                         <div className="flex items-center mb-3">
                                             <div className={`w-10 h-10 bg-gradient-to-r ${variety.gradient} rounded-lg flex items-center justify-center shadow-md mr-3`}>
                                                 {variety.icon}
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900">{variety.title}</h3>
+                                                <h3 className="text-lg font-bold text-ink">{variety.title}</h3>
                                             </div>
                                         </div>
-                                        <p className="text-gray-600 text-sm mb-3">{variety.description}</p>
-                                        <ul className="space-y-1 text-xs text-gray-700">
+                                        <p className="text-ink-2 text-sm mb-3">{variety.description}</p>
+                                        <ul className="space-y-1 text-xs text-ink-2">
                                             {variety.features.map((feature, i) => (
                                                 <li key={i} className="flex items-start gap-2">
                                                     <span className="text-blue-500">•</span>
@@ -412,7 +392,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                 </section>
 
                 {/* Panamanian Spanish Features */}
-                <section className="mb-16 bg-gray-50 py-16">
+                <section className="mb-16 bg-lav/60 py-16">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -421,8 +401,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Distinctive Features of <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Panamanian Spanish</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Distinctive Features of <span className="grad-text-light">Panamanian Spanish</span>
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {panamanianFeatures.map((section, sectionIndex) => (
@@ -440,7 +420,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                             {section.features.map((feature, featureIndex) => (
                                                 <div key={featureIndex} className="p-3 bg-blue-50/50 rounded-lg">
                                                     <p className="font-semibold text-blue-900">{feature.feature}</p>
-                                                    <p className="text-gray-700 text-sm mb-1 italic">{feature.example}</p>
+                                                    <p className="text-ink-2 text-sm mb-1 italic">{feature.example}</p>
                                                     <p className="text-blue-600 text-xs">{feature.explanation}</p>
                                                 </div>
                                             ))}
@@ -463,8 +443,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Understanding <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Regional Variations</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Understanding <span className="grad-text-light">Regional Variations</span>
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -482,7 +462,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                             {strategy.tips.map((tip, tipIndex) => (
                                                 <li key={tipIndex} className="flex items-start gap-2">
                                                     <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                                                    <span className="text-gray-700">{tip}</span>
+                                                    <span className="text-ink-2">{tip}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -503,8 +483,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto text-center"
                         >
-                            <h2 className="text-3xl font-bold mb-8">
-                                Common <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Confusions</span>
+                            <h2 className="h-display text-3xl mb-8">
+                                Common <span className="grad-text-light">Confusions</span>
                             </h2>
 
                             <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -516,10 +496,10 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         </h4>
                                         <ul className="space-y-3 text-sm">
                                             {category.vocabulary.map((item, itemIndex) => (
-                                                <li key={itemIndex} className="border-b border-gray-100 pb-2 last:border-0">
+                                                <li key={itemIndex} className="border-b border-line pb-2 last:border-0">
                                                     <strong className="text-blue-800">{item.spanish}:</strong> 
-                                                    <p className="text-gray-700 text-xs mt-1">In Panama: {item.panama}</p>
-                                                    {item.other && <p className="text-gray-500 text-xs mt-1">Elsewhere: {item.other}</p>}
+                                                    <p className="text-ink-2 text-xs mt-1">In Panama: {item.panama}</p>
+                                                    {item.other && <p className="text-ink-3 text-xs mt-1">Elsewhere: {item.other}</p>}
                                                 </li>
                                             ))}
                                         </ul>
@@ -541,8 +521,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Panamanian <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Regional Accents</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Panamanian <span className="grad-text-light">Regional Accents</span>
                             </h2>
 
                             <div className="grid md:grid-cols-2 gap-6">
@@ -562,13 +542,13 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         
                                         <div className="space-y-2 text-sm">
                                             <div>
-                                                <strong className="text-blue-800">Location:</strong> <span className="text-gray-700">{market.location}</span>
+                                                <strong className="text-blue-800">Location:</strong> <span className="text-ink-2">{market.location}</span>
                                             </div>
                                             <div>
-                                                <strong className="text-blue-800">Features:</strong> <span className="text-gray-700">{market.features}</span>
+                                                <strong className="text-blue-800">Features:</strong> <span className="text-ink-2">{market.features}</span>
                                             </div>
                                             <div>
-                                                <strong className="text-blue-800">Challenges:</strong> <span className="text-gray-700">{market.challenges}</span>
+                                                <strong className="text-blue-800">Challenges:</strong> <span className="text-ink-2">{market.challenges}</span>
                                             </div>
                                             <div className="bg-purple-50 p-3 rounded-lg mt-3">
                                                 <strong className="text-purple-800 text-xs">TIP:</strong>
@@ -583,7 +563,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                 </section>
 
                 {/* Cultural Language Tips */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -592,8 +572,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Panamanian <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Language Culture</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Panamanian <span className="grad-text-light">Language Culture</span>
                             </h2>
 
                             <div className="bg-blue-50/50 rounded-xl p-6 md:p-8 shadow-inner border border-blue-100">
@@ -605,7 +585,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Speech Patterns</h4>
-                                            <p className="text-gray-700 text-sm">Panamanians speak quickly with dropped consonants. The rhythm is musical with rising intonation at sentence ends. Interruptions in conversation are common and not considered rude.</p>
+                                            <p className="text-ink-2 text-sm">Panamanians speak quickly with dropped consonants. The rhythm is musical with rising intonation at sentence ends. Interruptions in conversation are common and not considered rude.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -614,7 +594,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Conversation Style</h4>
-                                            <p className="text-gray-700 text-sm">Directness varies by region. Panama City is more direct while rural areas use more indirect communication. Personal questions are common as relationship-building.</p>
+                                            <p className="text-ink-2 text-sm">Directness varies by region. Panama City is more direct while rural areas use more indirect communication. Personal questions are common as relationship-building.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -623,7 +603,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Social Context</h4>
-                                            <p className="text-gray-700 text-sm">Language reflects Panama's diverse heritage. African influences appear in rhythm, indigenous words in vocabulary, and English in business/urban settings.</p>
+                                            <p className="text-ink-2 text-sm">Language reflects Panama's diverse heritage. African influences appear in rhythm, indigenous words in vocabulary, and English in business/urban settings.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -632,7 +612,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Sensitive Topics</h4>
-                                            <p className="text-gray-700 text-sm">Avoid criticizing Panama or comparing it negatively to other countries. Politics and the Canal can be sensitive. Humor is appreciated but sarcasm may not translate well.</p>
+                                            <p className="text-ink-2 text-sm">Avoid criticizing Panama or comparing it negatively to other countries. Politics and the Canal can be sensitive. Humor is appreciated but sarcasm may not translate well.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -651,7 +631,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Learning Panamanian Spanish <span className="bg-gradient-to-r from-purple-600 to-red-600 bg-clip-text text-transparent">Do's & Don'ts</span>
                             </h2>
 
@@ -664,23 +644,23 @@ export default function PanamanianSpanishDifferencesArticle() {
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Listen to Panamanian music (reggae en español, plena)</span>
+                                            <span className="text-ink-2">Listen to Panamanian music (reggae en español, plena)</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Practice with locals from different regions</span>
+                                            <span className="text-ink-2">Practice with locals from different regions</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Learn key Panamanian expressions</span>
+                                            <span className="text-ink-2">Learn key Panamanian expressions</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Watch Panamanian YouTubers or TV shows</span>
+                                            <span className="text-ink-2">Watch Panamanian YouTubers or TV shows</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-blue-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Ask locals to correct your pronunciation</span>
+                                            <span className="text-ink-2">Ask locals to correct your pronunciation</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -693,23 +673,23 @@ export default function PanamanianSpanishDifferencesArticle() {
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't assume all Spanish is the same</span>
+                                            <span className="text-ink-2">Don't assume all Spanish is the same</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't try to imitate the accent too soon</span>
+                                            <span className="text-ink-2">Don't try to imitate the accent too soon</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't use slang without understanding context</span>
+                                            <span className="text-ink-2">Don't use slang without understanding context</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't be afraid to ask for clarification</span>
+                                            <span className="text-ink-2">Don't be afraid to ask for clarification</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't get frustrated by fast speech</span>
+                                            <span className="text-ink-2">Don't get frustrated by fast speech</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -719,7 +699,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                 </section>
 
                 {/* Resources & Media */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -728,8 +708,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Learning <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Resources</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Learning <span className="grad-text-light">Resources</span>
                             </h2>
 
                             <div className="grid md:grid-cols-2 gap-8">
@@ -769,7 +749,7 @@ export default function PanamanianSpanishDifferencesArticle() {
             </main>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gray-900 relative overflow-hidden">
+            <section className="py-16 bg-ink relative overflow-hidden">
                 <WaveBackground />
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
@@ -779,8 +759,8 @@ export default function PanamanianSpanishDifferencesArticle() {
                         variants={fadeInUp}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                            Master <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Panamanian Spanish</span>
+                        <h2 className="h-display text-3xl md:text-4xl mb-6 text-white leading-tight">
+                            Master <span className="grad-text-light">Panamanian Spanish</span>
                         </h2>
                         <p className="text-lg text-gray-300 mb-8">
                             Learn authentic Panamanian Spanish with native instructors who understand the local variations and can help you sound like a true Panameño!
@@ -792,7 +772,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                                 </span>
                             </NextLink>
                             <NextLink href="/learning-resources">
-                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-gray-900 cursor-pointer text-sm sm:text-base">
+                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-ink cursor-pointer text-sm sm:text-base">
                                     More Learning Resources
                                 </span>
                             </NextLink>
@@ -800,6 +780,7 @@ export default function PanamanianSpanishDifferencesArticle() {
                     </motion.div>
                 </div>
             </section>
+        <SiteFooter lang="en" />
         </div>
     );
 }

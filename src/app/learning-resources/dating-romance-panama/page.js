@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import NextLink from "next/link";
+import SiteHeader from "../../components/site/SiteHeader";
+import SiteFooter from "../../components/site/SiteFooter";
 import { PalmBackground, BambooBackground, HeliconiaBackground, MonsteraBackground, WaveBackground } from '../../components/backgrounds';
 
 const fadeInUp = {
@@ -249,38 +251,16 @@ const culturalTips = [
 
 export default function DatingRomancePanamaArticle() {
     return (
-        <div className="bg-white text-gray-800 min-h-screen">
-            <BambooBackground />
+        <div className="bg-paper text-ink min-h-screen">
 
-            {/* Header with Logo and Back Button */}
-            <header className="relative z-50 pt-6 pb-4">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="flex items-center justify-between">
-                        <NextLink href="/">
-                            <div className="h-12 w-32 relative">
-                                <Image
-                                    src="./logo.svg"
-                                    alt="Logo de BE Language Solutions"
-                                    fill
-                                    className="object-contain object-left"
-                                />
-                            </div>
-                        </NextLink>
-                        <NextLink href="/learning-resources">
-                            <div className="flex items-center text-pink-600 hover:text-purple-600 transition-colors cursor-pointer">
-                                <ArrowLeft className="w-4 h-4 mr-2" />
-                                <span className="font-medium">All Resources</span>
-                            </div>
-                        </NextLink>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader lang="en" alt="resources" />
 
             {/* Hero Section */}
-            <section className="pt-12 pb-16 relative overflow-hidden">
+            <section className="pt-[calc(var(--header-h)+2rem)] pb-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-50/30 via-white to-purple-50/30 z-0"></div>
 
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
+<div className="max-w-4xl mx-auto mb-6"><NextLink href="/learning-resources" className="inline-flex items-center gap-2 text-sm font-medium text-royal hover:text-grape"><ArrowLeft className="w-4 h-4" />All Resources</NextLink></div>
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -293,18 +273,18 @@ export default function DatingRomancePanamaArticle() {
                                 Romance Guide
                             </div>
 
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            <h1 className="h-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                                 Dating & Romance in Panama:
                                 <span className="block bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                                     Love Language Guide
                                 </span>
                             </h1>
 
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-xl text-ink-2 mb-8 leading-relaxed max-w-3xl mx-auto">
                                 Master romantic expressions, dating vocabulary, and cultural insights for navigating love and relationships in Panama.
                             </p>
 
-                            <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
+                            <div className="flex items-center justify-center gap-8 text-sm text-ink-3">
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-pink-600" />
                                     <span>5 min read</span>
@@ -346,7 +326,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Essential <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Romantic Expressions</span>
                             </h2>
 
@@ -356,14 +336,14 @@ export default function DatingRomancePanamaArticle() {
                                         key={index}
                                         variants={fadeInUp}
                                         whileHover={{ y: -5 }}
-                                        className="bg-white/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                                        className="bg-white/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-line"
                                     >
                                         <div className="flex items-center mb-4">
                                             <div className={`w-12 h-12 bg-gradient-to-r ${category.gradient} rounded-lg flex items-center justify-center shadow-md mr-4`}>
                                                 {category.icon}
                                             </div>
                                             <div>
-                                                <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
+                                                <h3 className="text-xl font-bold text-ink">{category.title}</h3>
                                                 <p className="text-pink-600 text-sm font-medium">{category.spanish}</p>
                                             </div>
                                         </div>
@@ -371,7 +351,7 @@ export default function DatingRomancePanamaArticle() {
                                             {category.examples.map((phrase, phraseIndex) => (
                                                 <div key={phraseIndex} className="p-3 bg-pink-50/50 rounded-lg">
                                                     <p className="font-semibold text-pink-900">{phrase.spanish}</p>
-                                                    <p className="text-gray-700 text-sm mb-1">{phrase.english}</p>
+                                                    <p className="text-ink-2 text-sm mb-1">{phrase.english}</p>
                                                     <p className="text-pink-600 text-xs italic">{phrase.pronunciation}</p>
                                                 </div>
                                             ))}
@@ -384,7 +364,7 @@ export default function DatingRomancePanamaArticle() {
                 </section>
 
                 {/* Dating Phrases */}
-                <section className="mb-16 bg-gray-50 py-16">
+                <section className="mb-16 bg-lav/60 py-16">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -393,7 +373,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Dating <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Conversation Starters</span>
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
@@ -412,7 +392,7 @@ export default function DatingRomancePanamaArticle() {
                                             {section.phrases.map((phrase, phraseIndex) => (
                                                 <div key={phraseIndex} className="p-3 bg-pink-50/50 rounded-lg">
                                                     <p className="font-semibold text-pink-900">{phrase.spanish}</p>
-                                                    <p className="text-gray-700 text-sm mb-1">{phrase.english}</p>
+                                                    <p className="text-ink-2 text-sm mb-1">{phrase.english}</p>
                                                     <p className="text-pink-600 text-xs italic">{phrase.pronunciation}</p>
                                                 </div>
                                             ))}
@@ -435,7 +415,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Perfect <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Date Ideas</span> in Panama
                             </h2>
 
@@ -455,7 +435,7 @@ export default function DatingRomancePanamaArticle() {
                                             {dateCategory.ideas.map((idea, ideaIndex) => (
                                                 <li key={ideaIndex} className="flex items-start gap-2">
                                                     <Heart className="w-4 h-4 text-pink-500 mt-0.5 flex-shrink-0" />
-                                                    <span className="text-gray-700">{idea}</span>
+                                                    <span className="text-ink-2">{idea}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -476,7 +456,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Cultural <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Dating Tips</span>
                             </h2>
 
@@ -495,7 +475,7 @@ export default function DatingRomancePanamaArticle() {
                                             {tipSection.tips.map((tip, tipIndex) => (
                                                 <li key={tipIndex} className="flex items-start gap-2">
                                                     <Sparkles className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" />
-                                                    <span className="text-gray-700">{tip}</span>
+                                                    <span className="text-ink-2">{tip}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -507,7 +487,7 @@ export default function DatingRomancePanamaArticle() {
                 </section>
 
                 {/* Bonus Vocabulary */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -516,7 +496,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto text-center"
                         >
-                            <h2 className="text-3xl font-bold mb-8">
+                            <h2 className="h-display text-3xl mb-8">
                                 Essential <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Love Vocabulary</span>
                             </h2>
 
@@ -574,7 +554,7 @@ export default function DatingRomancePanamaArticle() {
                 </section>
 
                 {/* Cultural Insights */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -583,7 +563,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Panamanian <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Romance Culture</span>
                             </h2>
 
@@ -596,7 +576,7 @@ export default function DatingRomancePanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-pink-900">Family Integration</h4>
-                                            <p className="text-gray-700 text-sm">Romantic relationships in Panama often involve the whole family. Meeting parents and siblings early is normal and expected.</p>
+                                            <p className="text-ink-2 text-sm">Romantic relationships in Panama often involve the whole family. Meeting parents and siblings early is normal and expected.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -605,7 +585,7 @@ export default function DatingRomancePanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-pink-900">Music & Dance</h4>
-                                            <p className="text-gray-700 text-sm">Salsa, merengue, and reggaeton play important roles in courtship. Dancing together is a common way to show romantic interest.</p>
+                                            <p className="text-ink-2 text-sm">Salsa, merengue, and reggaeton play important roles in courtship. Dancing together is a common way to show romantic interest.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -614,7 +594,7 @@ export default function DatingRomancePanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-pink-900">Romantic Gestures</h4>
-                                            <p className="text-gray-700 text-sm">Small, thoughtful gifts and surprise visits are highly valued. Serenades and public displays of affection are still appreciated.</p>
+                                            <p className="text-ink-2 text-sm">Small, thoughtful gifts and surprise visits are highly valued. Serenades and public displays of affection are still appreciated.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -623,7 +603,7 @@ export default function DatingRomancePanamaArticle() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-pink-900">Religious Influence</h4>
-                                            <p className="text-gray-700 text-sm">Catholic traditions influence many relationships, with marriage and commitment being highly valued cultural ideals.</p>
+                                            <p className="text-ink-2 text-sm">Catholic traditions influence many relationships, with marriage and commitment being highly valued cultural ideals.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -643,7 +623,7 @@ export default function DatingRomancePanamaArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
+                            <h2 className="h-display text-3xl text-center mb-12">
                                 Common <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Dating Mistakes</span> to Avoid
                             </h2>
 
@@ -656,23 +636,23 @@ export default function DatingRomancePanamaArticle() {
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't ignore or disrespect family members</span>
+                                            <span className="text-ink-2">Don't ignore or disrespect family members</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't be overly casual about religion or traditions</span>
+                                            <span className="text-ink-2">Don't be overly casual about religion or traditions</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't assume all women are financially dependent</span>
+                                            <span className="text-ink-2">Don't assume all women are financially dependent</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't rush physical intimacy</span>
+                                            <span className="text-ink-2">Don't rush physical intimacy</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-red-500 font-bold">×</span>
-                                            <span className="text-gray-700">Don't criticize Panamanian customs or compare to your country</span>
+                                            <span className="text-ink-2">Don't criticize Panamanian customs or compare to your country</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -685,23 +665,23 @@ export default function DatingRomancePanamaArticle() {
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex items-start gap-3">
                                             <span className="text-green-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Show genuine interest in family and culture</span>
+                                            <span className="text-ink-2">Show genuine interest in family and culture</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-green-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Ask questions about traditions respectfully</span>
+                                            <span className="text-ink-2">Ask questions about traditions respectfully</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-green-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Recognize and respect individual independence</span>
+                                            <span className="text-ink-2">Recognize and respect individual independence</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-green-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Build emotional connection before physical</span>
+                                            <span className="text-ink-2">Build emotional connection before physical</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="text-green-500 font-bold">✓</span>
-                                            <span className="text-gray-700">Express appreciation for local culture and people</span>
+                                            <span className="text-ink-2">Express appreciation for local culture and people</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -712,7 +692,7 @@ export default function DatingRomancePanamaArticle() {
             </main>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gray-900 relative overflow-hidden">
+            <section className="py-16 bg-ink relative overflow-hidden">
                 <WaveBackground />
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
@@ -722,8 +702,8 @@ export default function DatingRomancePanamaArticle() {
                         variants={fadeInUp}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                            Ready to Find Love in <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Panama?</span>
+                        <h2 className="h-display text-3xl md:text-4xl mb-6 text-white leading-tight">
+                            Ready to Find Love in <span className="grad-text-light">Panama?</span>
                         </h2>
                         <p className="text-lg text-gray-300 mb-8">
                             Perfect your Spanish romantic vocabulary! Book personalized Spanish lessons and practice real romantic conversations with confidence.
@@ -735,7 +715,7 @@ export default function DatingRomancePanamaArticle() {
                                 </span>
                             </NextLink>
                             <NextLink href="/learning-resources">
-                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-gray-900 cursor-pointer text-sm sm:text-base">
+                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-ink cursor-pointer text-sm sm:text-base">
                                     More Learning Resources
                                 </span>
                             </NextLink>
@@ -743,6 +723,7 @@ export default function DatingRomancePanamaArticle() {
                     </motion.div>
                 </div>
             </section>
+        <SiteFooter lang="en" />
         </div>
     );
 }

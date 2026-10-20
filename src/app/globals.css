@@ -1,12 +1,153 @@
 @import "tailwindcss";
 
+/* Be Languages design tokens — same blue → violet identity as the logo and plant illustrations */
+@theme {
+  --color-ink: #1b1740;
+  --color-ink-2: #4a476b;
+  --color-ink-3: #77749a;
+  --color-paper: #fbfaff;
+  --color-lav: #f3f0ff;
+  --color-lav-2: #e9e4fd;
+  --color-line: #e2ddf6;
+  --color-sky: #3b82f6;
+  --color-royal: #2563eb;
+  --color-violet: #8b5cf6;
+  --color-grape: #9333ea;
+
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 62%, #9333ea 100%);
+  --header-h: 76px;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
 }
 
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-inter-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
+::selection {
+  background: #ddd3fe;
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-violet);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+@layer components {
+  .grad-text {
+    background-image: linear-gradient(100deg, #2563eb 0%, #7c3aed 55%, #9333ea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .grad-text-light {
+    background-image: linear-gradient(100deg, #93c5fd 0%, #c4b5fd 60%, #e9d5ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .container-x {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x { padding-inline: 2rem; }
+  }
+
+  .section-pad { padding-block: 5rem; }
+  @media (min-width: 1024px) {
+    .section-pad { padding-block: 7rem; }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-royal);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brand-gradient);
+  }
+  .eyebrow-light { color: #c4b5fd; }
+  .eyebrow-white { color: rgba(255, 255, 255, .85); }
+  .eyebrow-white::before { background: rgba(255, 255, 255, .7); }
+
+  .h-display {
+    font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.08;
+    font-variation-settings: "SOFT" 50, "opsz" 36;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    color: #fff;
+    background-image: var(--brand-gradient);
+    box-shadow: 0 10px 24px -10px rgba(109, 69, 230, .65);
+  }
+  .btn-primary:hover { box-shadow: 0 16px 30px -10px rgba(109, 69, 230, .75); }
+  .btn-ghost {
+    color: var(--color-ink);
+    border: 1.5px solid var(--color-ink);
+    background: transparent;
+  }
+  .btn-ghost:hover { background: var(--color-ink); color: #fff; }
+  .btn-light {
+    color: var(--color-ink);
+    background: #fff;
+    box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .5);
+  }
+  .btn-outline-light {
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, .55);
+  }
+  .btn-outline-light:hover { background: rgba(255, 255, 255, .12); }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 1.5rem;
+  }
+}

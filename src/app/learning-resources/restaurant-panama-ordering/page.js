@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import NextLink from "next/link";
+import SiteHeader from "../../components/site/SiteHeader";
+import SiteFooter from "../../components/site/SiteFooter";
 import { PalmBackground, BambooBackground, HeliconiaBackground, MonsteraBackground, WaveBackground } from '../../components/backgrounds';
 
 const fadeInUp = {
@@ -241,38 +243,16 @@ const diningTips = [
 
 export default function RestaurantSpanishGuide() {
     return (
-        <div className="bg-white text-gray-800 min-h-screen">
-            <BambooBackground />
+        <div className="bg-paper text-ink min-h-screen">
 
-            {/* Header with Logo and Back Button */}
-            <header className="relative z-50 pt-6 pb-4">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="flex items-center justify-between">
-                        <NextLink href="/">
-                            <div className="h-12 w-32 relative">
-                                <Image
-                                    src="./logo.svg"
-                                    alt="Logo de BE Language Solutions"
-                                    fill
-                                    className="object-contain object-left"
-                                />
-                            </div>
-                        </NextLink>
-                        <NextLink href="/learning-resources">
-                            <div className="flex items-center text-blue-600 hover:text-purple-600 transition-colors cursor-pointer">
-                                <ArrowLeft className="w-4 h-4 mr-2" />
-                                <span className="font-medium">All Resources</span>
-                            </div>
-                        </NextLink>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader lang="en" alt="resources" />
 
             {/* Hero Section */}
-            <section className="pt-12 pb-16 relative overflow-hidden">
+            <section className="pt-[calc(var(--header-h)+2rem)] pb-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 z-0"></div>
 
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
+<div className="max-w-4xl mx-auto mb-6"><NextLink href="/learning-resources" className="inline-flex items-center gap-2 text-sm font-medium text-royal hover:text-grape"><ArrowLeft className="w-4 h-4" />All Resources</NextLink></div>
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -285,18 +265,18 @@ export default function RestaurantSpanishGuide() {
                                 Dining Guide
                             </div>
 
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            <h1 className="h-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                                 Restaurant Spanish:
-                                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                <span className="block grad-text">
                                     Order Like a Pro
                                 </span>
                             </h1>
 
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-xl text-ink-2 mb-8 leading-relaxed max-w-3xl mx-auto">
                                 Master essential phrases and vocabulary for dining out in Panama, from ordering traditional dishes to paying the bill with confidence.
                             </p>
 
-                            <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
+                            <div className="flex items-center justify-center gap-8 text-sm text-ink-3">
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-blue-600" />
                                     <span>4 min read</span>
@@ -338,8 +318,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Types of <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Restaurants</span> in Panama
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Types of <span className="grad-text">Restaurants</span> in Panama
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -348,18 +328,18 @@ export default function RestaurantSpanishGuide() {
                                         key={index}
                                         variants={fadeInUp}
                                         whileHover={{ y: -5 }}
-                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-line"
                                     >
                                         <div className="flex items-center mb-3">
                                             <div className={`w-10 h-10 bg-gradient-to-r ${type.gradient} rounded-lg flex items-center justify-center shadow-md mr-3`}>
                                                 {type.icon}
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900">{type.title}</h3>
+                                                <h3 className="text-lg font-bold text-ink">{type.title}</h3>
                                                 <p className="text-blue-600 text-sm font-medium">{type.spanish}</p>
                                             </div>
                                         </div>
-                                        <p className="text-gray-600 text-sm">{type.description}</p>
+                                        <p className="text-ink-2 text-sm">{type.description}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -368,7 +348,7 @@ export default function RestaurantSpanishGuide() {
                 </section>
 
                 {/* Essential Phrases */}
-                <section className="mb-16 bg-gray-50 py-16">
+                <section className="mb-16 bg-lav/60 py-16">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -377,8 +357,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Essential <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Dining Phrases</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Essential <span className="grad-text">Dining Phrases</span>
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {essentialPhrases.map((section, sectionIndex) => (
@@ -396,7 +376,7 @@ export default function RestaurantSpanishGuide() {
                                             {section.phrases.map((phrase, phraseIndex) => (
                                                 <div key={phraseIndex} className="p-3 bg-blue-50/50 rounded-lg">
                                                     <p className="font-semibold text-blue-900">{phrase.spanish}</p>
-                                                    <p className="text-gray-700 text-sm mb-1">{phrase.english}</p>
+                                                    <p className="text-ink-2 text-sm mb-1">{phrase.english}</p>
                                                     <p className="text-blue-600 text-xs italic">{phrase.pronunciation}</p>
                                                 </div>
                                             ))}
@@ -419,8 +399,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Popular <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Dishes</span> & Prices
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Popular <span className="grad-text">Dishes</span> & Prices
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -436,11 +416,11 @@ export default function RestaurantSpanishGuide() {
                                         </h3>
                                         <div className="space-y-3 text-sm">
                                             {category.dishes.map((dish, dishIndex) => (
-                                                <div key={dishIndex} className="border-b border-gray-100 pb-2 last:border-b-0">
+                                                <div key={dishIndex} className="border-b border-line pb-2 last:border-b-0">
                                                     <div className="flex justify-between items-start gap-2">
                                                         <div>
-                                                            <p className="font-semibold text-gray-900">{dish.spanish}</p>
-                                                            <p className="text-gray-600 text-xs">{dish.english}</p>
+                                                            <p className="font-semibold text-ink">{dish.spanish}</p>
+                                                            <p className="text-ink-2 text-xs">{dish.english}</p>
                                                         </div>
                                                         <span className="text-blue-600 font-medium text-xs whitespace-nowrap">{dish.price}</span>
                                                     </div>
@@ -464,8 +444,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Panama <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Dining Tips</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Panama <span className="grad-text">Dining Tips</span>
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -483,7 +463,7 @@ export default function RestaurantSpanishGuide() {
                                             {tipSection.tips.map((tip, tipIndex) => (
                                                 <li key={tipIndex} className="flex items-start gap-2">
                                                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                                                    <span className="text-gray-700">{tip}</span>
+                                                    <span className="text-ink-2">{tip}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -495,7 +475,7 @@ export default function RestaurantSpanishGuide() {
                 </section>
 
                 {/* Bonus Vocabulary */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -504,8 +484,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto text-center"
                         >
-                            <h2 className="text-3xl font-bold mb-8">
-                                Bonus <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Food Vocabulary</span>
+                            <h2 className="h-display text-3xl mb-8">
+                                Bonus <span className="grad-text">Food Vocabulary</span>
                             </h2>
 
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
@@ -571,8 +551,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Dining <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Culture</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Dining <span className="grad-text">Culture</span>
                             </h2>
 
                             <div className="bg-blue-50/50 rounded-xl p-6 md:p-8 shadow-inner border border-blue-100">
@@ -584,7 +564,7 @@ export default function RestaurantSpanishGuide() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Family Style Dining</h4>
-                                            <p className="text-gray-700 text-sm">Meals are social events meant to be shapurple. Don't be surprised if locals offer you food - it's a sign of hospitality!</p>
+                                            <p className="text-ink-2 text-sm">Meals are social events meant to be shapurple. Don't be surprised if locals offer you food - it's a sign of hospitality!</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -593,7 +573,7 @@ export default function RestaurantSpanishGuide() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Relaxed Pace</h4>
-                                            <p className="text-gray-700 text-sm">Service may be slower than you're used to. Enjoy the relaxed atmosphere - meals are meant to be savopurple, not rushed.</p>
+                                            <p className="text-ink-2 text-sm">Service may be slower than you're used to. Enjoy the relaxed atmosphere - meals are meant to be savopurple, not rushed.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -602,7 +582,7 @@ export default function RestaurantSpanishGuide() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Rice is Life</h4>
-                                            <p className="text-gray-700 text-sm">Rice and beans (arroz con frijoles) accompany almost every meal. It's perfectly normal to eat it with every course!</p>
+                                            <p className="text-ink-2 text-sm">Rice and beans (arroz con frijoles) accompany almost every meal. It's perfectly normal to eat it with every course!</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -611,7 +591,7 @@ export default function RestaurantSpanishGuide() {
                                         </div>
                                         <div>
                                             <h4 className="font-semibold text-blue-900">Polite Expressions</h4>
-                                            <p className="text-gray-700 text-sm">Always say "Buen provecho" (enjoy your meal) when you see others eating. It's basic courtesy in Panama!</p>
+                                            <p className="text-ink-2 text-sm">Always say "Buen provecho" (enjoy your meal) when you see others eating. It's basic courtesy in Panama!</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -631,8 +611,8 @@ export default function RestaurantSpanishGuide() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Must-Try <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Local Specialties</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Must-Try <span className="grad-text">Local Specialties</span>
                             </h2>
 
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -696,7 +676,7 @@ export default function RestaurantSpanishGuide() {
             </main>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gray-900 relative overflow-hidden">
+            <section className="py-16 bg-ink relative overflow-hidden">
                 <WaveBackground />
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
@@ -706,8 +686,8 @@ export default function RestaurantSpanishGuide() {
                         variants={fadeInUp}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                            Ready to Practice Your <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Restaurant Spanish?</span>
+                        <h2 className="h-display text-3xl md:text-4xl mb-6 text-white leading-tight">
+                            Ready to Practice Your <span className="grad-text-light">Restaurant Spanish?</span>
                         </h2>
                         <p className="text-lg text-gray-300 mb-8">
                             Join our Spanish classes and practice ordering food like a local! Learn with native speakers and discover Panama's amazing food culture.
@@ -719,7 +699,7 @@ export default function RestaurantSpanishGuide() {
                                 </span>
                             </NextLink>
                             <NextLink href="/learning-resources">
-                                <span className="block px-8 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-gray-900 cursor-pointer text-sm sm:text-base">
+                                <span className="block px-8 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-ink cursor-pointer text-sm sm:text-base">
                                     More Learning Resources
                                 </span>
                             </NextLink>
@@ -734,6 +714,7 @@ export default function RestaurantSpanishGuide() {
                     </motion.div>
                 </div>
             </section>
+        <SiteFooter lang="en" />
         </div>
     );
 }

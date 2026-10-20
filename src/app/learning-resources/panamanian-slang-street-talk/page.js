@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import NextLink from "next/link";
+import SiteHeader from "../../components/site/SiteHeader";
+import SiteFooter from "../../components/site/SiteFooter";
 import { PalmBackground, BambooBackground, HeliconiaBackground, MonsteraBackground, WaveBackground } from '../../components/backgrounds';
 
 const fadeInUp = {
@@ -316,38 +318,16 @@ const slangCategories = [
 
 export default function PanamanianSlangArticle() {
     return (
-        <div className="bg-white text-gray-800 min-h-screen">
-            <BambooBackground />
+        <div className="bg-paper text-ink min-h-screen">
 
-            {/* Header with Logo and Back Button */}
-            <header className="relative z-50 pt-6 pb-4">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="flex items-center justify-between">
-                        <NextLink href="/">
-                            <div className="h-12 w-32 relative">
-                                <Image
-                                    src="./logo.svg"
-                                    alt="Logo de BE Language Solutions"
-                                    fill
-                                    className="object-contain object-left"
-                                />
-                            </div>
-                        </NextLink>
-                        <NextLink href="/learning-resources">
-                            <div className="flex items-center text-blue-600 hover:text-purple-600 transition-colors cursor-pointer">
-                                <ArrowLeft className="w-4 h-4 mr-2" />
-                                <span className="font-medium">All Resources</span>
-                            </div>
-                        </NextLink>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader lang="en" alt="resources" />
 
             {/* Hero Section */}
-            <section className="pt-12 pb-16 relative overflow-hidden">
+            <section className="pt-[calc(var(--header-h)+2rem)] pb-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 z-0"></div>
 
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
+<div className="max-w-4xl mx-auto mb-6"><NextLink href="/learning-resources" className="inline-flex items-center gap-2 text-sm font-medium text-royal hover:text-grape"><ArrowLeft className="w-4 h-4" />All Resources</NextLink></div>
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -360,18 +340,18 @@ export default function PanamanianSlangArticle() {
                                 Culture Guide
                             </div>
 
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            <h1 className="h-display text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                                 Panamanian Slang:
-                                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                <span className="block grad-text">
                                     Talk Like a Local
                                 </span>
                             </h1>
 
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-xl text-ink-2 mb-8 leading-relaxed max-w-3xl mx-auto">
                                 Master authentic Panamanian slang, street talk, and expressions that locals use every day. From "chevere" to "jupa" - sound like a true Panamanian!
                             </p>
 
-                            <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
+                            <div className="flex items-center justify-center gap-8 text-sm text-ink-3">
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-blue-600" />
                                     <span>4 min read</span>
@@ -413,10 +393,10 @@ export default function PanamanianSlangArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Must-Know <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Panamanian Slang</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Must-Know <span className="grad-text">Panamanian Slang</span>
                             </h2>
-                            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                            <p className="text-center text-ink-2 mb-8 max-w-3xl mx-auto">
                                 These are the most popular and widely-used slang terms across Panama. Master these and you'll fit right in!
                             </p>
 
@@ -426,19 +406,19 @@ export default function PanamanianSlangArticle() {
                                         key={index}
                                         variants={fadeInUp}
                                         whileHover={{ y: -5 }}
-                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                                        className="bg-white/50 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-line"
                                     >
                                         <div className="flex items-center mb-3">
                                             <div className={`w-10 h-10 bg-gradient-to-r ${slang.gradient} rounded-lg flex items-center justify-center shadow-md mr-3`}>
                                                 {slang.icon}
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900">{slang.slang}</h3>
+                                                <h3 className="text-lg font-bold text-ink">{slang.slang}</h3>
                                                 <p className="text-blue-600 text-sm font-medium">{slang.meaning}</p>
                                             </div>
                                         </div>
-                                        <p className="text-gray-600 text-sm mb-2">{slang.usage}</p>
-                                        <p className="text-gray-800 text-sm italic bg-gray-50 p-2 rounded">{slang.example}</p>
+                                        <p className="text-ink-2 text-sm mb-2">{slang.usage}</p>
+                                        <p className="text-ink text-sm italic bg-lav/60 p-2 rounded">{slang.example}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -447,7 +427,7 @@ export default function PanamanianSlangArticle() {
                 </section>
 
                 {/* Regional Expressions */}
-                <section className="mb-16 bg-gray-50 py-16">
+                <section className="mb-16 bg-lav/60 py-16">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -456,8 +436,8 @@ export default function PanamanianSlangArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Regional <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Expressions</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Regional <span className="grad-text">Expressions</span>
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {regionalExpressions.map((region, regionIndex) => (
@@ -475,7 +455,7 @@ export default function PanamanianSlangArticle() {
                                             {region.expressions.map((expr, exprIndex) => (
                                                 <div key={exprIndex} className="p-3 bg-blue-50/50 rounded-lg">
                                                     <p className="font-semibold text-blue-900">{expr.phrase}</p>
-                                                    <p className="text-gray-700 text-sm mb-1">{expr.meaning}</p>
+                                                    <p className="text-ink-2 text-sm mb-1">{expr.meaning}</p>
                                                     <p className="text-blue-600 text-xs italic">{expr.usage}</p>
                                                 </div>
                                             ))}
@@ -498,8 +478,8 @@ export default function PanamanianSlangArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Slang by <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Category</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Slang by <span className="grad-text">Category</span>
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -518,7 +498,7 @@ export default function PanamanianSlangArticle() {
                                                 <div key={itemIndex} className="bg-green-50/50 p-2 rounded">
                                                     <p className="font-semibold text-green-800 text-sm">{item.word}</p>
                                                     <p className="text-green-700 text-xs">{item.meaning}</p>
-                                                    <p className="text-gray-600 text-xs italic">{item.context}</p>
+                                                    <p className="text-ink-2 text-xs italic">{item.context}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -539,8 +519,8 @@ export default function PanamanianSlangArticle() {
                             variants={fadeInUp}
                             className="max-w-6xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-8">
-                                Avoid These <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Common Mistakes</span>
+                            <h2 className="h-display text-3xl text-center mb-8">
+                                Avoid These <span className="grad-text">Common Mistakes</span>
                             </h2>
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -558,7 +538,7 @@ export default function PanamanianSlangArticle() {
                                             {section.mistakes.map((mistake, mistakeIndex) => (
                                                 <li key={mistakeIndex} className="flex items-start gap-2">
                                                     <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                                                    <span className="text-gray-700">{mistake}</span>
+                                                    <span className="text-ink-2">{mistake}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -570,7 +550,7 @@ export default function PanamanianSlangArticle() {
                 </section>
 
                 {/* Cultural Context */}
-                <section className="mb-16 bg-white py-16 border-t border-b border-gray-100">
+                <section className="mb-16 bg-white py-16 border-t border-b border-line">
                     <div className="container mx-auto px-4 sm:px-6">
                         <motion.div
                             initial="hidden"
@@ -579,8 +559,8 @@ export default function PanamanianSlangArticle() {
                             variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h2 className="text-3xl font-bold text-center mb-12">
-                                Cultural <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Context</span>
+                            <h2 className="h-display text-3xl text-center mb-12">
+                                Cultural <span className="grad-text">Context</span>
                             </h2>
 
                             <div className="bg-blue-50/50 rounded-xl p-6 md:p-8 shadow-inner border border-blue-100">
@@ -620,7 +600,7 @@ export default function PanamanianSlangArticle() {
             </main>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gray-900 relative overflow-hidden">
+            <section className="py-16 bg-ink relative overflow-hidden">
                 <WaveBackground />
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
@@ -630,8 +610,8 @@ export default function PanamanianSlangArticle() {
                         variants={fadeInUp}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                            Practice Your <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Panamanian Slang</span>
+                        <h2 className="h-display text-3xl md:text-4xl mb-6 text-white leading-tight">
+                            Practice Your <span className="grad-text-light">Panamanian Slang</span>
                         </h2>
                         <p className="text-lg text-gray-300 mb-8">
                             Join our Spanish classes and practice using authentic Panamanian slang with native speakers. Learn when and how to use these expressions naturally!
@@ -643,7 +623,7 @@ export default function PanamanianSlangArticle() {
                                 </span>
                             </NextLink>
                             <NextLink href="/learning-resources">
-                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-gray-900 cursor-pointer text-sm sm:text-base">
+                                <span className="block px-6 py-3 text-center rounded-full font-medium transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-ink cursor-pointer text-sm sm:text-base">
                                     More Learning Resources
                                 </span>
                             </NextLink>
@@ -651,6 +631,7 @@ export default function PanamanianSlangArticle() {
                     </motion.div>
                 </div>
             </section>
+        <SiteFooter lang="en" />
         </div>
     );
 }
