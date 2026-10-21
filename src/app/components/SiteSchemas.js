@@ -133,7 +133,11 @@ function buildSchemas(isEs, isHome) {
       { "@type": "Country", name: "Panama" },
     ],
     knowsLanguage: ["en", "es"],
-    sameAs: ["https://www.instagram.com/be.languages/"],
+    hasMap: "https://maps.google.com/?cid=9356912103615504008",
+    sameAs: [
+      "https://www.instagram.com/be.languages/",
+      "https://maps.google.com/?cid=9356912103615504008",
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

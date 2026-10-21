@@ -27,6 +27,17 @@ export const HOME = {
         { key: "translation", title: "Certified Translation", text: "Official English ⟷ Spanish translations for legal, academic, medical and personal documents.", price: "$15", unit: "/ page" },
       ],
     },
+    online: {
+      eyebrow: "Learn from anywhere in Panama",
+      title: "Live online",
+      accent: "classes",
+      intro: "Not in Bocas del Toro? Take the same one-on-one lessons by video call from Panama City, Chiriquí, the coast or abroad.",
+      items: [
+        { key: "onlineSpanish", title: "Online Spanish classes in Panama", text: "Real Panamanian Spanish for expats and digital nomads: banks, landlords, taxis, small talk." },
+        { key: "onlineEnglish", title: "Online English classes in Panama", text: "English for work, interviews and travel, with flexible hours on Panama time." },
+      ],
+      cta: "See online classes",
+    },
     about: {
       eyebrow: "About the instructor",
       title: "Certified",
@@ -102,6 +113,17 @@ export const HOME = {
         { key: "english", title: "Clases de Inglés", text: "Para locales, expatriados y viajeros que quieren mejorar su inglés para trabajo, viajes o crecimiento personal.", price: data.esEnglish.pricingPlans[0].price, unit: "/ semana" },
         { key: "translation", title: "Traducción Certificada", text: "Traducciones oficiales inglés ⟷ español de documentos legales, académicos, médicos y personales.", price: "$15", unit: "/ página" },
       ],
+    },
+    online: {
+      eyebrow: "Aprende desde cualquier lugar de Panamá",
+      title: "Clases",
+      accent: "en línea en vivo",
+      intro: "¿No estás en Bocas del Toro? Toma las mismas clases uno a uno por videollamada desde la Ciudad de Panamá, Chiriquí, la costa o el extranjero.",
+      items: [
+        { key: "onlineSpanish", title: "Clases de español en línea en Panamá", text: "Español panameño real para expatriados y nómadas digitales: bancos, caseros, taxis, conversación." },
+        { key: "onlineEnglish", title: "Clases de inglés en línea en Panamá", text: "Inglés para trabajo, entrevistas y viajes, con horarios flexibles en hora de Panamá." },
+      ],
+      cta: "Ver clases en línea",
     },
     about: {
       eyebrow: "Sobre la instructora",

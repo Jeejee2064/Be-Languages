@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Award, Briefcase, Clock, FileText, GraduationCap, Globe, Heart, MessageCircle, BookOpen, Landmark, Users, Scale, Shield } from 'lucide-react'
+import { Award, Briefcase, Clock, FileText, GraduationCap, Globe, Heart, MessageCircle, BookOpen, Landmark, Users, Scale, Shield, Video, MapPin, Languages } from 'lucide-react'
 import { ROUTES, UI, groupsFor } from '../../content/site'
 import { ArrowIcon, Button, CheckIcon, Plant, Reveal, SectionHead } from './primitives'
 import { PlanGrid, PolicyPanel } from './Pricing'
@@ -42,6 +42,80 @@ function Hero({ lang, crumb, title, lead, primary, secondary, secondaryHref, pla
           </Reveal>
         </div>
         <Reveal delay={0.15}>{aside}</Reveal>
+      </div>
+    </section>
+  )
+}
+
+const RELATED = {
+  en: {
+    eyebrow: 'Keep exploring',
+    title: 'Related',
+    accent: 'classes',
+    online: { spanish: 'Online Spanish classes in Panama', english: 'Online English classes in Panama' },
+    onlineText: { spanish: 'Not in Bocas del Toro? Take the same live 1-on-1 Spanish lessons by video call from anywhere in Panama.', english: 'Not in Bocas del Toro? Take the same live 1-on-1 English lessons by video call from anywhere in Panama.' },
+    local: { spanish: 'Spanish classes in Isla Colón, Bocas del Toro', english: 'English classes in Isla Colón, Bocas del Toro' },
+    localText: 'Prefer to learn face to face? Join in-person lessons on Isla Colón, with real-life practice in shops and restaurants.',
+    other: { spanish: 'Online English classes in Panama', english: 'Online Spanish classes in Panama' },
+    otherText: { spanish: 'Also improving your English? The same flexible packages, taught live online.', english: 'Living in Panama? Learn Spanish live online with a certified local instructor.' },
+    translation: 'Certified translation services in Bocas del Toro',
+    translationText: 'Official English ⟷ Spanish translations for legal, academic and immigration documents.',
+  },
+  es: {
+    eyebrow: 'Sigue explorando',
+    title: 'Clases',
+    accent: 'relacionadas',
+    online: { spanish: 'Clases de español en línea en Panamá', english: 'Clases de inglés en línea en Panamá' },
+    onlineText: { spanish: '¿No estás en Bocas del Toro? Toma las mismas clases de español uno a uno por videollamada desde cualquier lugar de Panamá.', english: '¿No estás en Bocas del Toro? Toma las mismas clases de inglés uno a uno por videollamada desde cualquier lugar de Panamá.' },
+    local: { spanish: 'Clases de español en Isla Colón, Bocas del Toro', english: 'Clases de inglés en Isla Colón, Bocas del Toro' },
+    localText: '¿Prefieres aprender cara a cara? Únete a clases presenciales en Isla Colón, con práctica real en tiendas y restaurantes.',
+    other: { spanish: 'Clases de inglés en línea en Panamá', english: 'Clases de español en línea en Panamá' },
+    otherText: { spanish: '¿Quieres mejorar tu inglés? Los mismos paquetes flexibles, en vivo y en línea.', english: '¿Vives en Panamá? Aprende español en vivo y en línea con una instructora local certificada.' },
+    translation: 'Traducciones certificadas en Bocas del Toro',
+    translationText: 'Traducciones oficiales inglés ⟷ español para documentos legales, académicos y migratorios.',
+  },
+}
+
+// Internal links between the in-person and online class pages (and their siblings)
+function RelatedClasses({ page }) {
+  const { lang, subject } = page
+  const r = ROUTES[lang]
+  const c = RELATED[lang]
+  const isOnline = Boolean(page.path)
+  const otherSubject = subject === 'spanish' ? 'english' : 'spanish'
+  const cap = (k) => k[0].toUpperCase() + k.slice(1)
+  const items = isOnline
+    ? [
+        { href: r[subject], Icon: MapPin, title: c.local[subject], text: c.localText },
+        { href: r['online' + cap(otherSubject)], Icon: Video, title: c.other[subject], text: c.otherText[subject] },
+      ]
+    : [
+        { href: r['online' + cap(subject)], Icon: Video, title: c.online[subject], text: c.onlineText[subject] },
+        { href: r.translation, Icon: Languages, title: c.translation, text: c.translationText },
+      ]
+  return (
+    <section className="section-pad">
+      <div className="container-x">
+        <SectionHead eyebrow={c.eyebrow} title={c.title} accent={c.accent} />
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {items.map(({ href, Icon, title, text }, i) => (
+            <Reveal key={href} delay={i * 0.07} className="h-full">
+              <Link
+                href={href}
+                className="group flex h-full items-start gap-5 rounded-[1.5rem] border border-line bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-violet/40 hover:shadow-[0_26px_50px_-34px_rgba(110,70,230,.6)]"
+              >
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-lav text-royal transition group-hover:bg-[image:var(--brand-gradient)] group-hover:text-white">
+                  <Icon className="h-6 w-6" strokeWidth={1.7} />
+                </span>
+                <div className="flex-1">
+                  <h3 className="h-display text-xl">{title}</h3>
+                  <p className="mt-2 leading-relaxed text-ink-2">{text}</p>
+                </div>
+                <ArrowIcon className="mt-1 h-5 w-5 shrink-0 text-royal transition group-hover:translate-x-1" />
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -140,6 +214,7 @@ export function ClassesPage({ page }) {
           </section>
         )}
 
+        <RelatedClasses page={page} />
         <ContactBlock lang={lang} />
       </main>
       <SiteFooter lang={lang} />

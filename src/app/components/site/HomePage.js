@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Building2, FileCheck2, Globe, Languages, MessagesSquare, ShieldCheck } from 'lucide-react'
+import { Building2, FileCheck2, Globe, Languages, MessagesSquare, ShieldCheck, Video } from 'lucide-react'
 import { HOME } from '../../content/home'
 import { ROUTES, UI, groupsFor, WHATSAPP } from '../../content/site'
 import { ArrowIcon, Button, CheckIcon, Plant, Reveal, SectionHead } from './primitives'
@@ -89,6 +89,35 @@ export default function HomePage({ lang = 'en' }) {
                       </p>
                       <span className="grid h-11 w-11 place-items-center rounded-full bg-ink text-white transition group-hover:bg-[image:var(--brand-gradient)] group-hover:translate-x-1">
                         <ArrowIcon />
+                      </span>
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Online classes */}
+        <section id="online" className="section-pad relative overflow-hidden">
+          <Plant name="heliconia" className="-right-40 -top-10 h-[30rem] w-[30rem] opacity-60" />
+          <div className="container-x relative z-10">
+            <SectionHead eyebrow={c.online.eyebrow} title={c.online.title} accent={c.online.accent} intro={c.online.intro} />
+            <div className="mt-12 grid gap-5 md:grid-cols-2">
+              {c.online.items.map((o, i) => (
+                <Reveal key={o.key} delay={i * 0.08} className="h-full">
+                  <Link
+                    href={r[o.key]}
+                    className="group flex h-full items-start gap-5 rounded-[1.75rem] border border-line bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-violet/50 hover:shadow-[0_30px_60px_-34px_rgba(110,70,230,.55)]"
+                  >
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-lav text-royal transition group-hover:bg-[image:var(--brand-gradient)] group-hover:text-white">
+                      <Video className="h-6 w-6" strokeWidth={1.7} />
+                    </span>
+                    <div className="flex-1">
+                      <h3 className="h-display text-2xl">{o.title}</h3>
+                      <p className="mt-2 leading-relaxed text-ink-2">{o.text}</p>
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-royal">
+                        {c.online.cta} <ArrowIcon />
                       </span>
                     </div>
                   </Link>

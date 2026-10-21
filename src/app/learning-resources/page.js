@@ -156,6 +156,7 @@ export default function LearningResourcesPage() {
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-3">
                 <Button href={ROUTES.en.spanish} variant="light">Book Spanish Classes <ArrowIcon /></Button>
+                <Button href={ROUTES.en.onlineSpanish} variant="light">Online Spanish Classes in Panama <ArrowIcon /></Button>
               </div>
             </Reveal>
           </div>
